@@ -1,0 +1,4 @@
+.examples-wrapper-div {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,20 @@
+.codeExampleDiv {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    width: 1000px;
+}
+
+.codeExampleDiv .MuiAccordion-root {
+    width: 1000px;
+    background-color: rgb(223, 223, 223);
+    overflow-x: auto;
+}
+
+.codeExampleLabel {
+    font-weight: bold;
+}
+
+.codeExample {
+    white-space: pre;
+}

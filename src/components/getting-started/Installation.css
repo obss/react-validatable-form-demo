@@ -1,0 +1,17 @@
+.commandBox {
+    white-space: pre;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.outsideUrlSpan {
+    color: #5b7adb;
+}
+
+.outsideUrlSpan:hover {
+    text-decoration: underline;
+    color: #395ac2;
+}

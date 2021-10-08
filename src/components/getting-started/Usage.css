@@ -1,0 +1,13 @@
+.codeBox {
+    white-space: pre;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.codeHeader {
+    margin-top: 20px;
+    font-size: large;
+}

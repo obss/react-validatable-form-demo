@@ -1,0 +1,123 @@
+.App {
+    text-align: center;
+}
+
+select,
+input {
+    border: 1px solid;
+}
+
+.pureButton {
+    border: 1px solid;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pureButton:hover {
+    background-color: lightgray;
+}
+
+.libraryName {
+    cursor: pointer;
+}
+
+.errorInfoText {
+    color: red;
+    min-height: 25px;
+    margin-bottom: 25px;
+}
+
+.hasError input,
+.hasError select {
+    border: 1px solid red;
+}
+
+.hasError .errorText {
+    font-size: small;
+    color: red;
+}
+
+.errorText {
+    min-height: 20px;
+}
+
+.MuiFormControl-root,
+.MuiAutocomplete-root {
+    width: 400px;
+}
+
+.formField {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 800px;
+    flex-wrap: wrap;
+}
+
+.formField > div {
+    width: 200px;
+    flex: 50%;
+}
+
+.mySubmitButton {
+    margin-top: 20px !important;
+    margin-left: 60px !important;
+}
+
+.myAddButton {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.myDeleteButton {
+    margin-left: 20px !important;
+}
+
+.ruleOptionComponent {
+    width: 280px !important;
+}
+
+.comparisonComponent {
+    width: 200px !important;
+}
+
+.comparisonDiv {
+    display: flex;
+}
+
+.textAndCheckboxDiv {
+    display: flex;
+}
+
+.checkboxOnRight {
+    margin-left: 20px;
+}
+
+.regexInfo {
+    margin-left: 20px;
+}
+
+.my-prime-div {
+    display: grid;
+}
+
+.p-error {
+    min-height: 20px;
+}
+
+.my-prime-div .p-component {
+    width: 400px;
+}
+
+.my-bootstrap-empty-feedback {
+	margin-top: .25rem;
+    height: 21px;
+}
+
+.my-bootstrap-form input, .my-bootstrap-form select {
+    width: 400px;
+}
+
+.apiInfoSectionHeader {
+	margin-top: 20px;
+    font-size: x-large;
+}
