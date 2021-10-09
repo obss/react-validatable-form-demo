@@ -201,6 +201,10 @@ export const NavSidebar = () => {
                                     title: 'rules',
                                     itemId: '/api/rules',
                                 },
+                                {
+                                    title: 'Rule',
+                                    itemId: '/api/rule',
+                                },
                             ],
                         },
                     ]}

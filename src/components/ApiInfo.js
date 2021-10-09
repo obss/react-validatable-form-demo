@@ -1,7 +1,7 @@
 import './ApiInfo.css';
 
 const ApiInfo = ({ apiInfoList }) => {
-    const apiInfoListJsx = apiInfoList.map((api) => {
+    const apiInfoListJsx = apiInfoList.map((api, index) => {
         const apiLabel = api.label;
         const apiDesc = api.desc;
         const apiIndent = api.indent || 0;
@@ -11,8 +11,8 @@ const ApiInfo = ({ apiInfoList }) => {
             leftIndentStyle.borderTop = '1px dashed black';
         }
         return (
-            <div key={apiLabel} style={leftIndentStyle} className="apiInfo">
-                <div className={'apiLabel'}>{apiLabel + ':'}</div>
+            <div key={index} style={leftIndentStyle} className="apiInfo">
+                <div className={'apiLabel'}>{apiLabel}</div>
                 <div className={'apiDesc'}>{apiDesc}</div>
             </div>
         );

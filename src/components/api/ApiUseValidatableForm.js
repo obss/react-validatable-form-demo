@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ApiInfo from '../ApiInfo';
 import CodeAccordion from '../CodeAccordion';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
@@ -13,7 +14,14 @@ const useValidatableFormCode = `const [isValid, validationError, formData, { set
 
 const hookParametersApiInfoList = [
     {
-        label: 'rules (array)',
+        label: (
+            <div>
+                rules (array){' '}
+                <Link className="inner-link" to="/api/rules">
+                    See rules API
+                </Link>
+            </div>
+        ),
         desc: 'Array of validation rules to be run on current form.',
     },
     {
@@ -21,20 +29,48 @@ const hookParametersApiInfoList = [
         desc: 'Initial form data to set default values of current form.',
     },
     {
-        label: 'hideBeforeSubmit (boolean)',
+        label: (
+            <div>
+                hideBeforeSubmit (boolean){' '}
+                <Link className="inner-link" to="/advanced/hide-before-submit">
+                    See Example
+                </Link>
+            </div>
+        ),
         desc: 'Flag to hide validation errors before setFormIsSubmitted function is called.',
     },
     {
-        label: 'showAfterBlur (boolean)',
+        label: (
+            <div>
+                showAfterBlur (boolean){' '}
+                <Link className="inner-link" to="/advanced/show-after-blur">
+                    See Example
+                </Link>
+            </div>
+        ),
         desc: 'Flag to hide validation errors before setPathIsBlurred function is called for any path.',
     },
     {
-        label: 'focusToErrorAfterSubmit (boolean)',
+        label: (
+            <div>
+                focusToErrorAfterSubmit (boolean){' '}
+                <Link className="inner-link" to="/advanced/focus-to-error-after-submit">
+                    See Example
+                </Link>
+            </div>
+        ),
         desc:
             'Flag to automatically focus to first HTML element with validation error after setFormIsSubmitted function is called.',
     },
     {
-        label: 'elementFocusHandler (function)',
+        label: (
+            <div>
+                elementFocusHandler (function){' '}
+                <Link className="inner-link" to="/customizations/custom-element-focus-handler">
+                    See Example
+                </Link>
+            </div>
+        ),
         desc:
             'Function that accepts the first "elementId" of current validation errors as parameter that is used to customly manage DOM after submit.',
     },

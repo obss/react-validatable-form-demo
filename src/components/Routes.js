@@ -35,6 +35,7 @@ import ExampleReactBootstrap from './examples/ExampleReactBootstrap';
 import ApiUseValidatableForm from './api/ApiUseValidatableForm';
 import ApiReactValidatableFormProvider from './api/ApiReactValidatableFormProvider';
 import ApiRules from './api/ApiRules';
+import ApiRule from './api/ApiRule';
 
 const Routes = () => {
     return (
@@ -142,6 +143,9 @@ const Routes = () => {
                 </Route>
                 <Route exact path="/api/rules">
                     <ApiRules />
+                </Route>
+                <Route exact path="/api/rule">
+                    <ApiRule />
                 </Route>
                 <Route exact path="/">
                     <Homepage />

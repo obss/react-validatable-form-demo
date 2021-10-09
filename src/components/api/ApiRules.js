@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ApiInfo from '../ApiInfo';
 import CodeAccordion from '../CodeAccordion';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
@@ -57,8 +58,15 @@ const rulesParametersApiInfoList = [
         desc: 'Path of the values of a list on formData to run the rules on each elements of the list.',
     },
     {
-        label: 'ruleSet (array)',
-        desc: 'Rules to be applied to the value on path.',
+        label: (
+            <div>
+                ruleSet (array){' '}
+                <Link className="inner-link" to="/api/rule">
+                    See Rule API
+                </Link>
+            </div>
+        ),
+        desc: 'Rules to be applied to the value on path (Can be string or rule object).',
     },
     {
         label: 'elementId (string)',
@@ -87,7 +95,7 @@ const ApiRules = () => {
     return (
         <ExampleUsageWrapper header="rules">
             <CodeAccordion code={rulesFormCode} />
-            <div className="apiInfoSectionHeader">Rule Definition Parameters</div>
+            <div className="apiInfoSectionHeader">Rules Array Parameters</div>
             <ApiInfo apiInfoList={rulesParametersApiInfoList} />
         </ExampleUsageWrapper>
     );
