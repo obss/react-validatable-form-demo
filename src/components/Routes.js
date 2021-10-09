@@ -33,6 +33,7 @@ import RuleEquality from './rules/RuleEquality';
 import ExamplePrimeReact from './examples/ExamplePrimeReact';
 import ExampleReactBootstrap from './examples/ExampleReactBootstrap';
 import ApiUseValidatableForm from './api/ApiUseValidatableForm';
+import ApiReactValidatableFormProvider from './api/ApiReactValidatableFormProvider';
 
 const Routes = () => {
     return (
@@ -131,6 +132,9 @@ const Routes = () => {
                 </Route>
                 <Route exact path="/examples/react-bootstrap">
                     <ExampleReactBootstrap />
+                </Route>
+                <Route exact path="/api/react-validatable-form-provider">
+                    <ApiReactValidatableFormProvider />
                 </Route>
                 <Route exact path="/api/use-validatable-form">
                     <ApiUseValidatableForm />

@@ -1,10 +1,20 @@
 .apiInfoWrapper {
     width: 1000px;
+    padding-bottom: 10px;
+}
+
+.apiInfo {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.apiInfo:last-child {
+    border-bottom: 1px solid black;
 }
 
 .apiLabel {
     font-weight: bold;
-    margin-top: 10px;
 }
 
 .apiDesc {

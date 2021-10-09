@@ -190,6 +190,10 @@ export const NavSidebar = () => {
                             itemId: 'group6',
                             subNav: [
                                 {
+                                    title: 'ReactValidatableFormProvider',
+                                    itemId: '/api/react-validatable-form-provider',
+                                },
+                                {
                                     title: 'useValidatableForm',
                                     itemId: '/api/use-validatable-form',
                                 },

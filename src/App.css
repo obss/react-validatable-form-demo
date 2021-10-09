@@ -120,4 +120,13 @@ input {
 .apiInfoSectionHeader {
 	margin-top: 20px;
     font-size: x-large;
+    font-weight: bold;
+}
+
+.inner-link {
+    color: #5b7adb;
+}
+
+.inner-link:hover {
+    text-decoration: underline;
 }

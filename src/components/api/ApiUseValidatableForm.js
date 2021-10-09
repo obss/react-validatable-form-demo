@@ -33,6 +33,11 @@ const hookParametersApiInfoList = [
         desc:
             'Flag to automatically focus to first HTML element with validation error after setFormIsSubmitted function is called.',
     },
+    {
+        label: 'elementFocusHandler (function)',
+        desc:
+            'Function that accepts the first "elementId" of current validation errors as parameter that is used to customly manage DOM after submit.',
+    },
 ];
 
 const returnValuesApiInfoList = [

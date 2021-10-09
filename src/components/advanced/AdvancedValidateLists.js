@@ -18,12 +18,7 @@ const rules = [
 ];
 
 const AdvancedValidateLists = () => {
-    const [
-        isValid,
-        validationError,
-        formData,
-        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
-    ] = useValidatableForm({
+    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted }] = useValidatableForm({
         rules,
         initialFormData: { listChild: [''] },
     });
@@ -60,7 +55,6 @@ const AdvancedValidateLists = () => {
                         type="text"
                         value={get(formData, `listChild[${index}]`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}]`, e.target.value)}
-                        onBlur={() => setPathIsBlurred(`listChild[${index}]`)}
                     />
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(index)}>
                         Delete Element

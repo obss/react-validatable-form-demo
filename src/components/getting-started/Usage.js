@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import './Usage.css';
 
@@ -38,11 +39,21 @@ const rules = [{ path: 'val', ruleSet: [{ rule: 'required' }] }];
 
     return (
         <ExampleUsageWrapper header="Usage">
-            <div className="codeHeader">Example Usage of ReactValidatableFormProvider:</div>
+            <div className="codeHeader">
+                Example Usage of ReactValidatableFormProvider:{' '}
+                <Link className="inner-link" to="/api/react-validatable-form-provider">
+                    See API
+                </Link>
+            </div>
             <div className="codeBox">
                 <span>{providerCode}</span>
             </div>
-            <div className="codeHeader">Example Usage of useValidatableForm Hook:</div>
+            <div className="codeHeader">
+                Example Usage of useValidatableForm Hook:{' '}
+                <Link className="inner-link" to="/api/use-validatable-form">
+                    See API
+                </Link>
+            </div>
             <div className="codeBox">
                 <span>{hookCode}</span>
             </div>

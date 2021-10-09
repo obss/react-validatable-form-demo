@@ -5,9 +5,10 @@ const ApiInfo = ({ apiInfoList }) => {
         const apiLabel = api.label;
         const apiDesc = api.desc;
         const apiIndent = api.indent || 0;
-        const leftIndentStyle = { marginLeft: apiIndent * 20 + 'px' };
+        const pLeft = 20 * apiIndent + 10;
+        const leftIndentStyle = { paddingLeft: pLeft + 'px' };
         return (
-            <div key={apiLabel} style={leftIndentStyle}>
+            <div key={apiLabel} style={leftIndentStyle} className="apiInfo">
                 <div className={'apiLabel'}>{apiLabel + ':'}</div>
                 <div className={'apiDesc'}>{apiDesc}</div>
             </div>
