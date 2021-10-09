@@ -47,7 +47,12 @@ const rules = [
 ];
 
 const AdvancedValidateListOfObjects = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, handleBlur }] = useValidatableForm({
+    const [
+        isValid,
+        validationError,
+        formData,
+        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
+    ] = useValidatableForm({
         rules,
         initialFormData: { listChild: [{ id: 1 }] },
         hideBeforeSubmit: true,
@@ -89,7 +94,7 @@ const AdvancedValidateListOfObjects = () => {
                         type="text"
                         value={get(formData, `listChild[${index}].subkey1`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}].subkey1`, e.target.value)}
-                        onBlur={() => handleBlur(`listChild{${index}}.subkey1`)}
+                        onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey1`)}
                         id={`listChild{${index}}.subkey1`}
                     />
                     <TextField
@@ -99,7 +104,7 @@ const AdvancedValidateListOfObjects = () => {
                         type="number"
                         value={get(formData, `listChild[${index}].subkey2`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}].subkey2`, e.target.value)}
-                        onBlur={() => handleBlur(`listChild{${index}}.subkey2`)}
+                        onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey2`)}
                         id={`listChild{${index}}.subkey2`}
                     />
                     disable

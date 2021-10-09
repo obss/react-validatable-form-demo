@@ -2,7 +2,7 @@ import { get } from 'lodash';
 import TextField from '@mui/material/TextField';
 
 const AdvancedSubComponent = (props) => {
-    const { validationError, formData, setPathValue, handleBlur } = props;
+    const { validationError, formData, setPathValue, setPathIsBlurred } = props;
     return (
         <div>
             <div className={'formField'}>
@@ -13,7 +13,7 @@ const AdvancedSubComponent = (props) => {
                     type="text"
                     value={get(formData, 'subComponentElement1') || ''}
                     onChange={(e) => setPathValue('subComponentElement1', e.target.value)}
-                    onBlur={() => handleBlur('subComponentElement1')}
+                    onBlur={() => setPathIsBlurred('subComponentElement1')}
                     id="subComponentElement1"
                 />
                 <TextField
@@ -23,7 +23,7 @@ const AdvancedSubComponent = (props) => {
                     type="text"
                     value={get(formData, 'subComponentElement2') || ''}
                     onChange={(e) => setPathValue('subComponentElement2', e.target.value)}
-                    onBlur={() => handleBlur('subComponentElement2')}
+                    onBlur={() => setPathIsBlurred('subComponentElement2')}
                     id="subComponentElement2"
                 />
             </div>

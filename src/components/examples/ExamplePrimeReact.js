@@ -39,7 +39,12 @@ const primeReactElementsFocusHandler = (elementId) => {
 };
 
 const ExamplePrimeReact = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, handleBlur }] = useValidatableForm({
+    const [
+        isValid,
+        validationError,
+        formData,
+        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
+    ] = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
         showAfterBlur: true,
@@ -74,7 +79,7 @@ const ExamplePrimeReact = () => {
                         className={get(validationError, 'textVal1') && 'p-invalid'}
                         value={get(formData, 'textVal1') || ''}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
-                        onBlur={() => handleBlur('textVal1')}
+                        onBlur={() => setPathIsBlurred('textVal1')}
                         id="textVal1"
                     />
                     <small className="p-error">{get(validationError, 'textVal1') || ' '}</small>
@@ -85,7 +90,7 @@ const ExamplePrimeReact = () => {
                         className={get(validationError, 'textVal2') && 'p-invalid'}
                         value={get(formData, 'textVal2') || ''}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
-                        onBlur={() => handleBlur('textVal2')}
+                        onBlur={() => setPathIsBlurred('textVal2')}
                         id="textVal2"
                     />
                     <small className="p-error">{get(validationError, 'textVal2') || ' '}</small>
@@ -96,7 +101,7 @@ const ExamplePrimeReact = () => {
                         className={get(validationError, 'numVal') && 'p-invalid'}
                         value={get(formData, 'numVal') || ''}
                         onChange={(e) => setPathValue('numVal', e.value)}
-                        onBlur={() => handleBlur('numVal')}
+                        onBlur={() => setPathIsBlurred('numVal')}
                         id="numVal"
                     />
                     <small className="p-error">{get(validationError, 'numVal') || ' '}</small>
@@ -110,7 +115,7 @@ const ExamplePrimeReact = () => {
                         suggestions={filteredOptions}
                         completeMethod={handleFilter}
                         onChange={(e) => setPathValue('selectVal', e.value)}
-                        onBlur={() => handleBlur('selectVal')}
+                        onBlur={() => setPathIsBlurred('selectVal')}
                         id="selectVal"
                     />
                     <small className="p-error">{get(validationError, 'selectVal') || ' '}</small>

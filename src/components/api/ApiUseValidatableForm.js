@@ -2,7 +2,7 @@ import ApiInfo from '../ApiInfo';
 import CodeAccordion from '../CodeAccordion';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 
-const useValidatableFormCode = `const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, handleBlur, setFormData, setRules, forceRunAllValidations }] = 
+const useValidatableFormCode = `const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, setPathIsBlurred, setFormData, setRules, forceRunAllValidations }] = 
     useValidatableForm({
         rules,
         initialFormData,
@@ -26,7 +26,7 @@ const hookParametersApiInfoList = [
     },
     {
         label: 'showAfterBlur (boolean)',
-        desc: 'Flag to hide validation errors before handleBlur function is called for any path.',
+        desc: 'Flag to hide validation errors before setPathIsBlurred function is called for any path.',
     },
     {
         label: 'focusToErrorAfterSubmit (boolean)',
@@ -67,9 +67,9 @@ const returnValuesApiInfoList = [
         indent: 1,
     },
     {
-        label: 'handleBlur(path)',
+        label: 'setPathIsBlurred(path)',
         desc:
-            'Function to set element is blurred info true and show its current validation result if showAfterBlur parameter is set true.',
+            'Function to set element of path is blurred info true and unhide its current validation result if showAfterBlur parameter is set true.',
         indent: 1,
     },
     {

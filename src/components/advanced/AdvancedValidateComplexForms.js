@@ -59,7 +59,12 @@ const rules = [
 ];
 
 const AdvancedValidateComplexForms = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, handleBlur }] = useValidatableForm({
+    const [
+        isValid,
+        validationError,
+        formData,
+        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
+    ] = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
         showAfterBlur: true,
@@ -100,7 +105,7 @@ const AdvancedValidateComplexForms = () => {
                         type="text"
                         value={get(formData, `listChild[${index}].subkey1`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}].subkey1`, e.target.value)}
-                        onBlur={() => handleBlur(`listChild{${index}}.subkey1`)}
+                        onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey1`)}
                         id={`listChild{${index}}.subkey1`}
                     />
                     <TextField
@@ -110,7 +115,7 @@ const AdvancedValidateComplexForms = () => {
                         type="number"
                         value={get(formData, `listChild[${index}].subkey2`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}].subkey2`, e.target.value)}
-                        onBlur={() => handleBlur(`listChild{${index}}.subkey2`)}
+                        onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey2`)}
                         id={`listChild{${index}}.subkey2`}
                     />
                     disable
@@ -145,7 +150,7 @@ const AdvancedValidateComplexForms = () => {
                         type="text"
                         value={get(formData, 'child1') || ''}
                         onChange={(e) => setPathValue('child1', e.target.value)}
-                        onBlur={() => handleBlur('child1')}
+                        onBlur={() => setPathIsBlurred('child1')}
                         id="child1"
                     />
                     <TextField
@@ -155,7 +160,7 @@ const AdvancedValidateComplexForms = () => {
                         type="text"
                         value={get(formData, 'child2') || ''}
                         onChange={(e) => setPathValue('child2', e.target.value)}
-                        onBlur={() => handleBlur('child2')}
+                        onBlur={() => setPathIsBlurred('child2')}
                         id="child2"
                     />
                     <TextField
@@ -165,7 +170,7 @@ const AdvancedValidateComplexForms = () => {
                         type="text"
                         value={get(formData, 'child3.subchild1') || ''}
                         onChange={(e) => setPathValue('child3.subchild1', e.target.value)}
-                        onBlur={() => handleBlur('child3.subchild1')}
+                        onBlur={() => setPathIsBlurred('child3.subchild1')}
                         id="child3.subchild1"
                     />
                     <TextField
@@ -175,7 +180,7 @@ const AdvancedValidateComplexForms = () => {
                         type="text"
                         value={get(formData, 'child3.subchild2') || ''}
                         onChange={(e) => setPathValue('child3.subchild2', e.target.value)}
-                        onBlur={() => handleBlur('child3.subchild2')}
+                        onBlur={() => setPathIsBlurred('child3.subchild2')}
                         id="child3.subchild2"
                     />
                 </div>
@@ -206,7 +211,7 @@ const AdvancedValidateComplexForms = () => {
                         type="text"
                         value={get(formData, 'bottomElement1') || ''}
                         onChange={(e) => setPathValue('bottomElement1', e.target.value)}
-                        onBlur={() => handleBlur('bottomElement1')}
+                        onBlur={() => setPathIsBlurred('bottomElement1')}
                         id="bottomElement1"
                     />
                     <TextField
@@ -216,7 +221,7 @@ const AdvancedValidateComplexForms = () => {
                         type="text"
                         value={get(formData, 'bottomElement2') || ''}
                         onChange={(e) => setPathValue('bottomElement2', e.target.value)}
-                        onBlur={() => handleBlur('bottomElement2')}
+                        onBlur={() => setPathIsBlurred('bottomElement2')}
                         id="bottomElement2"
                     />
                 </div>
@@ -224,7 +229,7 @@ const AdvancedValidateComplexForms = () => {
                     validationError={validationError}
                     formData={formData}
                     setPathValue={setPathValue}
-                    handleBlur={handleBlur}
+                    setPathIsBlurred={setPathIsBlurred}
                 />
                 <div>
                     <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>

@@ -38,7 +38,12 @@ const rules = [
 ];
 
 const CustomElementFocusHandler = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, handleBlur }] = useValidatableForm({
+    const [
+        isValid,
+        validationError,
+        formData,
+        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
+    ] = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
         showAfterBlur: true,
@@ -68,7 +73,7 @@ const CustomElementFocusHandler = () => {
                         type="text"
                         value={get(formData, 'textVal1') || ''}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
-                        onBlur={() => handleBlur('textVal1')}
+                        onBlur={() => setPathIsBlurred('textVal1')}
                         id="textVal1"
                     />
                     <TextField
@@ -78,7 +83,7 @@ const CustomElementFocusHandler = () => {
                         type="text"
                         value={get(formData, 'textVal2') || ''}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
-                        onBlur={() => handleBlur('textVal2')}
+                        onBlur={() => setPathIsBlurred('textVal2')}
                         id="textVal2"
                     />
                     <Autocomplete
@@ -87,7 +92,7 @@ const CustomElementFocusHandler = () => {
                         onChange={(event, newValue) => {
                             setPathValue('val3', newValue);
                         }}
-                        onBlur={() => handleBlur('val3')}
+                        onBlur={() => setPathIsBlurred('val3')}
                         options={options}
                         renderInput={(params) => (
                             <TextField
@@ -106,7 +111,7 @@ const CustomElementFocusHandler = () => {
                         type="text"
                         value={get(formData, 'textVal4') || ''}
                         onChange={(e) => setPathValue('textVal4', e.target.value)}
-                        onBlur={() => handleBlur('textVal4')}
+                        onBlur={() => setPathIsBlurred('textVal4')}
                         id="textVal4"
                     />
                 </div>

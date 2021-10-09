@@ -22,7 +22,12 @@ const rules = [
 ];
 
 const AdvancedFocusToErrorOnListAfterSubmit = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, handleBlur }] = useValidatableForm({
+    const [
+        isValid,
+        validationError,
+        formData,
+        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
+    ] = useValidatableForm({
         rules,
         initialFormData: { listChild: [''] },
         hideBeforeSubmit: true,
@@ -62,7 +67,7 @@ const AdvancedFocusToErrorOnListAfterSubmit = () => {
                         type="text"
                         value={get(formData, `listChild[${index}]`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}]`, e.target.value)}
-                        onBlur={() => handleBlur(`listChild{${index}}`)}
+                        onBlur={() => setPathIsBlurred(`listChild{${index}}`)}
                         id={`listChild{${index}}`}
                     />
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(index)}>

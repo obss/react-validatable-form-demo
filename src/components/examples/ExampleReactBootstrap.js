@@ -19,7 +19,12 @@ const rules = [
 ];
 
 const ExampleReactBootstrap = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, handleBlur }] = useValidatableForm({
+    const [
+        isValid,
+        validationError,
+        formData,
+        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
+    ] = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
         showAfterBlur: true,
@@ -45,7 +50,7 @@ const ExampleReactBootstrap = () => {
                     <Form.Control
                         placeholder="Text1"
                         value={get(formData, 'textVal1') || ''}
-                        onBlur={() => handleBlur('textVal1')}
+                        onBlur={() => setPathIsBlurred('textVal1')}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
                         isInvalid={!!get(validationError, 'textVal1')}
                     />
@@ -62,7 +67,7 @@ const ExampleReactBootstrap = () => {
                     <Form.Control
                         placeholder="Text2"
                         value={get(formData, 'textVal2') || ''}
-                        onBlur={() => handleBlur('textVal2')}
+                        onBlur={() => setPathIsBlurred('textVal2')}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
                         isInvalid={!!get(validationError, 'textVal2')}
                     />
@@ -80,7 +85,7 @@ const ExampleReactBootstrap = () => {
                         type="number"
                         placeholder="Num Val"
                         value={get(formData, 'numVal') || ''}
-                        onBlur={() => handleBlur('numVal')}
+                        onBlur={() => setPathIsBlurred('numVal')}
                         onChange={(e) => setPathValue('numVal', e.target.value)}
                         isInvalid={!!get(validationError, 'numVal')}
                     />
@@ -96,7 +101,7 @@ const ExampleReactBootstrap = () => {
                     <Form.Label>Select Val</Form.Label>
                     <Form.Select
                         value={get(formData, 'selectVal') || ''}
-                        onBlur={() => handleBlur('selectVal')}
+                        onBlur={() => setPathIsBlurred('selectVal')}
                         onChange={(e) => setPathValue('selectVal', e.target.value)}
                         isInvalid={!!get(validationError, 'selectVal')}
                     >

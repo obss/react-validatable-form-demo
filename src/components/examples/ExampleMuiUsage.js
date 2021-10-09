@@ -18,7 +18,12 @@ const rules = [
 ];
 
 const ExampleMuiUsage = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, handleBlur }] = useValidatableForm({
+    const [
+        isValid,
+        validationError,
+        formData,
+        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
+    ] = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
         showAfterBlur: true,
@@ -47,7 +52,7 @@ const ExampleMuiUsage = () => {
                         type="text"
                         value={get(formData, 'textVal1') || ''}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
-                        onBlur={() => handleBlur('textVal1')}
+                        onBlur={() => setPathIsBlurred('textVal1')}
                         id="textVal1"
                     />
                 </div>
@@ -59,7 +64,7 @@ const ExampleMuiUsage = () => {
                         type="text"
                         value={get(formData, 'textVal2') || ''}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
-                        onBlur={() => handleBlur('textVal2')}
+                        onBlur={() => setPathIsBlurred('textVal2')}
                         id="textVal2"
                     />
                 </div>
@@ -71,14 +76,14 @@ const ExampleMuiUsage = () => {
                         type="number"
                         value={get(formData, 'numVal') || ''}
                         onChange={(e) => setPathValue('numVal', e.target.value)}
-                        onBlur={() => handleBlur('numVal')}
+                        onBlur={() => setPathIsBlurred('numVal')}
                         id="numVal"
                     />
                 </div>
                 <div>
                     <Autocomplete
                         id="selectVal"
-                        onBlur={() => handleBlur('selectVal')}
+                        onBlur={() => setPathIsBlurred('selectVal')}
                         multiple
                         value={get(formData, 'selectVal') || []}
                         onChange={(event, newValue) => {

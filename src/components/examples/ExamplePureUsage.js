@@ -13,7 +13,12 @@ const rules = [
 ];
 
 const ExamplePureUsage = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, handleBlur }] = useValidatableForm({
+    const [
+        isValid,
+        validationError,
+        formData,
+        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
+    ] = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
         showAfterBlur: true,
@@ -38,7 +43,7 @@ const ExamplePureUsage = () => {
                         type="text"
                         value={get(formData, 'textVal1') || ''}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
-                        onBlur={() => handleBlur('textVal1')}
+                        onBlur={() => setPathIsBlurred('textVal1')}
                         id="textVal1"
                     />
                     <div className="errorText">{get(validationError, 'textVal1') || ' '}</div>
@@ -49,7 +54,7 @@ const ExamplePureUsage = () => {
                         type="text"
                         value={get(formData, 'textVal2') || ''}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
-                        onBlur={() => handleBlur('textVal2')}
+                        onBlur={() => setPathIsBlurred('textVal2')}
                         id="textVal2"
                     />
                     <div className="errorText">{get(validationError, 'textVal2') || ' '}</div>
@@ -60,7 +65,7 @@ const ExamplePureUsage = () => {
                         type="number"
                         value={get(formData, 'numVal') || ''}
                         onChange={(e) => setPathValue('numVal', e.target.value)}
-                        onBlur={() => handleBlur('numVal')}
+                        onBlur={() => setPathIsBlurred('numVal')}
                         id="numVal"
                     />
                     <div className="errorText">{get(validationError, 'numVal') || ' '}</div>
@@ -69,7 +74,7 @@ const ExamplePureUsage = () => {
                     <label htmlFor="selectVal">Select Val: </label>
                     <select
                         id="selectVal"
-                        onBlur={() => handleBlur('selectVal')}
+                        onBlur={() => setPathIsBlurred('selectVal')}
                         value={get(formData, 'selectVal') || ''}
                         onChange={(e) => setPathValue('selectVal', e.target.value)}
                     >
