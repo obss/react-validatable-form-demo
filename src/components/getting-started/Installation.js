@@ -1,23 +1,33 @@
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import './Installation.css';
 
-const npmCommand = '// with npm\nnpm install react-validatable-form';
-const yarnCommand = '// with yarn\nyarn add react-validatable-form';
+const npmCommandHeader = '// with npm';
+const npmCommand = 'npm install react-validatable-form';
+const yarnCommandHeader = '// with yarn';
+const yarnCommand = 'yarn add react-validatable-form';
 
 const Installation = () => {
     return (
         <ExampleUsageWrapper header="Installation">
-            <span className="outsideUrlSpan">
+            <div className="outsideUrlSpan">
                 <a href={'https://www.npmjs.com/package/react-validatable-form'} target="_blank" rel="noreferrer">
                     View on npmjs
                 </a>
-            </span>
+            </div>
+
+            <div className="outsideUrlSpan">
+                <a href={'https://github.com/obss/react-validatable-form'} target="_blank" rel="noreferrer">
+                    View on GitHub
+                </a>
+            </div>
 
             <div className="commandBox">
-                <span>{npmCommand}</span>
+                <p>{npmCommandHeader}</p>
+                <p className="commandText">{npmCommand}</p>
             </div>
             <div className="commandBox">
-                <span>{yarnCommand}</span>
+                <p>{yarnCommandHeader}</p>
+                <p className="commandText">{yarnCommand}</p>
             </div>
         </ExampleUsageWrapper>
     );

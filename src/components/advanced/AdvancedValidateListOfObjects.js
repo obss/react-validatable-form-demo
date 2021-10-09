@@ -36,6 +36,11 @@ const rules = [
                     },
                 ],
             },
+            {
+                path: 'subkey3',
+                ruleSet: ['required'],
+                elementId: 'subkey3ElementId',
+            },
         ],
         dependantPaths: ['disableAllSubkey2Rule'],
     },
@@ -88,6 +93,7 @@ const AdvancedValidateListOfObjects = () => {
             return (
                 <div key={lc.id}>
                     <TextField
+                        style={{ width: 200 }}
                         error={!!get(validationError, `listChild{${index}}.subkey1`)}
                         helperText={get(validationError, `listChild{${index}}.subkey1`) || ' '}
                         label="lengthGreaterThan3"
@@ -98,6 +104,7 @@ const AdvancedValidateListOfObjects = () => {
                         id={`listChild{${index}}.subkey1`}
                     />
                     <TextField
+                        style={{ width: 200 }}
                         error={!!get(validationError, `listChild{${index}}.subkey2`)}
                         helperText={get(validationError, `listChild{${index}}.subkey2`) || ' '}
                         label="numberGreaterThan5"
@@ -114,6 +121,17 @@ const AdvancedValidateListOfObjects = () => {
                             onChange={(e) => setPathValue(`listChild[${index}].disableSubkey2Rule`, e.target.checked)}
                         />
                     }
+                    <TextField
+                        style={{ width: 200 }}
+                        error={!!get(validationError, `listChild{${index}}.subkey3`)}
+                        helperText={get(validationError, `listChild{${index}}.subkey3`) || ' '}
+                        label="required"
+                        type="text"
+                        value={get(formData, `listChild[${index}].subkey3`) || ''}
+                        onChange={(e) => setPathValue(`listChild[${index}].subkey3`, e.target.value)}
+                        onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey3`)}
+                        id={`listChild{${index}}.subkey3ElementId`}
+                    />
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(lc.id)}>
                         Delete Element
                     </Button>

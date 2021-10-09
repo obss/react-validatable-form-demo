@@ -197,6 +197,10 @@ export const NavSidebar = () => {
                                     title: 'useValidatableForm',
                                     itemId: '/api/use-validatable-form',
                                 },
+                                {
+                                    title: 'rules',
+                                    itemId: '/api/rules',
+                                },
                             ],
                         },
                     ]}

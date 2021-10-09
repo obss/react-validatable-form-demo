@@ -7,6 +7,9 @@ const ApiInfo = ({ apiInfoList }) => {
         const apiIndent = api.indent || 0;
         const pLeft = 20 * apiIndent + 10;
         const leftIndentStyle = { paddingLeft: pLeft + 'px' };
+        if (apiIndent) {
+            leftIndentStyle.borderTop = '1px dashed black';
+        }
         return (
             <div key={apiLabel} style={leftIndentStyle} className="apiInfo">
                 <div className={'apiLabel'}>{apiLabel + ':'}</div>

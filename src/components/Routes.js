@@ -34,6 +34,7 @@ import ExamplePrimeReact from './examples/ExamplePrimeReact';
 import ExampleReactBootstrap from './examples/ExampleReactBootstrap';
 import ApiUseValidatableForm from './api/ApiUseValidatableForm';
 import ApiReactValidatableFormProvider from './api/ApiReactValidatableFormProvider';
+import ApiRules from './api/ApiRules';
 
 const Routes = () => {
     return (
@@ -138,6 +139,9 @@ const Routes = () => {
                 </Route>
                 <Route exact path="/api/use-validatable-form">
                     <ApiUseValidatableForm />
+                </Route>
+                <Route exact path="/api/rules">
+                    <ApiRules />
                 </Route>
                 <Route exact path="/">
                     <Homepage />
