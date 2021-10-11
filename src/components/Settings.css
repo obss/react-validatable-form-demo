@@ -21,3 +21,11 @@
 .versionInfo:hover {
     text-decoration: underline;
 }
+
+.topButton {
+    border: 1px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: #5b7adb;
+}

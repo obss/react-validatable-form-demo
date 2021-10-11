@@ -48,11 +48,19 @@ const providerParametersApiInfoList = [
     },
 ];
 
-const ApiReactValidatableFormProvider = () => {
+const ApiReactValidatableFormProvider = (props) => {
     return (
         <ExampleUsageWrapper header="ReactValidatableFormProvider">
             <CodeAccordion code={providerFormCode} />
-            <div className="apiInfoSectionHeader">Provider Parameters</div>
+            <div className="apiInfoSectionHeader">
+                Provider Parameters
+                <div>
+                    ruleSet (array){' '}
+                    <span className="inner-link" onClick={props.openSettingsDialog}>
+                        See Example Usages
+                    </span>
+                </div>
+            </div>
             <ApiInfo apiInfoList={providerParametersApiInfoList} />
         </ExampleUsageWrapper>
     );

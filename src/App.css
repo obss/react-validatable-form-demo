@@ -125,6 +125,7 @@ input {
 
 .inner-link {
     color: #5b7adb;
+    cursor: pointer;
 }
 
 .inner-link:hover {

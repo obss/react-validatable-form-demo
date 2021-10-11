@@ -2,3 +2,9 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.providerDialogContent {
+    min-width: 500px;
+    min-height: 400px;
+    padding: 20px;
+}
