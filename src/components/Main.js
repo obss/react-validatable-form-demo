@@ -8,6 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import './Main.css';
 import BodyWrapper from './BodyWrapper';
 import Routes from './Routes';
+import ExampleUsageWrapper from './ExampleUsageWrapper';
 
 const MyCustomRuleFunction = (ruleParams) => {
     const { value } = ruleParams;
@@ -153,7 +154,13 @@ const Main = () => {
     return (
         <>
             <Dialog open={settingsDialogOpen} onClose={() => setSettingsDialogOpen(false)}>
-                <DialogTitle>Edit ReactValidatableFormProvider Props</DialogTitle>
+                <DialogTitle>
+                    <ExampleUsageWrapper
+                        header="Edit ReactValidatableFormProvider Props"
+                        codeUrl="components/Main.js"
+                        wrapperClassName="modalHeaderWrapper"
+                    />
+                </DialogTitle>
                 {dialogContent}
             </Dialog>
             <ReactValidatableFormProvider

@@ -24,8 +24,10 @@ const ExampleUsageWrapper = (props) => {
         });
     }
 
+    const wrapperClassName = props.wrapperClassName || 'examplesUsageWrapperDiv';
+
     return (
-        <div className="examplesUsageWrapperDiv">
+        <div className={wrapperClassName}>
             <span className="pageTitle">{props.header}</span>
             {urlsJsx}
             <div className="mainWrapperDiv">{props.children}</div>

@@ -131,3 +131,19 @@ input {
 .inner-link:hover {
     text-decoration: underline;
 }
+
+.modalHeaderWrapper {
+    text-align: center;
+}
+
+.modalHeaderWrapper .pageTitle {
+    display: block;
+}
+
+.menu-search-input {
+    width: 90%;
+}
+
+.mysidemenu {
+    overflow-y: scroll;
+}
