@@ -1,5 +1,5 @@
 import { useValidatableForm } from 'react-validatable-form';
-import { get } from 'lodash';
+import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import ValidationResult from '../ValidationResult';
 import { options } from '../../constants/Data';

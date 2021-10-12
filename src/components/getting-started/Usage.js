@@ -12,7 +12,7 @@ const Usage = () => {
     `;
 
     const hookCode = `import { useValidatableForm } from 'react-validatable-form';
-import { get } from 'lodash';
+import get from 'lodash.get';
 import TextField from '@mui/material/TextField';
 
 //....

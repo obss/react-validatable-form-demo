@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash.get';
 import TextField from '@mui/material/TextField';
 
 const AdvancedSubComponent = (props) => {

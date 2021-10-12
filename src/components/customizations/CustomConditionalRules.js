@@ -1,5 +1,5 @@
 import { useValidatableForm } from 'react-validatable-form';
-import { get } from 'lodash';
+import get from 'lodash.get';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';

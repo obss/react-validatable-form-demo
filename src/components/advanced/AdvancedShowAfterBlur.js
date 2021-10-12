@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import { get } from 'lodash';
+import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
