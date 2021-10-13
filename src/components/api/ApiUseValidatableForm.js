@@ -97,7 +97,14 @@ const returnValuesApiInfoList = [
             'Fourth and last parameter of the return array of the hook. Returns the following functions to update validatable form at run time.',
     },
     {
-        label: 'setPathValue(path, value)',
+        label: (
+            <div>
+                setPathValue(path, value){' '}
+                <Link className="inner-link" to="/api/path">
+                    See Path API
+                </Link>
+            </div>
+        ),
         desc: 'Function to update given path of formData with given value.',
         indent: 1,
     },
@@ -108,7 +115,14 @@ const returnValuesApiInfoList = [
         indent: 1,
     },
     {
-        label: 'setPathIsBlurred(path)',
+        label: (
+            <div>
+                setPathIsBlurred(path){' '}
+                <Link className="inner-link" to="/api/path">
+                    See Path API
+                </Link>
+            </div>
+        ),
         desc:
             'Function to set element of path is blurred info true and unhide its current validation result if showAfterBlur parameter is set true.',
         indent: 1,

@@ -147,3 +147,35 @@ input {
 .mysidemenu {
     overflow-y: scroll;
 }
+
+.infoParagraph {
+    margin-top: 20px;
+}
+
+.pageCode {
+    white-space: pre;
+}
+
+.pathApiTable {
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+.pathApiTable td {
+    border: 2px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.pathApiTableInfoCol {
+    width: 400px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.pathApiTableExampleCol {
+    width: 400px;
+    font-weight: bold;
+    font-size: x-large;
+}

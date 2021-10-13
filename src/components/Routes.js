@@ -37,6 +37,7 @@ import ApiReactValidatableFormProvider from './api/ApiReactValidatableFormProvid
 import ApiRules from './api/ApiRules';
 import ApiRule from './api/ApiRule';
 import Settings from './Settings';
+import ApiPath from './api/ApiPath';
 
 const Routes = (props) => {
     return (
@@ -149,6 +150,9 @@ const Routes = (props) => {
                     </Route>
                     <Route exact path="/api/rule">
                         <ApiRule />
+                    </Route>
+                    <Route exact path="/api/path">
+                        <ApiPath />
                     </Route>
                     <Route exact path="/">
                         <Homepage />

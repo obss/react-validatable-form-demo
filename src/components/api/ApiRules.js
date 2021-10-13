@@ -50,11 +50,25 @@ const rulesFormCode = `const rules = [
 
 const rulesParametersApiInfoList = [
     {
-        label: 'path (string)',
+        label: (
+            <div>
+                path (string){' '}
+                <Link className="inner-link" to="/api/path">
+                    See Path API
+                </Link>
+            </div>
+        ),
         desc: 'Path of the value on formData to run the rule.',
     },
     {
-        label: 'listPath (string)',
+        label: (
+            <div>
+                listPath (string){' '}
+                <Link className="inner-link" to="/api/path">
+                    See Path API
+                </Link>
+            </div>
+        ),
         desc: 'Path of the values of a list on formData to run the rules on each elements of the list.',
     },
     {

@@ -181,6 +181,10 @@ const allMenuItems = [
                 title: 'Rule',
                 itemId: '/api/rule',
             },
+            {
+                title: 'path & listPath',
+                itemId: '/api/path',
+            },
         ],
     },
 ];
