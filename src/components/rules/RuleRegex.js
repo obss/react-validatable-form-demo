@@ -5,7 +5,10 @@ import TextField from '@mui/material/TextField';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
 
-const initialFormData = {};
+const initialFormData = {
+    val: 'ab',
+    val2: 'a1',
+};
 
 const rules = [
     { path: 'val', ruleSet: [{ rule: 'required' }, { rule: 'regex', regex: /ab+c/ }] },

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 
 const pathFormCode = `
@@ -71,42 +70,46 @@ const ApiPath = () => {
                 </p>
                 <p>This table shows how to use path and listPath keys for the following code.</p>
                 <table className="pathApiTable">
-                    <tr>
-                        <td className="pathApiTableInfoCol">Path Type</td>
-                        <td className="pathApiTableExampleCol">Usage Example</td>
-                    </tr>
-                    <tr>
-                        <td>Update value of first level child</td>
-                        <td>setPathValue({"'child1'"}, newValue)</td>
-                    </tr>
-                    <tr>
-                        <td>Update value of second level child</td>
-                        <td>setPathValue({"'child3.subchild1'"}, newValue)</td>
-                    </tr>
-                    <tr>
-                        <td>Update value of list&apos;s element at 0th index</td>
-                        <td>setPathValue({"'listChild[0]'"}, newValue)</td>
-                    </tr>
-                    <tr>
-                        <td>Update value of list of object&apos;s element at 0th index with key subkey1</td>
-                        <td>setPathValue({"'listChild[0].subkey1'"}, newValue)</td>
-                    </tr>
-                    <tr>
-                        <td>Get error of first level child</td>
-                        <td>get(validationError, {"'child1'"})</td>
-                    </tr>
-                    <tr>
-                        <td>Get error of second level child</td>
-                        <td>get(validationError, {"'child3.subchild1'"})</td>
-                    </tr>
-                    <tr>
-                        <td>Get error of list&apos;s element at 0th index</td>
-                        <td>get(validationError, {"'listChild{0}'"})</td>
-                    </tr>
-                    <tr>
-                        <td>Get error of list of object&apos;s element at 0th index with key subkey1</td>
-                        <td>get(validationError, {"'listChild{0}.subkey1'"})</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <td className="pathApiTableInfoCol">Path Type</td>
+                            <td className="pathApiTableExampleCol">Usage Example</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Update value of first level child</td>
+                            <td>setPathValue({"'child1'"}, newValue)</td>
+                        </tr>
+                        <tr>
+                            <td>Update value of second level child</td>
+                            <td>setPathValue({"'child3.subchild1'"}, newValue)</td>
+                        </tr>
+                        <tr>
+                            <td>Update value of list&apos;s element at 0th index</td>
+                            <td>setPathValue({"'listChild[0]'"}, newValue)</td>
+                        </tr>
+                        <tr>
+                            <td>Update value of list of object&apos;s element at 0th index with key subkey1</td>
+                            <td>setPathValue({"'listChild[0].subkey1'"}, newValue)</td>
+                        </tr>
+                        <tr>
+                            <td>Get error of first level child</td>
+                            <td>get(validationError, {"'child1'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Get error of second level child</td>
+                            <td>get(validationError, {"'child3.subchild1'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Get error of list&apos;s element at 0th index</td>
+                            <td>get(validationError, {"'listChild{0}'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Get error of list of object&apos;s element at 0th index with key subkey1</td>
+                            <td>get(validationError, {"'listChild{0}.subkey1'"})</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <span className="pageCode">{pathFormCode}</span>

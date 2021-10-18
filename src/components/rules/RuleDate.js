@@ -14,11 +14,13 @@ import CurrentRulesInfo from '../CurrentRulesInfo';
 
 const today = new Date();
 const defaultComparisonValue = today;
+var yesterday = new Date();
+yesterday.setDate(yesterday.getDate() - 1);
 const dateRule = { rule: 'date' };
 dateRule[ruleOptions[0]] = defaultComparisonValue;
 const rules = [{ path: 'val', ruleSet: ['required', dateRule], dependantPaths: ['comparisonValue'] }];
 const initialFormData = {
-    val: null,
+    val: yesterday,
     ruleOption: ruleOptions[0],
     comparisonValue: defaultComparisonValue,
 };
@@ -33,7 +35,7 @@ const RuleDate = () => {
     const [isFunc, setIsFunc] = useState(false);
 
     const updateRules = (funcParam, ruleParam) => {
-        const newRules = [...rules];
+        const newRules = JSON.parse(JSON.stringify(rules));
         const newRuleSet = [...newRules[0].ruleSet];
         const newRule = { rule: 'date' };
         if (funcParam) {

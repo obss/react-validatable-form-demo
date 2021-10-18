@@ -5,7 +5,9 @@ import TextField from '@mui/material/TextField';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
 
-const initialFormData = {};
+const initialFormData = {
+    val: 'aa',
+};
 
 const rules = [{ path: 'val', ruleSet: [{ rule: 'required' }, { rule: 'iban' }] }];
 

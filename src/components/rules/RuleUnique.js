@@ -26,7 +26,13 @@ const rules = [
 const RuleUnique = () => {
     const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
         rules,
-        initialFormData: { listChild: ['', ''], listOfObjectsChild: [{ id: 1 }, { id: 2 }] },
+        initialFormData: {
+            listChild: ['a', 'a'],
+            listOfObjectsChild: [
+                { id: 1, subkey1: 'b' },
+                { id: 2, subkey1: 'b' },
+            ],
+        },
     });
     const [nextId, setNextId] = useState(3);
 

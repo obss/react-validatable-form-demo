@@ -5,8 +5,8 @@ import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
 
 const initialFormData = {
-    val1: '',
-    val2: '',
+    val1: 'a',
+    val2: 'a',
     checkVal: false,
 };
 

@@ -7,6 +7,8 @@ import CurrentRulesInfo from '../CurrentRulesInfo';
 import { Checkbox, FormControl, FormControlLabel, FormGroup, FormHelperText } from '@mui/material';
 
 const initialFormData = {
+    val: false,
+    val2: 'aa',
     comparisonValue: 'aba',
 };
 

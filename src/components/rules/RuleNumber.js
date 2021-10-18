@@ -31,7 +31,7 @@ const RuleNumber = () => {
     const [isFunc, setIsFunc] = useState(false);
 
     const updateRules = (funcParam, ruleParam) => {
-        const newRules = [...rules];
+        const newRules = JSON.parse(JSON.stringify(rules));
         const newRuleSet = [...newRules[0].ruleSet];
         const newRule = { rule: 'number' };
         if (funcParam) {
