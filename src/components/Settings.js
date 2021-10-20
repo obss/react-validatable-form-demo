@@ -1,3 +1,5 @@
+import Button from '@mui/material/Button';
+import EditIcon from '@mui/icons-material/Edit';
 import './Settings.css';
 
 const Settings = (props) => {
@@ -7,9 +9,10 @@ const Settings = (props) => {
     return (
         <div className={'settings-div'}>
             <span className={'settingsTitle'}>
-                <button className="topButton" onClick={() => openSettingsDialog()}>
-                    Edit ReactValidatableFormProvider Props
-                </button>
+                <Button variant="contained" className="topButton" onClick={() => openSettingsDialog()}>
+                    <span className="topButtonLabel">Edit ReactValidatableFormProvider Props</span>
+                    <EditIcon />
+                </Button>
             </span>
 
             <span className={'versionInfo'}>

@@ -51,11 +51,16 @@ input {
     justify-content: space-evenly;
     min-width: 800px;
     flex-wrap: wrap;
+    gap: 10px;
+}
+
+.formListItem > div {
+    margin-right: 10px;
 }
 
 .formField > div {
     width: 200px;
-    flex: 50%;
+    flex: 45%;
 }
 
 .mySubmitButton {
@@ -82,6 +87,12 @@ input {
 
 .comparisonDiv {
     display: flex;
+    gap: 10px;
+}
+
+.comparisonDiv {
+    display: flex;
+    gap: 10px;
 }
 
 .textAndCheckboxDiv {
@@ -146,6 +157,20 @@ input {
 
 .mysidemenu {
     overflow-y: scroll;
+    margin-top: 78px;
+    min-height: 100%;
+}
+
+.sideMenuHidden {
+    display: none;
+}
+
+.menuButton {
+    top: 24px;
+    position: absolute !important;
+    z-index: 20000;
+    border: none !important;
+    outline: none !important;
 }
 
 .infoParagraph {

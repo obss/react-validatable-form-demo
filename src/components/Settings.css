@@ -1,5 +1,6 @@
 .settings-div {
     display: flex;
+    margin-left: 50px;
     margin-top: 20px;
     margin-bottom: 20px;
     align-items: center;
@@ -28,4 +29,15 @@
     padding-right: 20px;
     color: white;
     background-color: #5b7adb;
+    text-transform: none !important;
+}
+
+.topButtonLabel {
+    margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+    .topButtonLabel {
+        display: none;
+    }
 }

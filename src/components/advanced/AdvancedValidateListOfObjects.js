@@ -91,7 +91,7 @@ const AdvancedValidateListOfObjects = () => {
     if (formData.listChild && formData.listChild.length > 0) {
         listChildJsx = formData.listChild.map((lc, index) => {
             return (
-                <div key={lc.id}>
+                <div key={lc.id} className="formListItem">
                     <TextField
                         style={{ width: 200 }}
                         error={!!get(validationError, `listChild{${index}}.subkey1`)}

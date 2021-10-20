@@ -8,3 +8,10 @@
     min-height: 400px;
     padding: 20px;
 }
+
+.headerDiv {
+    height: 78px;
+    position: absolute;
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+}

@@ -97,7 +97,7 @@ const AdvancedValidateComplexForms = () => {
     if (formData.listChild && formData.listChild.length > 0) {
         listChildJsx = formData.listChild.map((lc, index) => {
             return (
-                <div key={lc.id}>
+                <div key={lc.id} className="formListItem">
                     <TextField
                         error={!!get(validationError, `listChild{${index}}.subkey1`)}
                         helperText={get(validationError, `listChild{${index}}.subkey1`) || ' '}

@@ -189,7 +189,7 @@ const allMenuItems = [
     },
 ];
 
-export const NavSidebar = () => {
+export const NavSidebar = ({ menuIsHidden }) => {
     const history = useHistory();
     const location = useLocation();
     const [searchInput, setSearchInput] = useState('');
@@ -250,10 +250,12 @@ export const NavSidebar = () => {
         );
     });
 
+    const menuStatus = menuIsHidden ? 'sideMenuHidden' : 'sideMenuOpen';
+
     return (
         <>
             <div
-                className={`mysidemenu fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 ease-out transform translate-x-0 bg-white border-r-2 lg:translate-x-0 lg:static lg:inset-0 ${'ease-out translate-x-0'}`}
+                className={`${menuStatus} mysidemenu fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 ease-out transform translate-x-0 bg-white border-r-2 lg:translate-x-0 lg:static lg:inset-0 ${'ease-out translate-x-0'}`}
             >
                 <div className="flex items-center justify-center text-center py-6">
                     <span className="mx-2 text-xl font-semibold text-black libraryName" onClick={onNameClick}>
@@ -261,7 +263,7 @@ export const NavSidebar = () => {
                     </span>
                 </div>
 
-                <div className="flex items-center justify-center text-center py-6">
+                <div className="flex items-center justify-center text-center">
                     <TextField
                         className="menu-search-input"
                         label="search"

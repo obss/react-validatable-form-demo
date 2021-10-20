@@ -5,6 +5,8 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Button from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
 import './Main.css';
 import BodyWrapper from './BodyWrapper';
 import Routes from './Routes';
@@ -53,6 +55,7 @@ const defaultLangOptions = ['en', 'tr'];
 const Main = () => {
     const [currentSettings, setCurrentSettings] = useState(defaultSettings);
     const [settingsDialogOpen, setSettingsDialogOpen] = useState(false);
+    const [menuIsHidden, setMenuIsHidden] = useState(false);
 
     const openSettingsDialog = () => {
         setSettingsDialogOpen(true);
@@ -153,6 +156,10 @@ const Main = () => {
 
     return (
         <>
+            <div className="headerDiv"></div>
+            <Button onClick={() => setMenuIsHidden(!menuIsHidden)} className="menuButton">
+                <MenuIcon />
+            </Button>
             <Dialog open={settingsDialogOpen} onClose={() => setSettingsDialogOpen(false)}>
                 <DialogTitle>
                     <ExampleUsageWrapper
@@ -174,7 +181,7 @@ const Main = () => {
             >
                 <BodyWrapper>
                     <div className="flex h-screen">
-                        <Routes openSettingsDialog={openSettingsDialog} />
+                        <Routes openSettingsDialog={openSettingsDialog} menuIsHidden={menuIsHidden} />
                     </div>
                 </BodyWrapper>
             </ReactValidatableFormProvider>

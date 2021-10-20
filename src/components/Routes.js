@@ -42,7 +42,7 @@ import ApiPath from './api/ApiPath';
 const Routes = (props) => {
     return (
         <HashRouter>
-            <NavSidebar />
+            <NavSidebar menuIsHidden={props.menuIsHidden} />
             <div>
                 <Settings openSettingsDialog={props.openSettingsDialog} />
                 <Switch>
