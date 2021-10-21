@@ -38,10 +38,12 @@ const RuleDate = () => {
         const newRules = JSON.parse(JSON.stringify(rules));
         const newRuleSet = [...newRules[0].ruleSet];
         const newRule = { rule: 'date' };
-        if (funcParam) {
-            newRule[ruleParam] = (formData) => formData['comparisonValue'];
-        } else {
-            newRule[ruleParam] = defaultComparisonValue;
+        if (ruleParam) {
+            if (funcParam) {
+                newRule[ruleParam] = (formData) => formData['comparisonValue'];
+            } else {
+                newRule[ruleParam] = defaultComparisonValue;
+            }
         }
         newRuleSet.splice(1, 1, newRule);
         newRules[0].ruleSet = newRuleSet;
@@ -83,7 +85,7 @@ const RuleDate = () => {
                         handleRuleOptionChange(newValue);
                     }}
                     options={ruleOptions}
-                    disableClearable={true}
+                    disableClearable={false}
                     renderInput={(params) => <TextField {...params} label="ruleOption" />}
                 />
                 {isFunc ? (

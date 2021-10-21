@@ -10,13 +10,12 @@ import { DesktopDatePicker } from '@mui/lab';
 
 const initialFormData = { listChild: ['', ''] };
 
-const today = new Date();
 const rules = [
     { path: 'val1', ruleSet: [{ rule: 'required', applyToNulls: true }] },
     { path: 'val2', ruleSet: [{ rule: 'number', equalTo: 3, applyToNulls: true }] },
     { path: 'val3', ruleSet: [{ rule: 'length', equalTo: 3, applyToNulls: true }] },
     { path: 'val4', ruleSet: [{ rule: 'listSize', equalTo: 3, applyToNulls: true }] },
-    { path: 'val5', ruleSet: [{ rule: 'date', equalTo: today, applyToNulls: true }] },
+    { path: 'val5', ruleSet: [{ rule: 'date', applyToNulls: true }] },
     { path: 'val6', ruleSet: [{ rule: 'email', applyToNulls: true }] },
     { path: 'val7', ruleSet: [{ rule: 'url', applyToNulls: true }] },
     { path: 'val8', ruleSet: [{ rule: 'iban', applyToNulls: true }] },
