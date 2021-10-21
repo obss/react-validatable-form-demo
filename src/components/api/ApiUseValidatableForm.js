@@ -109,7 +109,14 @@ const returnValuesApiInfoList = [
         indent: 1,
     },
     {
-        label: 'setFormIsSubmitted()',
+        label: (
+            <div>
+                setFormIsSubmitted(){' '}
+                <Link className="inner-link" to="/advanced/hide-before-submit">
+                    See Example
+                </Link>
+            </div>
+        ),
         desc:
             'Function to set form is submitted info true and show all current validation results if hideBeforeSubmit parameter is set true.',
         indent: 1,
@@ -135,6 +142,18 @@ const returnValuesApiInfoList = [
     {
         label: 'setRules(newRules)',
         desc: 'Function to update rules and run all validations according to these rules.',
+        indent: 1,
+    },
+    {
+        label: (
+            <div>
+                resetForm(){' '}
+                <Link className="inner-link" to="/advanced/show-after-blur">
+                    See Example
+                </Link>
+            </div>
+        ),
+        desc: 'Function to reset form submitted info and elements blurred info.',
         indent: 1,
     },
     {

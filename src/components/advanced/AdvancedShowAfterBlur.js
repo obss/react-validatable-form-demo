@@ -25,7 +25,7 @@ const AdvancedShowAfterBlur = () => {
         isValid,
         validationError,
         formData,
-        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
+        { setPathValue, setFormIsSubmitted, setPathIsBlurred, resetForm },
     ] = useValidatableForm({
         rules,
         initialFormData,
@@ -97,6 +97,9 @@ const AdvancedShowAfterBlur = () => {
                 <div>
                     <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>
                         Submit Form
+                    </Button>
+                    <Button className="mySubmitButton" variant="contained" onClick={() => resetForm()}>
+                        Reset Form
                     </Button>
                 </div>
                 <ValidationResult isValid={isValid} />

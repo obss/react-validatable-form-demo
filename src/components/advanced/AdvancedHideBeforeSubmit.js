@@ -26,7 +26,7 @@ const rules = [
 ];
 
 const AdvancedHideBeforeSubmit = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted }] = useValidatableForm({
+    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted, resetForm }] = useValidatableForm({
         rules,
         initialFormData,
         hideBeforeSubmit: true,
@@ -88,6 +88,9 @@ const AdvancedHideBeforeSubmit = () => {
                 <div>
                     <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>
                         Submit Form
+                    </Button>
+                    <Button className="mySubmitButton" variant="contained" onClick={() => resetForm()}>
+                        Reset Form
                     </Button>
                 </div>
                 <ValidationResult isValid={isValid} />
