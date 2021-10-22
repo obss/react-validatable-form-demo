@@ -46,6 +46,18 @@ const ruleParametersApiInfoList = [
         ),
     },
     {
+        label: 'onlyIntegers (boolean)',
+        desc: (
+            <span>
+                Decides whether only integer are allowed that can be used only by{' '}
+                <Link className="inner-link" to="/rules/number">
+                    number
+                </Link>{' '}
+                rule.
+            </span>
+        ),
+    },
+    {
         label: (
             <div>
                 applyToNulls (boolean){' '}

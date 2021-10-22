@@ -29,15 +29,21 @@ const RuleNumber = () => {
     const [currentRules, setCurrentRules] = useState(rules);
     const [ruleOption, setRuleOption] = useState(ruleOptions[0]);
     const [isFunc, setIsFunc] = useState(false);
+    const [onlyIntegers, setOnlyIntegers] = useState(false);
 
-    const updateRules = (funcParam, ruleParam) => {
+    const updateRules = (funcParam, ruleParam, onlyIntegersParam) => {
         const newRules = JSON.parse(JSON.stringify(rules));
         const newRuleSet = [...newRules[0].ruleSet];
         const newRule = { rule: 'number' };
-        if (funcParam) {
-            newRule[ruleParam] = (formData) => formData['comparisonValue'];
-        } else {
-            newRule[ruleParam] = defaultComparisonValue;
+        if (ruleParam) {
+            if (funcParam) {
+                newRule[ruleParam] = (formData) => formData['comparisonValue'];
+            } else {
+                newRule[ruleParam] = defaultComparisonValue;
+            }
+        }
+        if (onlyIntegersParam) {
+            newRule['onlyIntegers'] = true;
         }
         newRuleSet.splice(1, 1, newRule);
         newRules[0].ruleSet = newRuleSet;
@@ -46,13 +52,18 @@ const RuleNumber = () => {
     };
 
     const handleSetIsFunc = (newValue) => {
-        updateRules(newValue, ruleOption);
+        updateRules(newValue, ruleOption, onlyIntegers);
         setIsFunc(newValue);
     };
 
     const handleRuleOptionChange = (newValue) => {
-        updateRules(isFunc, newValue);
+        updateRules(isFunc, newValue, onlyIntegers);
         setRuleOption(newValue);
+    };
+
+    const handleOnlyIntegersChange = (newValue) => {
+        updateRules(isFunc, ruleOption, newValue);
+        setOnlyIntegers(newValue);
     };
 
     return (
@@ -74,7 +85,7 @@ const RuleNumber = () => {
                         handleRuleOptionChange(newValue);
                     }}
                     options={ruleOptions}
-                    disableClearable={true}
+                    disableClearable={false}
                     renderInput={(params) => <TextField {...params} label="ruleOption" />}
                 />
                 {isFunc ? (
@@ -99,6 +110,19 @@ const RuleNumber = () => {
                     <FormControlLabel
                         control={<Checkbox checked={isFunc} onChange={(e) => handleSetIsFunc(e.target.checked)} />}
                         label="as Function"
+                    />
+                </FormGroup>
+            </div>
+            <div className="comparisonDiv">
+                <FormGroup className={'checkboxOnRight'}>
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={onlyIntegers}
+                                onChange={(e) => handleOnlyIntegersChange(e.target.checked)}
+                            />
+                        }
+                        label="onlyIntegers"
                     />
                 </FormGroup>
             </div>
