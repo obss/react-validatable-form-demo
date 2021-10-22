@@ -42,8 +42,8 @@ import ApiPath from './api/ApiPath';
 const Routes = (props) => {
     return (
         <HashRouter>
-            <NavSidebar menuIsHidden={props.menuIsHidden} />
-            <div>
+            <NavSidebar menuIsHidden={props.menuIsHidden} onMenuItemSelect={props.onMenuItemSelect} />
+            <div className="generalDiv" onClick={props.onOutsideClick}>
                 <Settings openSettingsDialog={props.openSettingsDialog} />
                 <Switch>
                     <Route exact path="/getting-started/installation">

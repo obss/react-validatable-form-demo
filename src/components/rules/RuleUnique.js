@@ -3,6 +3,8 @@ import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
 import { useState } from 'react';
@@ -62,7 +64,8 @@ const RuleUnique = () => {
                         onChange={(e) => setPathValue(`listChild[${index}]`, e.target.value)}
                     />
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(index)}>
-                        Delete Element
+                        <span className="myShinkableButtonSpan">Delete Element</span>
+                        <DeleteIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
             );
@@ -101,7 +104,8 @@ const RuleUnique = () => {
                         variant="contained"
                         onClick={() => handleDeleteObjectElement(lc.id)}
                     >
-                        Delete Element
+                        <span className="myShinkableButtonSpan">Delete Element</span>
+                        <DeleteIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
             );
@@ -113,7 +117,8 @@ const RuleUnique = () => {
             <div>
                 <div>
                     <Button className="myAddButton" variant="contained" onClick={() => handleAddElement()}>
-                        Add New Element
+                        <span className="myShinkableButtonSpan">Add New Element</span>
+                        <AddIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
                 <div className={'formListField'}>{listChildJsx}</div>
@@ -121,7 +126,8 @@ const RuleUnique = () => {
 
                 <div>
                     <Button className="myAddButton" variant="contained" onClick={() => handleAddObjectElement()}>
-                        Add New Element
+                        <span className="myShinkableButtonSpan">Add New Element</span>
+                        <AddIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
                 <div className={'formListField'}>{listOfObjectsChildJsx}</div>

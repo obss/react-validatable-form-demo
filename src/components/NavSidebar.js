@@ -189,7 +189,7 @@ const allMenuItems = [
     },
 ];
 
-export const NavSidebar = ({ menuIsHidden }) => {
+export const NavSidebar = ({ menuIsHidden, onMenuItemSelect }) => {
     const history = useHistory();
     const location = useLocation();
     const [searchInput, setSearchInput] = useState('');
@@ -206,11 +206,13 @@ export const NavSidebar = ({ menuIsHidden }) => {
 
     const onNameClick = () => {
         history.push('/');
+        onMenuItemSelect();
     };
 
     const onItemSelect = ({ itemId }) => {
         if (itemId.includes('/') && location.pathname !== itemId) {
             history.push(itemId);
+            onMenuItemSelect();
         }
     };
 

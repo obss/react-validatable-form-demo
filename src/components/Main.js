@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { ReactValidatableFormProvider } from 'react-validatable-form';
 import { Dialog, DialogTitle } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import './Main.css';
 import BodyWrapper from './BodyWrapper';
@@ -53,9 +54,22 @@ const customTranslations = {
 const defaultLangOptions = ['en', 'tr'];
 
 const Main = () => {
+    const isMobile = useMediaQuery('(max-width:1024px)');
     const [currentSettings, setCurrentSettings] = useState(defaultSettings);
     const [settingsDialogOpen, setSettingsDialogOpen] = useState(false);
     const [menuIsHidden, setMenuIsHidden] = useState(false);
+
+    const handleOutsideClick = () => {
+        if (isMobile) {
+            setMenuIsHidden(true);
+        }
+    };
+
+    const handleOnMenuItemSelect = () => {
+        if (isMobile) {
+            setMenuIsHidden(true);
+        }
+    };
 
     const openSettingsDialog = () => {
         setSettingsDialogOpen(true);
@@ -157,9 +171,9 @@ const Main = () => {
     return (
         <>
             <div className="headerDiv"></div>
-            <Button onClick={() => setMenuIsHidden(!menuIsHidden)} className="menuButton">
+            <IconButton onClick={() => setMenuIsHidden(!menuIsHidden)} className="menuButton">
                 <MenuIcon />
-            </Button>
+            </IconButton>
             <Dialog open={settingsDialogOpen} onClose={() => setSettingsDialogOpen(false)}>
                 <DialogTitle>
                     <ExampleUsageWrapper
@@ -181,7 +195,12 @@ const Main = () => {
             >
                 <BodyWrapper>
                     <div className="flex h-screen">
-                        <Routes openSettingsDialog={openSettingsDialog} menuIsHidden={menuIsHidden} />
+                        <Routes
+                            onMenuItemSelect={handleOnMenuItemSelect}
+                            openSettingsDialog={openSettingsDialog}
+                            menuIsHidden={menuIsHidden}
+                            onOutsideClick={handleOutsideClick}
+                        />
                     </div>
                 </BodyWrapper>
             </ReactValidatableFormProvider>

@@ -9,12 +9,20 @@
 
 .mainWrapperDiv {
     margin-top: 20px;
-    min-width: 800px;
+    width: 800px;
+    max-width: 90vw;
+    padding-bottom: 20px;
 }
 
 .pageCodeUrlSpan {
     margin-left: 50px;
     color: #5b7adb;
+}
+
+@media(max-width: 1024px) {
+    .pageCodeUrlSpan {
+        margin-left: 10px;
+    }
 }
 
 .pageCodeUrlSpan:hover {

@@ -1,6 +1,7 @@
 .apiInfoWrapper {
     width: 1000px;
     padding-bottom: 10px;
+    max-width: 90vw;
 }
 
 .apiInfo {

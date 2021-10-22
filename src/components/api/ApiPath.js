@@ -112,7 +112,9 @@ const ApiPath = () => {
                     </tbody>
                 </table>
             </div>
-            <span className="pageCode">{pathFormCode}</span>
+            <div className="pageCodeWrapper">
+                <span className="pageCode">{pathFormCode}</span>
+            </div>
         </ExampleUsageWrapper>
     );
 };

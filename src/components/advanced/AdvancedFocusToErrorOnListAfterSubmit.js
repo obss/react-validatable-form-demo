@@ -4,6 +4,8 @@ import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
 import { Dialog, DialogTitle } from '@mui/material';
@@ -71,7 +73,8 @@ const AdvancedFocusToErrorOnListAfterSubmit = () => {
                         id={`listChild{${index}}`}
                     />
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(index)}>
-                        Delete Element
+                        <span className="myShinkableButtonSpan">Delete Element</span>
+                        <DeleteIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
             );
@@ -80,7 +83,7 @@ const AdvancedFocusToErrorOnListAfterSubmit = () => {
 
     return (
         <ExampleUsageWrapper
-            header="Validate Lists"
+            header="focusToErrorAfterSubmit on Lists"
             codeUrl="components/advanced/AdvancedFocusToErrorOnListAfterSubmit.js"
         >
             <div>
@@ -91,7 +94,8 @@ const AdvancedFocusToErrorOnListAfterSubmit = () => {
                         onClick={() => handleAddElement()}
                         id={'listErrorFocusElement'}
                     >
-                        Add New Element
+                        <span className="myShinkableButtonSpan">Add New Element</span>
+                        <AddIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
                 <div className={'formListField'}>{listChildJsx}</div>

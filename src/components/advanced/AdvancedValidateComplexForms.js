@@ -5,6 +5,8 @@ import Checkbox from '@mui/material/Checkbox';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
 import AdvancedSubComponent from './AdvancedSubComponent';
@@ -126,7 +128,8 @@ const AdvancedValidateComplexForms = () => {
                         />
                     }
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(lc.id)}>
-                        Delete Element
+                        <span className="myShinkableButtonSpan">Delete Element</span>
+                        <DeleteIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
             );
@@ -191,9 +194,10 @@ const AdvancedValidateComplexForms = () => {
                         onClick={() => handleAddElement()}
                         id={'listErrorFocusElement'}
                     >
-                        Add New Element
+                        <span className="myShinkableButtonSpan">Add New Element</span>
+                        <AddIcon className="myShinkableButtonIcon" />
                     </Button>
-                    disable all subkey2 rows
+                    <span style={{ marginLeft: 10 }}>disable all subkey2 rows</span>
                     {
                         <Checkbox
                             checked={get(formData, `disableAllSubkey2Rule`) || false}

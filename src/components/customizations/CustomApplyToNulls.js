@@ -2,11 +2,13 @@ import { useValidatableForm } from 'react-validatable-form';
 import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
+import { Autocomplete, Button } from '@mui/material';
+import { DesktopDatePicker } from '@mui/lab';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
-import { Autocomplete, Button } from '@mui/material';
 import { options } from '../../constants/Data';
-import { DesktopDatePicker } from '@mui/lab';
 
 const initialFormData = { listChild: ['', ''] };
 
@@ -59,7 +61,8 @@ const CustomApplyToNulls = () => {
                         onChange={(e) => setPathValue(`listChild[${index}]`, e.target.value)}
                     />
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(index)}>
-                        Delete Element
+                        <span className="myShinkableButtonSpan">Delete Element</span>
+                        <DeleteIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
             );
@@ -183,7 +186,8 @@ const CustomApplyToNulls = () => {
             </div>
             <div>
                 <Button className="myAddButton" variant="contained" onClick={() => handleAddElement()}>
-                    Add New Element
+                    <span className="myShinkableButtonSpan">Add New Element</span>
+                    <AddIcon className="myShinkableButtonIcon" />
                 </Button>
             </div>
             <div className={'formListField'}>{listChildJsx}</div>
