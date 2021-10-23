@@ -50,7 +50,7 @@ const Routes = (props) => {
                         <Installation />
                     </Route>
                     <Route exact path="/getting-started/usage">
-                        <Usage />
+                        <Usage openSettingsDialog={props.openSettingsDialog} />
                     </Route>
                     <Route exact path="/rules/required">
                         <RuleRequired />

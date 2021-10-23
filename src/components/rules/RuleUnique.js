@@ -1,4 +1,5 @@
 import { useValidatableForm } from 'react-validatable-form';
+import { Link } from 'react-router-dom';
 import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
@@ -114,6 +115,13 @@ const RuleUnique = () => {
 
     return (
         <ExampleUsageWrapper header="Unique" codeUrl="components/rules/RuleUnique.js">
+            <p className="infoParagraph">
+                <b>unique</b> rule checks if non-unique values exist on a{' '}
+                <Link className="inner-link" to="/api/path">
+                    listPath
+                </Link>
+                .
+            </p>
             <div>
                 <div>
                     <Button className="myAddButton" variant="contained" onClick={() => handleAddElement()}>

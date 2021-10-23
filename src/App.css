@@ -281,3 +281,10 @@ input {
     .side-navigation-panel-select-option-selected:hover {
         background-color: rgb(243, 243, 243) !important;
 }
+
+.infoParagraph {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 90vw;
+    font-size: large;
+}

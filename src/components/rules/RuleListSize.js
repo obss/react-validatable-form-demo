@@ -58,6 +58,10 @@ const RuleListSize = () => {
 
     return (
         <ExampleUsageWrapper header="listSize" codeUrl="components/rules/RuleListSize.js">
+            <p className="infoParagraph">
+                <b>listSize</b> rule checks the length of an array. <b>{ruleOptions.join(', ')}</b> parameters are used
+                to make comparisons with given comparison values.
+            </p>
             <div className="comparisonDiv">
                 <Autocomplete
                     multiple

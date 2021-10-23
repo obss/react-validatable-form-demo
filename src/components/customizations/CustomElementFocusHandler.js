@@ -64,6 +64,10 @@ const CustomElementFocusHandler = () => {
             header="elementFocusHandler"
             codeUrl="components/customizations/CustomElementFocusHandler.js"
         >
+            <p className="infoParagraph">
+                <b>elementFocusHandler</b> parameter is used to manually handle focusing to the first element with a
+                validation error.
+            </p>
             <div>
                 <div className={'formField'}>
                     <TextField

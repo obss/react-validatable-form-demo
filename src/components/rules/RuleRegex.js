@@ -23,6 +23,18 @@ const RuleRegex = () => {
 
     return (
         <ExampleUsageWrapper header="regex" codeUrl="components/rules/RuleRegex.js">
+            <p className="infoParagraph">
+                <b>regex</b> rule checks if the given value is a valid string according to given{' '}
+                <a
+                    className="outsideUrlSpan"
+                    href={'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    regex
+                </a>
+                .
+            </p>
             <div>
                 <TextField
                     error={!!get(validationError, 'val')}

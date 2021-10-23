@@ -19,6 +19,9 @@ const RuleEmail = () => {
 
     return (
         <ExampleUsageWrapper header="email" codeUrl="components/rules/RuleEmail.js">
+            <p className="infoParagraph">
+                <b>email</b> rule checks if the given value is a valid email.
+            </p>
             <div>
                 <TextField
                     error={!!get(validationError, 'val')}

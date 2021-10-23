@@ -56,6 +56,12 @@ const AdvancedFocusToErrorAfterSubmit = () => {
             header="focusToErrorAfterSubmit"
             codeUrl="components/advanced/AdvancedFocusToErrorAfterSubmit.js"
         >
+            <p className="infoParagraph">
+                <b>focusToErrorAfterSubmit</b> parameter is used to automatically focus to the first element with a
+                validation error. In order to find the element on DOM, <b>path</b> value should be equal to the HTML
+                element ID. If DOM element ID is different than <b>path</b> value, then the DOM element ID should be
+                passed as <b>elementId</b> param to the rule definition.
+            </p>
             <div>
                 <div className={'formField'}>
                     <TextField

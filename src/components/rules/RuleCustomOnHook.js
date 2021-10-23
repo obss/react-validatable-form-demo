@@ -27,6 +27,7 @@ const RuleCustomOnHook = () => {
 
     return (
         <ExampleUsageWrapper header="customly defined on hook" codeUrl="components/rules/RuleCustomOnHook.js">
+            <p className="infoParagraph">Custom rules can be defined as a function and given as a rule definition.</p>
             <div>
                 <TextField
                     error={!!get(validationError, 'val')}

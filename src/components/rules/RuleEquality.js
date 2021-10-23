@@ -29,6 +29,9 @@ const RuleEquality = () => {
 
     return (
         <ExampleUsageWrapper header="equality" codeUrl="components/rules/RuleEquality.js">
+            <p className="infoParagraph">
+                <b>equality</b> rule checks if the given value is equal to comparison value.
+            </p>
             <div>
                 <FormGroup className={'checkboxOnRight'}>
                     <FormControl error={!!get(validationError, 'val')}>

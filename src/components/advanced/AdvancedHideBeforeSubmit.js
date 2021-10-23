@@ -42,6 +42,10 @@ const AdvancedHideBeforeSubmit = () => {
 
     return (
         <ExampleUsageWrapper header="hideBeforeSubmit" codeUrl="components/advanced/AdvancedHideBeforeSubmit.js">
+            <p className="infoParagraph">
+                <b>hideBeforeSubmit</b> parameter is used to hide validation errors before <b>setFormIsSubmitted()</b>{' '}
+                function is called. Later, validation errors can also be hidden by calling <b>resetForm()</b> function.
+            </p>
             <div>
                 <div className={'formField'}>
                     <TextField

@@ -144,6 +144,10 @@ const AdvancedValidateComplexForms = () => {
                 'components/advanced/AdvancedSubComponent.js',
             ]}
         >
+            <p className="infoParagraph">
+                <b>react-validatable-form</b> can handle validation of complex forms. The form can have multiple paths,
+                listPaths and subcomponents.
+            </p>
             <div>
                 <div className={'formField'}>
                     <TextField

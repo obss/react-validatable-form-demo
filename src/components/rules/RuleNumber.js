@@ -68,6 +68,11 @@ const RuleNumber = () => {
 
     return (
         <ExampleUsageWrapper header="number" codeUrl="components/rules/RuleNumber.js">
+            <p className="infoParagraph">
+                <b>number</b> rule checks if the given value is a valid number. If <b>onlyIntegers</b> parameter is set,
+                it also checks if given value is an integer. <b>{ruleOptions.join(', ')}</b> parameters are used to make
+                comparisons with given comparison values.
+            </p>
             <div className="comparisonDiv">
                 <TextField
                     error={!!get(validationError, 'val')}

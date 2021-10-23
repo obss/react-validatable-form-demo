@@ -35,6 +35,26 @@ const Installation = () => {
 
     return (
         <ExampleUsageWrapper header="Installation">
+            <p className="infoParagraph">
+                <a
+                    className="outsideUrlSpan"
+                    href={'https://www.npmjs.com/package/react-validatable-form'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    react-validatable-form
+                </a>{' '}
+                is a{' '}
+                <a
+                    className="outsideUrlSpan"
+                    href={'https://reactjs.org/docs/hooks-intro.html'}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    React hook
+                </a>{' '}
+                that is used to create dynamic client side validations on React forms.
+            </p>
             <div className="outsideUrlSpan">
                 <a href={'https://www.npmjs.com/package/react-validatable-form'} target="_blank" rel="noreferrer">
                     View on npmjs

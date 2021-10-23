@@ -19,6 +19,9 @@ const RuleUrl = () => {
 
     return (
         <ExampleUsageWrapper header="url" codeUrl="components/rules/RuleUrl.js">
+            <p className="infoParagraph">
+                <b>url</b> rule checks if the given value is a valid url.
+            </p>
             <div>
                 <TextField
                     error={!!get(validationError, 'val')}

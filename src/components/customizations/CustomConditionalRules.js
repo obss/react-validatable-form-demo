@@ -44,6 +44,10 @@ const CustomConditionalRules = () => {
             header="disableIf & enableIf"
             codeUrl={'components/customizations/CustomConditionalRules.js'}
         >
+            <p className="infoParagraph">
+                Any validation rule can be disabled if the defined <b>disableIf</b> function returns true. Any
+                validation rule can only be enabled if the defined <b>enableIf</b> function returns true.
+            </p>
             <div>
                 <div className={'textAndCheckboxDiv'}>
                     <TextField

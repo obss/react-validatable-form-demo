@@ -1,4 +1,5 @@
 import { useValidatableForm } from 'react-validatable-form';
+import { Link } from 'react-router-dom';
 import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
@@ -22,6 +23,13 @@ const RuleCustomOnProvider = () => {
             header="custom on provider"
             codeUrl={['components/rules/RuleCustomOnProvider.js', 'components/Main.js']}
         >
+            <p className="infoParagraph">
+                Custom rules can be defined as a function and passed to{' '}
+                <Link className="inner-link" to="/api/react-validatable-form-provider">
+                    ReactValidatableFormProvider
+                </Link>{' '}
+                with a unique name and can be used anywhere in the app.
+            </p>
             <div>
                 <TextField
                     error={!!get(validationError, 'val')}

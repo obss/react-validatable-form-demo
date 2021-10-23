@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
 import get from 'lodash.get';
+import { Link } from 'react-router-dom';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -69,6 +70,13 @@ const AdvancedValidateLists = () => {
 
     return (
         <ExampleUsageWrapper header="Validate Lists" codeUrl="components/advanced/AdvancedValidateLists.js">
+            <p className="infoParagraph">
+                An array of values can be validated using{' '}
+                <Link className="inner-link" to="/api/path">
+                    listPath
+                </Link>{' '}
+                key.
+            </p>
             <div>
                 <div>
                     <Button className="myAddButton" variant="contained" onClick={() => handleAddElement()}>

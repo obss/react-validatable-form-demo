@@ -124,7 +124,7 @@ const ExampleReactBootstrap = () => {
                         <div className={'my-bootstrap-empty-feedback'}></div>
                     )}
                 </Form.Group>
-                <Button className="mySubmitButton" variant="primary" type="submit" onClick={() => handleFormSubmit()}>
+                <Button className="mySubmitButton" variant="primary" onClick={() => handleFormSubmit()}>
                     Submit
                 </Button>
                 <ValidationResult isValid={isValid} />

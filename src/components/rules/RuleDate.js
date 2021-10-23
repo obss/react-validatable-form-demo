@@ -63,6 +63,10 @@ const RuleDate = () => {
 
     return (
         <ExampleUsageWrapper header="date" codeUrl="components/rules/RuleDate.js">
+            <p className="infoParagraph">
+                <b>date</b> rule checks if the given value is a valid date. <b>{ruleOptions.join(', ')}</b> parameters
+                are used to make comparisons with given comparison values.
+            </p>
             <div className="comparisonDiv">
                 <DesktopDatePicker
                     label="val"

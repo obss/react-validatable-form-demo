@@ -86,6 +86,13 @@ const AdvancedFocusToErrorOnListAfterSubmit = () => {
             header="focusToErrorAfterSubmit on Lists"
             codeUrl="components/advanced/AdvancedFocusToErrorOnListAfterSubmit.js"
         >
+            <p className="infoParagraph">
+                <b>focusToErrorAfterSubmit</b> parameter is used to automatically focus to the first element of list
+                with validation errors. In order to find the element on DOM, <b>listPath</b> value and index of the list
+                should be equal to the HTML element ID in a format <b>{'listPath{index}'}</b>. If DOM list element ID
+                prefix is different than <b>listPath</b> value, then the DOM element ID prefix should be passed as{' '}
+                <b>listElementId</b> param to the rule definition.
+            </p>
             <div>
                 <div>
                     <Button

@@ -17,6 +17,10 @@ const RuleRequired = () => {
 
     return (
         <ExampleUsageWrapper header="required" codeUrl="components/rules/RuleRequired.js">
+            <p className="infoParagraph">
+                <b>required</b> rule checks if the given value is <b>undefined</b>, <b>null</b>, <b>empty string</b> or{' '}
+                <b>empty array</b>.
+            </p>
             <div>
                 <TextField
                     error={!!get(validationError, 'val')}

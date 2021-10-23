@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
 import get from 'lodash.get';
+import { Link } from 'react-router-dom';
 import Checkbox from '@mui/material/Checkbox';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
@@ -148,6 +149,13 @@ const AdvancedValidateListOfObjects = () => {
             header="Validate List of Objects"
             codeUrl="components/advanced/AdvancedValidateListOfObjects.js"
         >
+            <p className="infoParagraph">
+                An array of objects with more than one subkeys can be validated using{' '}
+                <Link className="inner-link" to="/api/path">
+                    listPath
+                </Link>{' '}
+                and each subkey can have different rules which should be defined in <b>subRules</b> key.
+            </p>
             <div>
                 <div>
                     <Button

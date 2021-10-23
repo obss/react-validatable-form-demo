@@ -19,6 +19,9 @@ const RuleIban = () => {
 
     return (
         <ExampleUsageWrapper header="iban" codeUrl="components/rules/RuleIban.js">
+            <p className="infoParagraph">
+                <b>iban</b> rule checks if the given value is a valid IBAN.
+            </p>
             <div>
                 <TextField
                     error={!!get(validationError, 'val')}

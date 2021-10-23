@@ -40,6 +40,9 @@ const CustomMessage = () => {
 
     return (
         <ExampleUsageWrapper header="customMessage" codeUrl="components/customizations/CustomMessage.js">
+            <p className="infoParagraph">
+                Validation error message of a rule can be customized by passing <b>customMessage</b> param to the rule.
+            </p>
             <div>
                 <div>
                     <TextField
