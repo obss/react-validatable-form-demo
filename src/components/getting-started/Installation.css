@@ -1,9 +1,6 @@
 .commandBox {
     white-space: pre;
-    background-color: black;
-    color: white;
-    margin-top: 20px;
-    padding-left: 10px;
+    text-transform: none;
 }
 
 .commandText {
@@ -18,4 +15,14 @@
 .outsideUrlSpan:hover {
     text-decoration: underline;
     color: #395ac2;
+}
+
+.installButtonsDiv {
+    margin-top: 10px;
+    display: inline-grid;
+    grid-gap: 20px;
+}
+
+.installButtonIcon {
+    margin-left: 10px;
 }

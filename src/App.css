@@ -21,6 +21,10 @@ input {
     cursor: pointer;
 }
 
+.libraryName:hover {
+    background-color: rgb(243, 243, 243);
+}
+
 .errorInfoText {
     color: red;
     min-height: 25px;
@@ -46,10 +50,8 @@ input {
     width: 400px;
     max-width: 90vw;
 }
-.formListField
-.MuiFormControl-root,
-.formListField
-.MuiAutocomplete-root {
+.formListField .MuiFormControl-root,
+.formListField .MuiAutocomplete-root {
     width: 400px;
     max-width: 65vw;
 }
@@ -72,7 +74,7 @@ input {
     flex: 45%;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .formField {
         flex-direction: column;
     }
@@ -86,7 +88,7 @@ input {
     margin-left: 60px !important;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .mySubmitButton {
         margin-left: 20px !important;
     }
@@ -114,7 +116,7 @@ input {
     gap: 10px;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .comparisonDiv {
         flex-direction: column;
     }
@@ -124,7 +126,7 @@ input {
     display: flex;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .textAndCheckboxDiv {
         flex-direction: column;
     }
@@ -152,17 +154,18 @@ input {
 }
 
 .my-bootstrap-empty-feedback {
-	margin-top: .25rem;
+    margin-top: 0.25rem;
     height: 21px;
 }
 
-.my-bootstrap-form input, .my-bootstrap-form select {
+.my-bootstrap-form input,
+.my-bootstrap-form select {
     width: 400px;
     max-width: 90vw;
 }
 
 .apiInfoSectionHeader {
-	margin-top: 20px;
+    margin-top: 20px;
     font-size: x-large;
     font-weight: bold;
 }
@@ -253,14 +256,28 @@ input {
     font-size: x-large;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .myShinkableButtonSpan {
         display: none;
     }
 }
 
-@media(min-width: 1024px) {
+@media (min-width: 1024px) {
     .myShinkableButtonIcon {
         display: none;
     }
+}
+
+.side-navigation-panel
+    .side-navigation-panel-select
+    .side-navigation-panel-select-wrap
+    .side-navigation-panel-select-option-selected {
+    background-color: white !important;
+}
+
+.side-navigation-panel
+    .side-navigation-panel-select
+    .side-navigation-panel-select-wrap
+    .side-navigation-panel-select-option-selected:hover {
+        background-color: rgb(243, 243, 243) !important;
 }

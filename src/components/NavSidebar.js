@@ -14,10 +14,12 @@ const allMenuItems = [
             {
                 title: 'Installation',
                 itemId: '/getting-started/installation',
+                keywords: ['npm', 'yarn'],
             },
             {
                 title: 'Usage',
                 itemId: '/getting-started/usage',
+                keywords: ['ReactValidatableFormProvider', 'useValidatableForm'],
             },
         ],
     },
@@ -32,6 +34,7 @@ const allMenuItems = [
             {
                 title: 'number',
                 itemId: '/rules/number',
+                keywords: ['onlyIntegers'],
             },
             {
                 title: 'length',
@@ -81,7 +84,7 @@ const allMenuItems = [
     },
     {
         title: 'Advanced Settings',
-        itemId: 'group4',
+        itemId: 'group3',
         subNav: [
             {
                 title: 'Validate Lists',
@@ -90,10 +93,12 @@ const allMenuItems = [
             {
                 title: 'Hide Before Submit',
                 itemId: '/advanced/hide-before-submit',
+                keywords: ['resetForm'],
             },
             {
                 title: 'Show After Blur',
                 itemId: '/advanced/show-after-blur',
+                keywords: ['resetForm'],
             },
             {
                 title: 'Focus to Error After Submit',
@@ -115,7 +120,7 @@ const allMenuItems = [
     },
     {
         title: 'Customizations',
-        itemId: 'group3',
+        itemId: 'group4',
         subNav: [
             {
                 title: 'Custom Message',
@@ -128,6 +133,7 @@ const allMenuItems = [
             {
                 title: 'Conditional Rules',
                 itemId: '/customizations/conditional-rules',
+                keywords: ['disableIf', 'enableIf'],
             },
             {
                 title: 'Apply to Nulls',
@@ -150,6 +156,7 @@ const allMenuItems = [
             {
                 title: 'MUI Components',
                 itemId: '/examples/mui',
+                keywords: ['materialui', 'material-ui'],
             },
             {
                 title: 'PrimeReact Components',
@@ -168,22 +175,64 @@ const allMenuItems = [
             {
                 title: 'ReactValidatableFormProvider',
                 itemId: '/api/react-validatable-form-provider',
+                keywords: ['lang', 'customRules', 'translations'],
             },
             {
                 title: 'useValidatableForm',
                 itemId: '/api/use-validatable-form',
+                keywords: [
+                    'rules',
+                    'initialFormData',
+                    'hideBeforeSubmit',
+                    'showAfterBlur',
+                    'focusToErrorAfterSubmit',
+                    'elementFocusHandler',
+                    'isValid',
+                    'validationError',
+                    'setPathValue',
+                    'setFormIsSubmitted',
+                    'setPathIsBlurred',
+                    'setFormData',
+                    'setRules',
+                    'resetForm',
+                    'forceRunAllValidations',
+                ],
             },
             {
                 title: 'rules',
                 itemId: '/api/rules',
+                keywords: [
+                    'path',
+                    'listPath',
+                    'ruleSet',
+                    'elementId',
+                    'listElementId',
+                    'dependantPaths',
+                    'disableFocusAfterSubmit',
+                    'subRules',
+                ],
             },
             {
                 title: 'Rule',
                 itemId: '/api/rule',
+                keywords: [
+                    'equalTo',
+                    'lessThan',
+                    'lessThanOrEqualTo',
+                    'greaterThan',
+                    'greaterThanOrEqualTo',
+                    'notEqualTo',
+                    'onlyIntegers',
+                    'applyToNulls',
+                    'disableIf',
+                    'enableIf',
+                    'customMessage',
+                ],
             },
             {
                 title: 'path & listPath',
                 itemId: '/api/path',
+                keywords: ['lodash', 'path', 'listPath'],
             },
         ],
     },
@@ -225,9 +274,11 @@ export const NavSidebar = ({ menuIsHidden, onMenuItemSelect }) => {
                 let subsList = [];
                 for (let i = 0; i < m.subNav.length; i++) {
                     const subEl = m.subNav[i];
+                    const keywords = subEl.keywords || [];
                     if (
                         subEl.title.toUpperCase().includes(searchInputUpper) ||
-                        subEl.title.replaceAll(/\s/g, '').toUpperCase().includes(searchInputUpper)
+                        subEl.title.replaceAll(/\s/g, '').toUpperCase().includes(searchInputUpper) ||
+                        keywords.filter((k) => k.toUpperCase().includes(searchInputUpper)).length > 0
                     ) {
                         subsList.push(subEl);
                         result = true;
@@ -243,9 +294,10 @@ export const NavSidebar = ({ menuIsHidden, onMenuItemSelect }) => {
 
     const navigations = filteredMenuItems.map((fm) => {
         const itemWithSubItems = filteredMenuItems.filter((m) => m.itemId === fm.itemId);
+        const isActiveGroupElement = itemWithSubItems[0].subNav.filter((m) => m.itemId === firstPathname).length > 0;
         let activeItemId = firstPathname;
-        if (searchInput) {
-            activeItemId = itemWithSubItems[0].itemId;
+        if (!isActiveGroupElement && searchInput) {
+            activeItemId = fm.itemId;
         }
         return (
             <Navigation key={fm.itemId} activeItemId={activeItemId} onSelect={onItemSelect} items={itemWithSubItems} />
@@ -259,10 +311,8 @@ export const NavSidebar = ({ menuIsHidden, onMenuItemSelect }) => {
             <div
                 className={`${menuStatus} mysidemenu fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 ease-out transform translate-x-0 bg-white border-r-2 lg:translate-x-0 lg:static lg:inset-0 ${'ease-out translate-x-0'}`}
             >
-                <div className="flex items-center justify-center text-center py-6">
-                    <span className="mx-2 text-xl font-semibold text-black libraryName" onClick={onNameClick}>
-                        react-validatable-form
-                    </span>
+                <div className="flex items-center justify-center text-center py-6 libraryName" onClick={onNameClick}>
+                    <span className="mx-2 text-xl font-semibold text-black">react-validatable-form</span>
                 </div>
 
                 <div className="flex items-center justify-center text-center">

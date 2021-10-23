@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ReactValidatableFormProvider } from 'react-validatable-form';
 import { Dialog, DialogTitle } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -58,6 +58,10 @@ const Main = () => {
     const [currentSettings, setCurrentSettings] = useState(defaultSettings);
     const [settingsDialogOpen, setSettingsDialogOpen] = useState(false);
     const [menuIsHidden, setMenuIsHidden] = useState(false);
+
+    useEffect(() => {
+        setMenuIsHidden(isMobile);
+    }, [isMobile]);
 
     const handleOutsideClick = () => {
         if (isMobile) {
