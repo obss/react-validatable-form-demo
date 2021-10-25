@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@date-io/date-fns": "2.11.0",
+    "@elgorditosalsero/react-gtm-hook": "2.0.8",
     "@emotion/react": "11.5.0",
     "@emotion/styled": "11.3.0",
     "@mui/lab": "5.0.0-alpha.51",
