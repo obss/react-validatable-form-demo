@@ -30,12 +30,14 @@ const rules = [
 ];
 
 const AdvancedFocusToErrorAfterSubmit = () => {
-    const [
+    const {
         isValid,
         validationError,
         formData,
-        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
-    ] = useValidatableForm({
+        setPathValue,
+        setFormIsSubmitted,
+        setPathIsBlurred,
+    } = useValidatableForm({
         rules,
         initialFormData,
         hideBeforeSubmit: true,

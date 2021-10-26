@@ -27,7 +27,7 @@ const rules = [
 ];
 
 const RuleUnique = () => {
-    const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
         rules,
         initialFormData: {
             listChild: ['a', 'a'],

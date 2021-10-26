@@ -65,8 +65,21 @@ input {
     gap: 10px;
 }
 
+.complexFormListField .MuiFormControl-root,
+.complexFormListField .MuiAutocomplete-root {
+    width: 300px;
+    max-width: 60vw;
+}
+
 .formListItem > div {
     margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+    .formListItem {
+        border: 1px solid black;
+        margin-bottom: 10px;
+    }
 }
 
 .formField > div {

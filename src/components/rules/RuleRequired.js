@@ -10,7 +10,7 @@ const initialFormData = {};
 const rules = [{ path: 'val', ruleSet: [{ rule: 'required' }] }];
 
 const RuleRequired = () => {
-    const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
         rules,
         initialFormData,
     });

@@ -21,12 +21,15 @@ const rules = [
 ];
 
 const AdvancedShowAfterBlur = () => {
-    const [
+    const {
         isValid,
         validationError,
         formData,
-        { setPathValue, setFormIsSubmitted, setPathIsBlurred, resetForm },
-    ] = useValidatableForm({
+        setPathValue,
+        setFormIsSubmitted,
+        setPathIsBlurred,
+        resetForm,
+    } = useValidatableForm({
         rules,
         initialFormData,
         hideBeforeSubmit: true,

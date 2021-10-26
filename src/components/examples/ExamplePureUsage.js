@@ -13,12 +13,14 @@ const rules = [
 ];
 
 const ExamplePureUsage = () => {
-    const [
+    const {
         isValid,
         validationError,
         formData,
-        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
-    ] = useValidatableForm({
+        setPathValue,
+        setFormIsSubmitted,
+        setPathIsBlurred,
+    } = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
         showAfterBlur: true,

@@ -16,7 +16,7 @@ const rules = [
 ];
 
 const RuleRegex = () => {
-    const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
         rules,
         initialFormData,
     });

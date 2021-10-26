@@ -34,7 +34,7 @@ const rules = [
 ];
 
 const CustomConditionalRules = () => {
-    const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
         rules,
         initialFormData,
     });

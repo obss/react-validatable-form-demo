@@ -17,7 +17,7 @@ const rules = [
 ];
 
 const CustomTranslations = () => {
-    const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
         rules,
         initialFormData,
     });

@@ -21,7 +21,7 @@ const rules = [
 ];
 
 const AdvancedValidateLists = () => {
-    const [isValid, validationError, formData, { setPathValue, setFormIsSubmitted }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue, setFormIsSubmitted } = useValidatableForm({
         rules,
         initialFormData: { listChild: [''] },
     });

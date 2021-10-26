@@ -26,7 +26,7 @@ const initialFormData = {
 };
 
 const RuleDate = () => {
-    const [isValid, validationError, formData, { setPathValue, setRules }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue, setRules } = useValidatableForm({
         rules,
         initialFormData,
     });

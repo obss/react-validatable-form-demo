@@ -22,7 +22,7 @@ const rules = [
 ];
 
 const RuleEquality = () => {
-    const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
         rules,
         initialFormData,
     });

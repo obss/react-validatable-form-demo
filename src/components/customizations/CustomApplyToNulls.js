@@ -30,7 +30,7 @@ const rules = [
 ];
 
 const CustomApplyToNulls = () => {
-    const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
         rules,
         initialFormData,
     });

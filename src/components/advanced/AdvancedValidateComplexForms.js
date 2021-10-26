@@ -61,12 +61,14 @@ const rules = [
 ];
 
 const AdvancedValidateComplexForms = () => {
-    const [
+    const {
         isValid,
         validationError,
         formData,
-        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
-    ] = useValidatableForm({
+        setPathValue,
+        setFormIsSubmitted,
+        setPathIsBlurred,
+    } = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
         showAfterBlur: true,
@@ -209,7 +211,7 @@ const AdvancedValidateComplexForms = () => {
                         />
                     }
                 </div>
-                <div className={'formListField'}>{listChildJsx}</div>
+                <div className={'complexFormListField'}>{listChildJsx}</div>
                 <div className={'errorInfoText'}>{get(validationError, 'listChild')}</div>
                 <div className={'formField'}>
                     <TextField

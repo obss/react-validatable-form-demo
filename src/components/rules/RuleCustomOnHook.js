@@ -20,7 +20,7 @@ const customRule = (ruleParams) => {
 const rules = [{ path: 'val', ruleSet: ['required', { rule: customRule }] }];
 
 const RuleCustomOnHook = () => {
-    const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
         rules,
         initialFormData,
     });

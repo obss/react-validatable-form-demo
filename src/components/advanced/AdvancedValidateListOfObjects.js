@@ -55,12 +55,14 @@ const rules = [
 ];
 
 const AdvancedValidateListOfObjects = () => {
-    const [
+    const {
         isValid,
         validationError,
         formData,
-        { setPathValue, setFormIsSubmitted, setPathIsBlurred },
-    ] = useValidatableForm({
+        setPathValue,
+        setFormIsSubmitted,
+        setPathIsBlurred,
+    } = useValidatableForm({
         rules,
         initialFormData: { listChild: [{ id: 1 }] },
         hideBeforeSubmit: true,

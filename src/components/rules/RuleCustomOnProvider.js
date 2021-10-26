@@ -13,7 +13,7 @@ const initialFormData = {
 const rules = [{ path: 'val', ruleSet: [{ rule: 'required' }, { rule: 'myCustomRule' }] }];
 
 const RuleCustomOnProvider = () => {
-    const [isValid, validationError, formData, { setPathValue }] = useValidatableForm({
+    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
         rules,
         initialFormData,
     });
