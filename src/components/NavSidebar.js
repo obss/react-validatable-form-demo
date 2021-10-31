@@ -47,6 +47,7 @@ const allMenuItems = [
             {
                 title: 'date',
                 itemId: '/rules/date',
+                keywords: ['time', 'withTime'],
             },
             {
                 title: 'email',
@@ -175,7 +176,17 @@ const allMenuItems = [
             {
                 title: 'ReactValidatableFormProvider',
                 itemId: '/api/react-validatable-form-provider',
-                keywords: ['lang', 'customRules', 'translations'],
+                keywords: [
+                    'lang',
+                    'customRules',
+                    'translations',
+                    'dateFormatterFunction',
+                    'dateWithTimeFormatterFunction',
+                    'hideBeforeSubmit',
+                    'showAfterBlur',
+                    'focusToErrorAfterSubmit',
+                    'elementFocusHandler',
+                ],
             },
             {
                 title: 'useValidatableForm',
@@ -223,6 +234,7 @@ const allMenuItems = [
                     'greaterThanOrEqualTo',
                     'notEqualTo',
                     'onlyIntegers',
+                    'withTime',
                     'applyToNulls',
                     'disableIf',
                     'enableIf',

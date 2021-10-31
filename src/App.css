@@ -124,6 +124,10 @@ input {
     width: 200px !important;
 }
 
+.comparisonDateComponent {
+    width: 250px !important;
+}
+
 .comparisonDiv {
     display: flex;
     gap: 10px;
@@ -211,7 +215,7 @@ input {
 
 .mysidemenu {
     overflow-y: scroll;
-    margin-top: 78px;
+    margin-top: 64px;
     min-height: 90%;
 }
 
@@ -220,7 +224,7 @@ input {
 }
 
 .menuButton {
-    top: 24px;
+    top: 14px;
     left: 10px;
     position: absolute !important;
     z-index: 20000;

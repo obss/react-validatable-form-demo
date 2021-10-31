@@ -8,6 +8,7 @@ import { ruleOptions } from '../../constants/Constants';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
+import DateTimePicker from '@mui/lab/DateTimePicker';
 import Autocomplete from '@mui/material/Autocomplete';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
@@ -33,8 +34,9 @@ const RuleDate = () => {
     const [currentRules, setCurrentRules] = useState(rules);
     const [ruleOption, setRuleOption] = useState(ruleOptions[0]);
     const [isFunc, setIsFunc] = useState(false);
+    const [withTime, setWithTime] = useState(false);
 
-    const updateRules = (funcParam, ruleParam) => {
+    const updateRules = (funcParam, ruleParam, withTimeParam) => {
         const newRules = JSON.parse(JSON.stringify(rules));
         const newRuleSet = [...newRules[0].ruleSet];
         const newRule = { rule: 'date' };
@@ -45,6 +47,9 @@ const RuleDate = () => {
                 newRule[ruleParam] = defaultComparisonValue;
             }
         }
+        if (withTimeParam) {
+            newRule['withTime'] = true;
+        }
         newRuleSet.splice(1, 1, newRule);
         newRules[0].ruleSet = newRuleSet;
         setCurrentRules(newRules);
@@ -52,25 +57,34 @@ const RuleDate = () => {
     };
 
     const handleSetIsFunc = (newValue) => {
-        updateRules(newValue, ruleOption);
+        updateRules(newValue, ruleOption, withTime);
         setIsFunc(newValue);
     };
 
     const handleRuleOptionChange = (newValue) => {
-        updateRules(isFunc, newValue);
+        updateRules(isFunc, newValue, withTime);
         setRuleOption(newValue);
     };
+
+    const handleWithTimeChange = (newValue) => {
+        updateRules(isFunc, ruleOption, newValue);
+        setWithTime(newValue);
+    };
+
+    const PickerComponent = withTime ? DateTimePicker : DesktopDatePicker;
+    const pickerFormat = withTime ? null : 'MM/dd/yyyy';
 
     return (
         <ExampleUsageWrapper header="date" codeUrl="components/rules/RuleDate.js">
             <p className="infoParagraph">
-                <b>date</b> rule checks if the given value is a valid date. <b>{ruleOptions.join(', ')}</b> parameters
-                are used to make comparisons with given comparison values.
+                <b>date</b> rule checks if the given value is a valid date. If <b>withTime</b> parameter is set, it
+                compares hours and minutes, too. <b>{ruleOptions.join(', ')}</b> parameters are used to make comparisons
+                with given comparison values.
             </p>
             <div className="comparisonDiv">
-                <DesktopDatePicker
+                <PickerComponent
                     label="val"
-                    inputFormat="MM/dd/yyyy"
+                    inputFormat={pickerFormat}
                     value={get(formData, 'val')}
                     onChange={(val) => setPathValue('val', val)}
                     renderInput={(params) => (
@@ -93,28 +107,37 @@ const RuleDate = () => {
                     renderInput={(params) => <TextField {...params} label="ruleOption" />}
                 />
                 {isFunc ? (
-                    <DesktopDatePicker
+                    <PickerComponent
                         label="comparisonValue"
-                        inputFormat="MM/dd/yyyy"
+                        inputFormat={pickerFormat}
                         value={get(formData, 'comparisonValue')}
                         onChange={(val) => setPathValue('comparisonValue', val)}
-                        renderInput={(params) => <TextField className="comparisonComponent" {...params} />}
+                        renderInput={(params) => <TextField className="comparisonDateComponent" {...params} />}
                     />
                 ) : (
-                    <DesktopDatePicker
+                    <PickerComponent
                         disabled={true}
-                        style={{ width: 200 }}
                         label="comparisonValue"
-                        inputFormat="MM/dd/yyyy"
+                        inputFormat={pickerFormat}
                         value={today}
                         onChange={() => {}}
-                        renderInput={(params) => <TextField className="comparisonComponent" {...params} />}
+                        renderInput={(params) => <TextField className="comparisonDateComponent" {...params} />}
                     />
                 )}
                 <FormGroup className={'checkboxOnRight'}>
                     <FormControlLabel
                         control={<Checkbox checked={isFunc} onChange={(e) => handleSetIsFunc(e.target.checked)} />}
                         label="as Function"
+                    />
+                </FormGroup>
+            </div>
+            <div className="comparisonDiv">
+                <FormGroup className={'checkboxOnRight'}>
+                    <FormControlLabel
+                        control={
+                            <Checkbox checked={withTime} onChange={(e) => handleWithTimeChange(e.target.checked)} />
+                        }
+                        label="withTime"
                     />
                 </FormGroup>
             </div>

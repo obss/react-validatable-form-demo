@@ -34,6 +34,8 @@ const customRules = {
 const defaultSettings = {
     lang: 'en',
     translationsEnabled: false,
+    customDateFormatterFunctionEnabled: false,
+    customDateWithTimeFormatterFunctionEnabled: false,
     hideBeforeSubmit: false,
     showAfterBlur: false,
     focusToErrorAfterSubmit: false,
@@ -49,6 +51,24 @@ const customTranslations = {
     de: {
         required: 'Dieses Feld wird benötigt',
     },
+};
+
+const customDateFormatterFunction = (dateParam) => {
+    const strArray = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const d = dateParam.getDate();
+    const m = strArray[dateParam.getMonth()];
+    const y = dateParam.getFullYear();
+    return '' + (d <= 9 ? '0' + d : d) + '-' + m + '-' + y;
+};
+
+const customDateWithTimeFormatterFunction = (dateParam) => {
+    const strArray = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const d = dateParam.getDate();
+    const m = strArray[dateParam.getMonth()];
+    const y = dateParam.getFullYear();
+    const h = dateParam.getHours();
+    const mi = dateParam.getMinutes();
+    return '' + (d <= 9 ? '0' + d : d) + '-' + m + '-' + y + ' ' + h + ':' + mi;
 };
 
 const defaultLangOptions = ['en', 'tr'];
@@ -95,6 +115,16 @@ const Main = () => {
         translations = customTranslations;
     }
 
+    let dateFormatterFunction = null;
+    if (currentSettings.customDateFormatterFunctionEnabled) {
+        dateFormatterFunction = customDateFormatterFunction;
+    }
+
+    let dateWithTimeFormatterFunction = null;
+    if (currentSettings.customDateWithTimeFormatterFunctionEnabled) {
+        dateWithTimeFormatterFunction = customDateWithTimeFormatterFunction;
+    }
+
     const currentLangOptions = [...defaultLangOptions];
     if (currentSettings.translationsEnabled) {
         currentLangOptions.push('de');
@@ -132,6 +162,26 @@ const Main = () => {
                     />
                 }
                 label="custom translations"
+            />
+            <FormControlLabel
+                control={
+                    <Checkbox
+                        checked={currentSettings.customDateFormatterFunctionEnabled}
+                        onChange={(e) => handleSettingChange('customDateFormatterFunctionEnabled', e.target.checked)}
+                    />
+                }
+                label="custom dateFormatterFunction"
+            />
+            <FormControlLabel
+                control={
+                    <Checkbox
+                        checked={currentSettings.customDateWithTimeFormatterFunctionEnabled}
+                        onChange={(e) =>
+                            handleSettingChange('customDateWithTimeFormatterFunctionEnabled', e.target.checked)
+                        }
+                    />
+                }
+                label="custom dateWithTimeFormatterFunction"
             />
             <FormControlLabel
                 control={
@@ -192,6 +242,8 @@ const Main = () => {
                 lang={currentSettings.lang}
                 customRules={customRules}
                 translations={translations}
+                dateFormatterFunction={dateFormatterFunction}
+                dateWithTimeFormatterFunction={dateWithTimeFormatterFunction}
                 hideBeforeSubmit={currentSettings.hideBeforeSubmit}
                 showAfterBlur={currentSettings.showAfterBlur}
                 focusToErrorAfterSubmit={currentSettings.focusToErrorAfterSubmit}

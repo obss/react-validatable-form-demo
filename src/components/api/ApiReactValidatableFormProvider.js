@@ -29,6 +29,14 @@ const providerParametersApiInfoList = [
             'Custom translation objects to override default error messages or to add a new language for error messages.',
     },
     {
+        label: 'dateFormatterFunction (function)',
+        desc: 'Function that is used to format dates used in date rule without withTime option.',
+    },
+    {
+        label: 'dateWithTimeFormatterFunction (function)',
+        desc: 'Function that is used to format dates used in date rule with withTime option.',
+    },
+    {
         label: 'hideBeforeSubmit (boolean)',
         desc: 'Flag to hide validation errors before setFormIsSubmitted function is called.',
     },

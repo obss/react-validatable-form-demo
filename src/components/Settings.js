@@ -1,5 +1,6 @@
 import Button from '@mui/material/Button';
 import EditIcon from '@mui/icons-material/Edit';
+import Tooltip from '@mui/material/Tooltip';
 import './Settings.css';
 
 const Settings = (props) => {
@@ -15,11 +16,27 @@ const Settings = (props) => {
                 </Button>
             </span>
 
-            <span className={'versionInfo'}>
-                <a href={'https://www.npmjs.com/package/react-validatable-form'} target="_blank" rel="noreferrer">
-                    {versionInfo}
-                </a>
-            </span>
+            <Tooltip placement="bottom" title="View on GitHub">
+                <span className={'githubIcon'}>
+                    <a href={'https://github.com/obss/react-validatable-form'} target="_blank" rel="noreferrer">
+                        <img src={process.env.PUBLIC_URL + '/github.png'} alt="github_icon" />
+                    </a>
+                </span>
+            </Tooltip>
+            <Tooltip placement="bottom" title="View on npmjs">
+                <span className={'npmIcon'}>
+                    <a href={'https://www.npmjs.com/package/react-validatable-form'} target="_blank" rel="noreferrer">
+                        <img src={process.env.PUBLIC_URL + '/npm.png'} alt="npm_icon" />
+                    </a>
+                </span>
+            </Tooltip>
+            <Tooltip placement="bottom" title="Current Version">
+                <span className={'versionInfo'}>
+                    <a href={'https://www.npmjs.com/package/react-validatable-form'} target="_blank" rel="noreferrer">
+                        {versionInfo}
+                    </a>
+                </span>
+            </Tooltip>
         </div>
     );
 };

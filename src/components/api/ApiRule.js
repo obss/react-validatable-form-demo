@@ -58,6 +58,18 @@ const ruleParametersApiInfoList = [
         ),
     },
     {
+        label: 'withTime (boolean)',
+        desc: (
+            <span>
+                Decides whether hours and minutes are taken into account that can be used only by{' '}
+                <Link className="inner-link" to="/rules/date">
+                    date
+                </Link>{' '}
+                rule.
+            </span>
+        ),
+    },
+    {
         label: (
             <div>
                 applyToNulls (boolean){' '}

@@ -1,7 +1,7 @@
 .settings-div {
     display: flex;
     margin-left: 50px;
-    margin-top: 20px;
+    margin-top: 12px;
     margin-bottom: 20px;
     align-items: center;
 }
@@ -10,6 +10,30 @@
     font-size: x-large;
     margin-right: 20px;
     margin-left: 20px;
+}
+
+.githubIcon {
+    position: absolute;
+    right: 180px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid rgb(243, 243, 243);
+}
+
+.githubIcon:hover {
+    border: 1px solid black;
+}
+
+.npmIcon {
+    position: absolute;
+    right: 130px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid rgb(243, 243, 243);
+}
+
+.npmIcon:hover {
+    border: 1px solid black;
 }
 
 .versionInfo {
