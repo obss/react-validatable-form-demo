@@ -1,7 +1,5 @@
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import { NavSidebar } from './NavSidebar';
-import ExamplePureUsage from './examples/ExamplePureUsage';
-import ExampleMuiUsage from './examples/ExampleMuiUsage';
 import Homepage from './Homepage';
 import RuleRequired from './rules/RuleRequired';
 import RuleNumber from './rules/RuleNumber';
@@ -30,8 +28,11 @@ import CustomApplyToNulls from './customizations/CustomApplyToNulls';
 import CustomElementFocusHandler from './customizations/CustomElementFocusHandler';
 import RuleUnique from './rules/RuleUnique';
 import RuleEquality from './rules/RuleEquality';
+import ExamplePureUsage from './examples/ExamplePureUsage';
+import ExampleMuiUsage from './examples/ExampleMuiUsage';
 import ExamplePrimeReact from './examples/ExamplePrimeReact';
 import ExampleReactBootstrap from './examples/ExampleReactBootstrap';
+import ExampleSetFormData from './examples/ExampleSetFormData';
 import ApiUseValidatableForm from './api/ApiUseValidatableForm';
 import ApiReactValidatableFormProvider from './api/ApiReactValidatableFormProvider';
 import ApiRules from './api/ApiRules';
@@ -138,6 +139,9 @@ const Routes = (props) => {
                     </Route>
                     <Route exact path="/examples/react-bootstrap">
                         <ExampleReactBootstrap />
+                    </Route>
+                    <Route exact path="/examples/set-form-data">
+                        <ExampleSetFormData />
                     </Route>
                     <Route exact path="/api/react-validatable-form-provider">
                         <ApiReactValidatableFormProvider openSettingsDialog={props.openSettingsDialog} />

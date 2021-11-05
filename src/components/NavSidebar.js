@@ -167,6 +167,10 @@ const allMenuItems = [
                 title: 'React-Bootstrap Components',
                 itemId: '/examples/react-bootstrap',
             },
+            {
+                title: 'setFormData',
+                itemId: '/examples/set-form-data',
+            },
         ],
     },
     {

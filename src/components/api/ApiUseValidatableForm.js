@@ -126,7 +126,14 @@ const returnValuesApiInfoList = [
             'Function to set element of path is blurred info true and unhide its current validation result if showAfterBlur parameter is set true.',
     },
     {
-        label: 'setFormData(newFormData, pathToBeRun)',
+        label: (
+            <div>
+                setFormData(newFormData, pathToBeRun){' '}
+                <Link className="inner-link" to="/examples/set-form-data">
+                    See Example
+                </Link>
+            </div>
+        ),
         desc: 'Function to update whole formData and run validation rules of given pathToBeRun array.',
     },
     {
