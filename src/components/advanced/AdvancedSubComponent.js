@@ -19,7 +19,7 @@ const AdvancedSubComponent = (props) => {
                 <TextField
                     error={!!get(validationError, 'subComponentElement2')}
                     helperText={get(validationError, 'subComponentElement2') || ' '}
-                    label="bottomElement2"
+                    label="subComponentElement2"
                     type="text"
                     value={get(formData, 'subComponentElement2') || ''}
                     onChange={(e) => setPathValue('subComponentElement2', e.target.value)}

@@ -33,6 +33,7 @@ import ExampleMuiUsage from './examples/ExampleMuiUsage';
 import ExamplePrimeReact from './examples/ExamplePrimeReact';
 import ExampleReactBootstrap from './examples/ExampleReactBootstrap';
 import ExampleSetFormData from './examples/ExampleSetFormData';
+import ExampleSetPathValue from './examples/ExampleSetPathValue';
 import ApiUseValidatableForm from './api/ApiUseValidatableForm';
 import ApiReactValidatableFormProvider from './api/ApiReactValidatableFormProvider';
 import ApiRules from './api/ApiRules';
@@ -142,6 +143,9 @@ const Routes = (props) => {
                     </Route>
                     <Route exact path="/examples/set-form-data">
                         <ExampleSetFormData />
+                    </Route>
+                    <Route exact path="/examples/set-path-value">
+                        <ExampleSetPathValue />
                     </Route>
                     <Route exact path="/api/react-validatable-form-provider">
                         <ApiReactValidatableFormProvider openSettingsDialog={props.openSettingsDialog} />

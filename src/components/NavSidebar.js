@@ -171,6 +171,10 @@ const allMenuItems = [
                 title: 'setFormData',
                 itemId: '/examples/set-form-data',
             },
+            {
+                title: 'setPathValue',
+                itemId: '/examples/set-path-value',
+            },
         ],
     },
     {

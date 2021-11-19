@@ -17,13 +17,12 @@ const rules = [
     { path: 'selectVal', ruleSet: [{ rule: 'required' }] },
 ];
 
-const ExampleSetFormData = () => {
+const ExampleSetPathValue = () => {
     const {
         isValid,
         validationError,
         formData,
         setPathValue,
-        setFormData,
         setFormIsSubmitted,
         setPathIsBlurred,
     } = useValidatableForm({
@@ -37,23 +36,20 @@ const ExampleSetFormData = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            setFormData({
-                textVal1: 'aa',
-                textVal2: 'bb',
-                numVal: 5,
-                selectVal: ['Europe', 'South America'],
-            });
+            setPathValue('textVal1', 'aaa');
+            setPathValue('textVal2', 'bbb');
+            setPathValue('numVal', 5);
+            setPathValue('selectVal', ['Europe', 'South America']);
             setFormFilledState(1);
         }, 2000);
     }, []);
 
     useEffect(() => {
         setTimeout(() => {
-            setFormData({
-                textVal1: 'aa',
-                numVal: 8,
-                selectVal: ['Europe'],
-            });
+            setPathValue('textVal1', 'aaa');
+            setPathValue('textVal2', null);
+            setPathValue('numVal', 9);
+            setPathValue('selectVal', ['Europe']);
             setFormFilledState(2);
         }, 4000);
     }, []);
@@ -66,7 +62,7 @@ const ExampleSetFormData = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="setFormData" codeUrl="components/examples/ExampleSetFormData.js">
+        <ExampleUsageWrapper header="setPathValue" codeUrl="components/examples/ExampleSetPathValue.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'
@@ -147,4 +143,4 @@ const ExampleSetFormData = () => {
     );
 };
 
-export default ExampleSetFormData;
+export default ExampleSetPathValue;
