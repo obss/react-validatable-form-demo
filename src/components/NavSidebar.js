@@ -175,6 +175,26 @@ const allMenuItems = [
                 title: 'setPathValue',
                 itemId: '/examples/set-path-value',
             },
+            {
+                title: 'unsetPathValue',
+                itemId: '/examples/unset-path-value',
+            },
+            {
+                title: 'setRules',
+                itemId: '/examples/set-rules',
+            },
+            {
+                title: 'setFormDataAndRules',
+                itemId: '/examples/set-form-data-and-rules',
+            },
+            {
+                title: 'formData',
+                itemId: '/examples/form-data',
+            },
+            {
+                title: 'validationError',
+                itemId: '/examples/validation-error',
+            },
         ],
     },
     {
@@ -209,11 +229,15 @@ const allMenuItems = [
                     'isValid',
                     'validationError',
                     'setPathValue',
+                    'unsetPathValue',
                     'setFormIsSubmitted',
                     'setPathIsBlurred',
                     'setFormData',
                     'setRules',
+                    'setFormDataAndRules',
                     'resetForm',
+                    'getValue',
+                    'getError',
                     'forceRunAllValidations',
                 ],
             },

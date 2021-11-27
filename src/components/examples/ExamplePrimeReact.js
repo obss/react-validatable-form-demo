@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import ValidationResult from '../ValidationResult';
 import { InputText } from 'primereact/inputtext';
 import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
-import { AutoComplete } from 'primereact/autocomplete';
+import { MultiSelect } from 'primereact/multiselect';
 import { Dialog } from 'primereact/dialog';
 import FormSubmitResult from '../FormSubmitResult';
 import { options } from '../../constants/Data';
@@ -41,11 +40,12 @@ const primeReactElementsFocusHandler = (elementId) => {
 const ExamplePrimeReact = () => {
     const {
         isValid,
-        validationError,
         formData,
         setPathValue,
         setFormIsSubmitted,
         setPathIsBlurred,
+        getValue,
+        getError,
     } = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
@@ -54,11 +54,6 @@ const ExamplePrimeReact = () => {
         elementFocusHandler: primeReactElementsFocusHandler,
     });
     const [dialogOpen, setDialogOpen] = useState(false);
-    const [filterVal, setFilterVal] = useState(null);
-
-    const handleFilter = (ev) => {
-        setFilterVal(ev.query);
-    };
 
     const handleFormSubmit = () => {
         const submitResultValid = setFormIsSubmitted();
@@ -66,8 +61,6 @@ const ExamplePrimeReact = () => {
             setDialogOpen(true);
         }
     };
-
-    const filteredOptions = filterVal ? options.filter((o) => o.includes(filterVal)) : [...options];
 
     return (
         <ExampleUsageWrapper
@@ -78,49 +71,47 @@ const ExamplePrimeReact = () => {
                 <div className="my-prime-div">
                     <label htmlFor="textVal1">Text1</label>
                     <InputText
-                        className={get(validationError, 'textVal1') && 'p-invalid'}
-                        value={get(formData, 'textVal1') || ''}
+                        className={getError('textVal1') && 'p-invalid'}
+                        value={getValue('textVal1') || ''}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal1')}
                         id="textVal1"
                     />
-                    <small className="p-error">{get(validationError, 'textVal1') || ' '}</small>
+                    <small className="p-error">{getError('textVal1') || ' '}</small>
                 </div>
                 <div className="my-prime-div">
                     <label htmlFor="textVal2">Text2</label>
                     <InputText
-                        className={get(validationError, 'textVal2') && 'p-invalid'}
-                        value={get(formData, 'textVal2') || ''}
+                        className={getError('textVal2') && 'p-invalid'}
+                        value={getValue('textVal2') || ''}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal2')}
                         id="textVal2"
                     />
-                    <small className="p-error">{get(validationError, 'textVal2') || ' '}</small>
+                    <small className="p-error">{getError('textVal2') || ' '}</small>
                 </div>
                 <div className="my-prime-div">
                     <label htmlFor="numVal">Num Val</label>
                     <InputNumber
-                        className={get(validationError, 'numVal') && 'p-invalid'}
-                        value={get(formData, 'numVal') || ''}
+                        className={getError('numVal') && 'p-invalid'}
+                        value={getValue('numVal') || ''}
                         onChange={(e) => setPathValue('numVal', e.value)}
                         onBlur={() => setPathIsBlurred('numVal')}
                         id="numVal"
                     />
-                    <small className="p-error">{get(validationError, 'numVal') || ' '}</small>
+                    <small className="p-error">{getError('numVal') || ' '}</small>
                 </div>
                 <div className="my-prime-div">
                     <label htmlFor="selectVal">Select Val</label>
-                    <AutoComplete
-                        multiple
-                        className={get(validationError, 'selectVal') && 'p-invalid'}
-                        value={get(formData, 'selectVal') || []}
-                        suggestions={filteredOptions}
-                        completeMethod={handleFilter}
+                    <MultiSelect
+                        className={getError('selectVal') && 'p-invalid'}
+                        value={getValue('selectVal') || []}
+                        options={options}
                         onChange={(e) => setPathValue('selectVal', e.value)}
                         onBlur={() => setPathIsBlurred('selectVal')}
                         id="selectVal"
                     />
-                    <small className="p-error">{get(validationError, 'selectVal') || ' '}</small>
+                    <small className="p-error">{getError('selectVal') || ' '}</small>
                 </div>
                 <div>
                     <Button className="mySubmitButton" onClick={() => handleFormSubmit()}>

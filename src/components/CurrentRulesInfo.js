@@ -28,12 +28,12 @@ const stringifyWithFunction = (obj) => {
     return json;
 };
 
-const CurrentRulesInfo = ({ currentRules }) => {
+const CurrentRulesInfo = ({ currentRules, header = 'Current Rules' }) => {
     return (
         <div className={'currentRuleInfoDiv'}>
             <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                    <span className={'currentRuleLabel'}>Current Rules</span>
+                    <span className={'currentRuleLabel'}>{header}</span>
                 </AccordionSummary>
                 <AccordionDetails>
                     <span className={'currentRuleString'}>{stringifyWithFunction(currentRules)}</span>

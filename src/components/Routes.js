@@ -34,12 +34,17 @@ import ExamplePrimeReact from './examples/ExamplePrimeReact';
 import ExampleReactBootstrap from './examples/ExampleReactBootstrap';
 import ExampleSetFormData from './examples/ExampleSetFormData';
 import ExampleSetPathValue from './examples/ExampleSetPathValue';
+import ExampleSetFormDataAndRules from './examples/ExampleSetFormDataAndRules';
+import ExampleFormData from './examples/ExampleFormData';
 import ApiUseValidatableForm from './api/ApiUseValidatableForm';
 import ApiReactValidatableFormProvider from './api/ApiReactValidatableFormProvider';
 import ApiRules from './api/ApiRules';
 import ApiRule from './api/ApiRule';
 import Settings from './Settings';
 import ApiPath from './api/ApiPath';
+import ExampleValidationError from './examples/ExampleValidationError';
+import ExampleSetRules from './examples/ExampleSetRules';
+import ExampleUnsetPathValue from './examples/ExampleUnsetPathValue';
 
 const Routes = (props) => {
     return (
@@ -146,6 +151,21 @@ const Routes = (props) => {
                     </Route>
                     <Route exact path="/examples/set-path-value">
                         <ExampleSetPathValue />
+                    </Route>
+                    <Route exact path="/examples/unset-path-value">
+                        <ExampleUnsetPathValue />
+                    </Route>
+                    <Route exact path="/examples/set-rules">
+                        <ExampleSetRules />
+                    </Route>
+                    <Route exact path="/examples/set-form-data-and-rules">
+                        <ExampleSetFormDataAndRules />
+                    </Route>
+                    <Route exact path="/examples/form-data">
+                        <ExampleFormData />
+                    </Route>
+                    <Route exact path="/examples/validation-error">
+                        <ExampleValidationError />
                     </Route>
                     <Route exact path="/api/react-validatable-form-provider">
                         <ApiReactValidatableFormProvider openSettingsDialog={props.openSettingsDialog} />

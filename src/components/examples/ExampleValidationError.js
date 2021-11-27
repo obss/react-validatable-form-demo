@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import ValidationResult from '../ValidationResult';
@@ -17,38 +16,67 @@ const rules = [
     { path: 'selectVal', ruleSet: [{ rule: 'required' }] },
 ];
 
-const ExampleSetPathValue = () => {
+const rules2 = [
+    { path: 'textVal1', ruleSet: [{ rule: 'required' }, { rule: 'length', greaterThanOrEqualTo: 10 }] },
+    { path: 'textVal2', ruleSet: [{ rule: 'required' }, { rule: 'length', greaterThanOrEqualTo: 15 }] },
+    { path: 'numVal', ruleSet: [{ rule: 'required' }] },
+    { path: 'selectVal', ruleSet: [{ rule: 'required' }] },
+];
+
+const rules3 = [
+    { path: 'textVal1', ruleSet: [{ rule: 'required' }, { rule: 'length', greaterThanOrEqualTo: 13 }] },
+    { path: 'textVal2', ruleSet: [{ rule: 'required' }, { rule: 'length', greaterThanOrEqualTo: 25 }] },
+    { path: 'numVal', ruleSet: [{ rule: 'required' }] },
+    { path: 'selectVal', ruleSet: [{ rule: 'required' }] },
+];
+
+const ExampleValidationError = () => {
     const {
         isValid,
         validationError,
         formData,
         setPathValue,
+        setFormDataAndRules,
         setFormIsSubmitted,
         setPathIsBlurred,
+        getValue,
+        getError,
     } = useValidatableForm({
         rules,
         focusToErrorAfterSubmit: true,
     });
     const [dialogOpen, setDialogOpen] = useState(false);
+    const [currentRules, setCurrentRules] = useState(rules);
     const [formFilledState, setFormFilledState] = useState(0);
 
     useEffect(() => {
         setTimeout(() => {
-            setPathValue('textVal1', 'aaa');
-            setPathValue('textVal2', 'bbb');
-            setPathValue('numVal', 5);
-            setPathValue('selectVal', ['Europe', 'South America']);
+            setFormDataAndRules(
+                {
+                    textVal1: 'aa',
+                    textVal2: 'bb',
+                    numVal: 5,
+                    selectVal: ['Europe', 'South America'],
+                },
+                rules2
+            );
             setFormFilledState(1);
+            setCurrentRules(rules2);
         }, 2000);
     }, []);
 
     useEffect(() => {
         setTimeout(() => {
-            setPathValue('textVal1', 'aaa');
-            setPathValue('textVal2', null);
-            setPathValue('numVal', 9);
-            setPathValue('selectVal', ['Europe']);
+            setFormDataAndRules(
+                {
+                    textVal1: 'aa',
+                    numVal: 8,
+                    selectVal: ['Europe'],
+                },
+                rules3
+            );
             setFormFilledState(2);
+            setCurrentRules(rules3);
         }, 4000);
     }, []);
 
@@ -60,7 +88,7 @@ const ExampleSetPathValue = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="setPathValue" codeUrl="components/examples/ExampleSetPathValue.js">
+        <ExampleUsageWrapper header="validationError" codeUrl="components/examples/ExampleValidationError.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'
@@ -71,11 +99,11 @@ const ExampleSetPathValue = () => {
                 <br />
                 <div>
                     <TextField
-                        error={!!get(validationError, 'textVal1')}
-                        helperText={get(validationError, 'textVal1') || ' '}
+                        error={!!getError('textVal1')}
+                        helperText={getError('textVal1') || ' '}
                         label="Text1"
                         type="text"
-                        value={get(formData, 'textVal1') || ''}
+                        value={getValue('textVal1') || ''}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal1')}
                         id="textVal1"
@@ -83,11 +111,11 @@ const ExampleSetPathValue = () => {
                 </div>
                 <div>
                     <TextField
-                        error={!!get(validationError, 'textVal2')}
-                        helperText={get(validationError, 'textVal2') || ' '}
+                        error={!!getError('textVal2')}
+                        helperText={getError('textVal2') || ' '}
                         label="Text2"
                         type="text"
-                        value={get(formData, 'textVal2') || ''}
+                        value={getValue('textVal2') || ''}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal2')}
                         id="textVal2"
@@ -95,11 +123,11 @@ const ExampleSetPathValue = () => {
                 </div>
                 <div>
                     <TextField
-                        error={!!get(validationError, 'numVal')}
-                        helperText={get(validationError, 'numVal') || ' '}
+                        error={!!getError('numVal')}
+                        helperText={getError('numVal') || ' '}
                         label="Num Val"
                         type="number"
-                        value={get(formData, 'numVal') || ''}
+                        value={getValue('numVal') || ''}
                         onChange={(e) => setPathValue('numVal', e.target.value)}
                         onBlur={() => setPathIsBlurred('numVal')}
                         id="numVal"
@@ -110,7 +138,7 @@ const ExampleSetPathValue = () => {
                         id="selectVal"
                         onBlur={() => setPathIsBlurred('selectVal')}
                         multiple
-                        value={get(formData, 'selectVal') || []}
+                        value={getValue('selectVal') || []}
                         onChange={(event, newValue) => {
                             setPathValue('selectVal', newValue);
                         }}
@@ -118,8 +146,8 @@ const ExampleSetPathValue = () => {
                         renderInput={(params) => (
                             <TextField
                                 {...params}
-                                error={!!get(validationError, 'selectVal')}
-                                helperText={get(validationError, 'selectVal') || ' '}
+                                error={!!getError('selectVal')}
+                                helperText={getError('selectVal') || ' '}
                                 label="Select Val"
                             />
                         )}
@@ -131,7 +159,8 @@ const ExampleSetPathValue = () => {
                     </Button>
                 </div>
                 <ValidationResult isValid={isValid} />
-                <CurrentRulesInfo currentRules={rules} />
+                <CurrentRulesInfo currentRules={validationError} header="Current validationError" />
+                <CurrentRulesInfo currentRules={currentRules} />
             </div>
             <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
                 <DialogTitle>Form Data Submitted</DialogTitle>
@@ -141,4 +170,4 @@ const ExampleSetPathValue = () => {
     );
 };
 
-export default ExampleSetPathValue;
+export default ExampleValidationError;

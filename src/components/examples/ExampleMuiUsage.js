@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import ValidationResult from '../ValidationResult';
@@ -20,11 +19,12 @@ const rules = [
 const ExampleMuiUsage = () => {
     const {
         isValid,
-        validationError,
         formData,
         setPathValue,
         setFormIsSubmitted,
         setPathIsBlurred,
+        getValue,
+        getError,
     } = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
@@ -48,11 +48,11 @@ const ExampleMuiUsage = () => {
             <div>
                 <div>
                     <TextField
-                        error={!!get(validationError, 'textVal1')}
-                        helperText={get(validationError, 'textVal1') || ' '}
+                        error={!!getError('textVal1')}
+                        helperText={getError('textVal1') || ' '}
                         label="Text1"
                         type="text"
-                        value={get(formData, 'textVal1') || ''}
+                        value={getValue('textVal1') || ''}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal1')}
                         id="textVal1"
@@ -60,11 +60,11 @@ const ExampleMuiUsage = () => {
                 </div>
                 <div>
                     <TextField
-                        error={!!get(validationError, 'textVal2')}
-                        helperText={get(validationError, 'textVal2') || ' '}
+                        error={!!getError('textVal2')}
+                        helperText={getError('textVal2') || ' '}
                         label="Text2"
                         type="text"
-                        value={get(formData, 'textVal2') || ''}
+                        value={getValue('textVal2') || ''}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal2')}
                         id="textVal2"
@@ -72,11 +72,11 @@ const ExampleMuiUsage = () => {
                 </div>
                 <div>
                     <TextField
-                        error={!!get(validationError, 'numVal')}
-                        helperText={get(validationError, 'numVal') || ' '}
+                        error={!!getError('numVal')}
+                        helperText={getError('numVal') || ' '}
                         label="Num Val"
                         type="number"
-                        value={get(formData, 'numVal') || ''}
+                        value={getValue('numVal') || ''}
                         onChange={(e) => setPathValue('numVal', e.target.value)}
                         onBlur={() => setPathIsBlurred('numVal')}
                         id="numVal"
@@ -87,7 +87,7 @@ const ExampleMuiUsage = () => {
                         id="selectVal"
                         onBlur={() => setPathIsBlurred('selectVal')}
                         multiple
-                        value={get(formData, 'selectVal') || []}
+                        value={getValue('selectVal') || []}
                         onChange={(event, newValue) => {
                             setPathValue('selectVal', newValue);
                         }}
@@ -95,8 +95,8 @@ const ExampleMuiUsage = () => {
                         renderInput={(params) => (
                             <TextField
                                 {...params}
-                                error={!!get(validationError, 'selectVal')}
-                                helperText={get(validationError, 'selectVal') || ' '}
+                                error={!!getError('selectVal')}
+                                helperText={getError('selectVal') || ' '}
                                 label="Select Val"
                             />
                         )}

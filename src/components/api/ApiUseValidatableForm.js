@@ -82,12 +82,26 @@ const returnValuesApiInfoList = [
         desc: "Always returns the form's combined validation result according to current formData and rules.",
     },
     {
-        label: 'validationError (object)',
+        label: (
+            <div>
+                validationError (object){' '}
+                <Link className="inner-link" to="/examples/validation-error">
+                    See Example
+                </Link>
+            </div>
+        ),
         desc:
             'Returns the validation result info of each rule with each path according to current formData and rules. Some validation results can be hide before submit or before blur.',
     },
     {
-        label: 'formData (object)',
+        label: (
+            <div>
+                formData (object){' '}
+                <Link className="inner-link" to="/examples/form-data">
+                    See Example
+                </Link>
+            </div>
+        ),
         desc: 'Returns current formData.',
     },
     {
@@ -97,9 +111,28 @@ const returnValuesApiInfoList = [
                 <Link className="inner-link" to="/api/path">
                     See Path API
                 </Link>
+                {' - '}
+                <Link className="inner-link" to="/examples/set-path-value">
+                    See Example
+                </Link>
             </div>
         ),
         desc: 'Function to update given path of formData with given value.',
+    },
+    {
+        label: (
+            <div>
+                unsetPathValue(path, value){' '}
+                <Link className="inner-link" to="/api/path">
+                    See Path API
+                </Link>
+                {' - '}
+                <Link className="inner-link" to="/examples/unset-path-value">
+                    See Example
+                </Link>
+            </div>
+        ),
+        desc: 'Function to remove value and key for given path of formData.',
     },
     {
         label: (
@@ -137,8 +170,27 @@ const returnValuesApiInfoList = [
         desc: 'Function to update whole formData and run validation rules of given pathToBeRun array.',
     },
     {
-        label: 'setRules(newRules)',
+        label: (
+            <div>
+                setRules(newRules){' '}
+                <Link className="inner-link" to="/examples/set-rules">
+                    See Example
+                </Link>
+            </div>
+        ),
         desc: 'Function to update rules and run all validations according to these rules.',
+    },
+    {
+        label: (
+            <div>
+                setFormDataAndRules(newFormData, newRules){' '}
+                <Link className="inner-link" to="/examples/set-form-data-and-rules">
+                    See Example
+                </Link>
+            </div>
+        ),
+        desc:
+            'Function to update whole formData and rules simultaneously and run all validations according to these formData and rules.',
     },
     {
         label: (
@@ -150,6 +202,14 @@ const returnValuesApiInfoList = [
             </div>
         ),
         desc: 'Function to reset form submitted info and elements blurred info.',
+    },
+    {
+        label: 'getValue(path)',
+        desc: 'Function to get value of given path on formData object.',
+    },
+    {
+        label: 'getError(path)',
+        desc: 'Function to get validation error of given path on validationError object.',
     },
     {
         label: 'forceRunAllValidations()',

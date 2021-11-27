@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import ValidationResult from '../ValidationResult';
 import FormSubmitResult from '../FormSubmitResult';
@@ -21,11 +20,12 @@ const rules = [
 const ExampleReactBootstrap = () => {
     const {
         isValid,
-        validationError,
         formData,
         setPathValue,
         setFormIsSubmitted,
         setPathIsBlurred,
+        getValue,
+        getError,
     } = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
@@ -51,15 +51,13 @@ const ExampleReactBootstrap = () => {
                     <Form.Label>Text1</Form.Label>
                     <Form.Control
                         placeholder="Text1"
-                        value={get(formData, 'textVal1') || ''}
+                        value={getValue('textVal1') || ''}
                         onBlur={() => setPathIsBlurred('textVal1')}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
-                        isInvalid={!!get(validationError, 'textVal1')}
+                        isInvalid={!!getError('textVal1')}
                     />
-                    {get(validationError, 'textVal1') ? (
-                        <Form.Control.Feedback type="invalid">
-                            {get(validationError, 'textVal1') || ' '}
-                        </Form.Control.Feedback>
+                    {getError('textVal1') ? (
+                        <Form.Control.Feedback type="invalid">{getError('textVal1') || ' '}</Form.Control.Feedback>
                     ) : (
                         <div className={'my-bootstrap-empty-feedback'}></div>
                     )}
@@ -68,15 +66,13 @@ const ExampleReactBootstrap = () => {
                     <Form.Label>Text2</Form.Label>
                     <Form.Control
                         placeholder="Text2"
-                        value={get(formData, 'textVal2') || ''}
+                        value={getValue('textVal2') || ''}
                         onBlur={() => setPathIsBlurred('textVal2')}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
-                        isInvalid={!!get(validationError, 'textVal2')}
+                        isInvalid={!!getError('textVal2')}
                     />
-                    {get(validationError, 'textVal2') ? (
-                        <Form.Control.Feedback type="invalid">
-                            {get(validationError, 'textVal2') || ' '}
-                        </Form.Control.Feedback>
+                    {getError('textVal2') ? (
+                        <Form.Control.Feedback type="invalid">{getError('textVal2') || ' '}</Form.Control.Feedback>
                     ) : (
                         <div className={'my-bootstrap-empty-feedback'}></div>
                     )}
@@ -86,15 +82,13 @@ const ExampleReactBootstrap = () => {
                     <Form.Control
                         type="number"
                         placeholder="Num Val"
-                        value={get(formData, 'numVal') || ''}
+                        value={getValue('numVal') || ''}
                         onBlur={() => setPathIsBlurred('numVal')}
                         onChange={(e) => setPathValue('numVal', e.target.value)}
-                        isInvalid={!!get(validationError, 'numVal')}
+                        isInvalid={!!getError('numVal')}
                     />
-                    {get(validationError, 'numVal') ? (
-                        <Form.Control.Feedback type="invalid">
-                            {get(validationError, 'numVal') || ' '}
-                        </Form.Control.Feedback>
+                    {getError('numVal') ? (
+                        <Form.Control.Feedback type="invalid">{getError('numVal') || ' '}</Form.Control.Feedback>
                     ) : (
                         <div className={'my-bootstrap-empty-feedback'}></div>
                     )}
@@ -102,10 +96,10 @@ const ExampleReactBootstrap = () => {
                 <Form.Group controlId="selectVal">
                     <Form.Label>Select Val</Form.Label>
                     <Form.Select
-                        value={get(formData, 'selectVal') || ''}
+                        value={getValue('selectVal') || ''}
                         onBlur={() => setPathIsBlurred('selectVal')}
                         onChange={(e) => setPathValue('selectVal', e.target.value)}
-                        isInvalid={!!get(validationError, 'selectVal')}
+                        isInvalid={!!getError('selectVal')}
                     >
                         <option key={'empty'} value={''}>
                             {''}
@@ -118,10 +112,8 @@ const ExampleReactBootstrap = () => {
                             );
                         })}
                     </Form.Select>
-                    {get(validationError, 'selectVal') ? (
-                        <Form.Control.Feedback type="invalid">
-                            {get(validationError, 'selectVal') || ' '}
-                        </Form.Control.Feedback>
+                    {getError('selectVal') ? (
+                        <Form.Control.Feedback type="invalid">{getError('selectVal') || ' '}</Form.Control.Feedback>
                     ) : (
                         <div className={'my-bootstrap-empty-feedback'}></div>
                     )}

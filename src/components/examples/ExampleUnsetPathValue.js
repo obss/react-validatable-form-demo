@@ -17,12 +17,13 @@ const rules = [
     { path: 'selectVal', ruleSet: [{ rule: 'required' }] },
 ];
 
-const ExampleSetPathValue = () => {
+const ExampleUnsetPathValue = () => {
     const {
         isValid,
         validationError,
         formData,
         setPathValue,
+        unsetPathValue,
         setFormIsSubmitted,
         setPathIsBlurred,
     } = useValidatableForm({
@@ -46,10 +47,20 @@ const ExampleSetPathValue = () => {
         setTimeout(() => {
             setPathValue('textVal1', 'aaa');
             setPathValue('textVal2', null);
-            setPathValue('numVal', 9);
+            unsetPathValue('numVal');
             setPathValue('selectVal', ['Europe']);
             setFormFilledState(2);
         }, 4000);
+    }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setPathValue('textVal1', 'aaa');
+            setPathValue('textVal2', 'gagag');
+            setPathValue('numVal', 9);
+            setPathValue('selectVal', ['Europe']);
+            setFormFilledState(3);
+        }, 6000);
     }, []);
 
     const handleFormSubmit = () => {
@@ -60,13 +71,15 @@ const ExampleSetPathValue = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="setPathValue" codeUrl="components/examples/ExampleSetPathValue.js">
+        <ExampleUsageWrapper header="unsetPathValue" codeUrl="components/examples/ExampleUnsetPathValue.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'
                     : formFilledState === 1
                     ? 'Wait for another 2 seconds...'
-                    : 'Thanks for waiting 4 seconds'}
+                    : formFilledState === 2
+                    ? 'And Wait for another 2 seconds...'
+                    : 'Thanks for waiting 6 seconds'}
                 <br />
                 <br />
                 <div>
@@ -131,6 +144,7 @@ const ExampleSetPathValue = () => {
                     </Button>
                 </div>
                 <ValidationResult isValid={isValid} />
+                <CurrentRulesInfo currentRules={formData} header="Current formData" />
                 <CurrentRulesInfo currentRules={rules} />
             </div>
             <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
@@ -141,4 +155,4 @@ const ExampleSetPathValue = () => {
     );
 };
 
-export default ExampleSetPathValue;
+export default ExampleUnsetPathValue;

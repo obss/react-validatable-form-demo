@@ -12,7 +12,6 @@ const Usage = (props) => {
     `;
 
     const hookCode = `import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import TextField from '@mui/material/TextField';
 
 //....
@@ -22,17 +21,17 @@ const rules = [{ path: 'val', ruleSet: [{ rule: 'required' }] }];
 
 //....
 
-    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
+    const { isValid, formData, setPathValue, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
 
     return <TextField
-        error={!!get(validationError, 'val')}
-        helperText={get(validationError, 'val') || ' '}
+        error={!!getError('val')}
+        helperText={getError('val') || ' '}
         label="val"
         type="text"
-        value={get(formData, 'val') || ''}
+        value={getValue('val') || ''}
         onChange={(e) => setPathValue('val', e.target.value)}
     />;
     `;

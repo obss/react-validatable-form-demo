@@ -28,8 +28,6 @@ const ExampleSetFormData = () => {
         setPathIsBlurred,
     } = useValidatableForm({
         rules,
-        hideBeforeSubmit: true,
-        showAfterBlur: true,
         focusToErrorAfterSubmit: true,
     });
     const [dialogOpen, setDialogOpen] = useState(false);
