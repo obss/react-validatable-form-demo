@@ -3,7 +3,8 @@ import ApiInfo from '../ApiInfo';
 import CodeAccordion from '../CodeAccordion';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 
-const useValidatableFormCode = `const {isValid, validationError, formData, setPathValue, setFormIsSubmitted, setPathIsBlurred, setFormData, setRules, forceRunAllValidations } = 
+const useValidatableFormCode = `const {isValid, validationError, validationErrorOriginalResult, formData, setPathValue, unsetPathValue, setFormIsSubmitted,
+    setPathIsBlurred, setFormData, setRules, setFormDataAndRules, resetForm, getValue, getError, forceRunAllValidations } = 
     useValidatableForm({
         rules,
         initialFormData,
@@ -92,6 +93,18 @@ const returnValuesApiInfoList = [
         ),
         desc:
             'Returns the validation result info of each rule with each path according to current formData and rules. Some validation results can be hide before submit or before blur.',
+    },
+    {
+        label: (
+            <div>
+                validationErrorOriginalResult (object){' '}
+                <Link className="inner-link" to="/examples/validation-error-original-result">
+                    See Example
+                </Link>
+            </div>
+        ),
+        desc:
+            'Returns the validation result info of each rule with each path according to current formData and rules. (is not hidden before submit or before blur).',
     },
     {
         label: (

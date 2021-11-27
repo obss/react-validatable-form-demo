@@ -195,6 +195,10 @@ const allMenuItems = [
                 title: 'validationError',
                 itemId: '/examples/validation-error',
             },
+            {
+                title: 'validationErrorOriginalResult',
+                itemId: '/examples/validation-error-original-result',
+            },
         ],
     },
     {
@@ -228,6 +232,7 @@ const allMenuItems = [
                     'elementFocusHandler',
                     'isValid',
                     'validationError',
+                    'validationErrorOriginalResult',
                     'setPathValue',
                     'unsetPathValue',
                     'setFormIsSubmitted',

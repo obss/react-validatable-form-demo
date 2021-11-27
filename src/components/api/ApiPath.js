@@ -94,20 +94,52 @@ const ApiPath = () => {
                             <td>setPathValue({"'listChild[0].subkey1'"}, newValue)</td>
                         </tr>
                         <tr>
+                            <td>Get value of first level child</td>
+                            <td>getValue({"'child1'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Get value of second level child</td>
+                            <td>getValue({"'child3.subchild1'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Get value of list&apos;s element at 0th index</td>
+                            <td>getValue({"'listChild[0]'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Get value of list of object&apos;s element at 0th index with key subkey1</td>
+                            <td>getValue({"'listChild[0].subkey1'"})</td>
+                        </tr>
+                        <tr>
                             <td>Get error of first level child</td>
-                            <td>get(validationError, {"'child1'"})</td>
+                            <td>getError({"'child1'"})</td>
                         </tr>
                         <tr>
                             <td>Get error of second level child</td>
-                            <td>get(validationError, {"'child3.subchild1'"})</td>
+                            <td>getError({"'child3.subchild1'"})</td>
                         </tr>
                         <tr>
                             <td>Get error of list&apos;s element at 0th index</td>
-                            <td>get(validationError, {"'listChild{0}'"})</td>
+                            <td>getError({"'listChild{0}'"})</td>
                         </tr>
                         <tr>
                             <td>Get error of list of object&apos;s element at 0th index with key subkey1</td>
-                            <td>get(validationError, {"'listChild{0}.subkey1'"})</td>
+                            <td>getError({"'listChild{0}.subkey1'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Unset value and key of first level child</td>
+                            <td>unsetPathValue({"'child1'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Unset value and key of second level child</td>
+                            <td>unsetPathValue({"'child3.subchild1'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Unset value and key of list&apos;s element at 0th index</td>
+                            <td>unsetPathValue({"'listChild[0]'"})</td>
+                        </tr>
+                        <tr>
+                            <td>Unset value and key of list of object&apos;s element at 0th index with key subkey1</td>
+                            <td>unsetPathValue({"'listChild[0].subkey1'"})</td>
                         </tr>
                     </tbody>
                 </table>
