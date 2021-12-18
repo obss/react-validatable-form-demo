@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import { Link } from 'react-router-dom';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
@@ -21,7 +20,7 @@ const rules = [
 ];
 
 const AdvancedValidateLists = () => {
-    const { isValid, validationError, formData, setPathValue, setFormIsSubmitted } = useValidatableForm({
+    const { isValid, formData, setPathValue, setFormIsSubmitted, getValue, getError } = useValidatableForm({
         rules,
         initialFormData: { listChild: [''] },
     });
@@ -52,11 +51,11 @@ const AdvancedValidateLists = () => {
             return (
                 <div key={index}>
                     <TextField
-                        error={!!get(validationError, `listChild{${index}}`)}
-                        helperText={get(validationError, `listChild{${index}}`) || ' '}
+                        error={!!getError(`listChild{${index}}`)}
+                        helperText={getError(`listChild{${index}}`) || ' '}
                         label="lengthGreaterThan3"
                         type="text"
-                        value={get(formData, `listChild[${index}]`) || ''}
+                        value={getValue(`listChild[${index}]`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}]`, e.target.value)}
                     />
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(index)}>
@@ -85,7 +84,7 @@ const AdvancedValidateLists = () => {
                     </Button>
                 </div>
                 <div className={'formListField'}>{listChildJsx}</div>
-                <div className={'errorInfoText'}>{get(validationError, 'listChild')}</div>
+                <div className={'errorInfoText'}>{getError('listChild')}</div>
                 <div>
                     <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>
                         Submit Form

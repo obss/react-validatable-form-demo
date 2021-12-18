@@ -1,5 +1,4 @@
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -34,7 +33,7 @@ const rules = [
 ];
 
 const CustomConditionalRules = () => {
-    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
+    const { isValid, setPathValue, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
@@ -51,18 +50,18 @@ const CustomConditionalRules = () => {
             <div>
                 <div className={'textAndCheckboxDiv'}>
                     <TextField
-                        error={!!get(validationError, 'val1')}
-                        helperText={get(validationError, 'val1') || ' '}
+                        error={!!getError('val1')}
+                        helperText={getError('val1') || ' '}
                         label="val1"
                         type="text"
-                        value={get(formData, 'val1') || ''}
+                        value={getValue('val1') || ''}
                         onChange={(e) => setPathValue('val1', e.target.value)}
                     />
                     <FormGroup className={'checkboxOnRight'}>
                         <FormControlLabel
                             control={
                                 <Checkbox
-                                    checked={get(formData, 'disableVal1Rule') || false}
+                                    checked={getValue('disableVal1Rule') || false}
                                     onChange={(e) => setPathValue('disableVal1Rule', e.target.checked)}
                                 />
                             }
@@ -72,18 +71,18 @@ const CustomConditionalRules = () => {
                 </div>
                 <div className={'textAndCheckboxDiv'}>
                     <TextField
-                        error={!!get(validationError, 'val2')}
-                        helperText={get(validationError, 'val2') || ' '}
+                        error={!!getError('val2')}
+                        helperText={getError('val2') || ' '}
                         label="val2"
                         type="text"
-                        value={get(formData, 'val2') || ''}
+                        value={getValue('val2') || ''}
                         onChange={(e) => setPathValue('val2', e.target.value)}
                     />
                     <FormGroup className={'checkboxOnRight'}>
                         <FormControlLabel
                             control={
                                 <Checkbox
-                                    checked={get(formData, 'enableVal2Rule') || false}
+                                    checked={getValue('enableVal2Rule') || false}
                                     onChange={(e) => setPathValue('enableVal2Rule', e.target.checked)}
                                 />
                             }

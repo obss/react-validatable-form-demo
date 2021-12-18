@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -23,12 +22,13 @@ const rules = [
 const AdvancedShowAfterBlur = () => {
     const {
         isValid,
-        validationError,
         formData,
         setPathValue,
         setFormIsSubmitted,
         setPathIsBlurred,
         resetForm,
+        getValue,
+        getError,
     } = useValidatableForm({
         rules,
         initialFormData,
@@ -55,28 +55,28 @@ const AdvancedShowAfterBlur = () => {
                 <div className={'formField'}>
                     <TextField
                         id={'textVal1'}
-                        error={!!get(validationError, 'textVal1')}
-                        helperText={get(validationError, 'textVal1') || ' '}
+                        error={!!getError('textVal1')}
+                        helperText={getError('textVal1') || ' '}
                         label="requiredField"
                         type="text"
-                        value={get(formData, 'textVal1') || ''}
+                        value={getValue('textVal1') || ''}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal1')}
                     />
                     <TextField
                         id={'textVal2'}
-                        error={!!get(validationError, 'textVal2')}
-                        helperText={get(validationError, 'textVal2') || ' '}
+                        error={!!getError('textVal2')}
+                        helperText={getError('textVal2') || ' '}
                         label="requiredAndLengthField"
                         type="text"
-                        value={get(formData, 'textVal2') || ''}
+                        value={getValue('textVal2') || ''}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal2')}
                     />
                     <Autocomplete
                         id={'val3'}
                         multiple
-                        value={get(formData, 'val3') || []}
+                        value={getValue('val3') || []}
                         onChange={(event, newValue) => {
                             setPathValue('val3', newValue);
                         }}
@@ -85,28 +85,28 @@ const AdvancedShowAfterBlur = () => {
                         renderInput={(params) => (
                             <TextField
                                 {...params}
-                                error={!!get(validationError, 'val3')}
-                                helperText={get(validationError, 'val3') || ' '}
+                                error={!!getError('val3')}
+                                helperText={getError('val3') || ' '}
                                 label="requiredAndListSize"
                             />
                         )}
                     />
                     <TextField
                         id={'textVal4'}
-                        error={!!get(validationError, 'textVal4')}
-                        helperText={get(validationError, 'textVal4') || ' '}
+                        error={!!getError('textVal4')}
+                        helperText={getError('textVal4') || ' '}
                         label="requiredAndUrl"
                         type="text"
-                        value={get(formData, 'textVal4') || ''}
+                        value={getValue('textVal4') || ''}
                         onChange={(e) => setPathValue('textVal4', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal4')}
                     />
                 </div>
                 <div>
-                    <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>
+                    <Button className="mySubmitButton" variant="contained" onClick={handleFormSubmit}>
                         Submit Form
                     </Button>
-                    <Button className="mySubmitButton" variant="contained" onClick={() => resetForm()}>
+                    <Button className="mySubmitButton" variant="contained" onClick={resetForm}>
                         Reset Form
                     </Button>
                 </div>

@@ -1,5 +1,4 @@
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import { Autocomplete, Button } from '@mui/material';
@@ -30,7 +29,7 @@ const rules = [
 ];
 
 const CustomApplyToNulls = () => {
-    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
+    const { isValid, formData, setPathValue, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
@@ -53,11 +52,11 @@ const CustomApplyToNulls = () => {
             return (
                 <div key={index}>
                     <TextField
-                        error={!!get(validationError, `listChild{${index}}`)}
-                        helperText={get(validationError, `listChild{${index}}`) || ' '}
+                        error={!!getError(`listChild{${index}}`)}
+                        helperText={getError(`listChild{${index}}`) || ' '}
                         label="unique"
                         type="text"
-                        value={get(formData, `listChild[${index}]`) || ''}
+                        value={getValue(`listChild[${index}]`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}]`, e.target.value)}
                     />
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(index)}>
@@ -78,38 +77,38 @@ const CustomApplyToNulls = () => {
             </p>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val1')}
-                    helperText={get(validationError, 'val1') || ' '}
+                    error={!!getError('val1')}
+                    helperText={getError('val1') || ' '}
                     label="requiredApplyToNulls"
                     type="text"
-                    value={get(formData, 'val1') || ''}
+                    value={getValue('val1') || ''}
                     onChange={(e) => setPathValue('val1', e.target.value)}
                 />
             </div>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val2')}
-                    helperText={get(validationError, 'val2') || ' '}
+                    error={!!getError('val2')}
+                    helperText={getError('val2') || ' '}
                     label="numberApplyToNulls"
                     type="number"
-                    value={get(formData, 'val2') || ''}
+                    value={getValue('val2') || ''}
                     onChange={(e) => setPathValue('val2', e.target.value)}
                 />
             </div>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val3')}
-                    helperText={get(validationError, 'val3') || ' '}
+                    error={!!getError('val3')}
+                    helperText={getError('val3') || ' '}
                     label="lengthApplyToNulls"
                     type="text"
-                    value={get(formData, 'val3') || ''}
+                    value={getValue('val3') || ''}
                     onChange={(e) => setPathValue('val3', e.target.value)}
                 />
             </div>
             <div>
                 <Autocomplete
                     multiple
-                    value={get(formData, 'val4') || []}
+                    value={getValue('val4') || []}
                     onChange={(event, newValue) => {
                         setPathValue('val4', newValue);
                     }}
@@ -117,8 +116,8 @@ const CustomApplyToNulls = () => {
                     renderInput={(params) => (
                         <TextField
                             {...params}
-                            error={!!get(validationError, 'val4')}
-                            helperText={get(validationError, 'val4') || ' '}
+                            error={!!getError('val4')}
+                            helperText={getError('val4') || ' '}
                             label="listSizeApplyToNulls"
                         />
                     )}
@@ -128,75 +127,71 @@ const CustomApplyToNulls = () => {
                 <DesktopDatePicker
                     label="dateApplyToNulls"
                     inputFormat="MM/dd/yyyy"
-                    value={get(formData, 'val5') || null}
+                    value={getValue('val5') || null}
                     onChange={(val) => setPathValue('val5', val)}
                     renderInput={(params) => (
-                        <TextField
-                            {...params}
-                            error={!!get(validationError, 'val5')}
-                            helperText={get(validationError, 'val5') || ' '}
-                        />
+                        <TextField {...params} error={!!getError('val5')} helperText={getError('val5') || ' '} />
                     )}
                 />
             </div>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val6')}
-                    helperText={get(validationError, 'val6') || ' '}
+                    error={!!getError('val6')}
+                    helperText={getError('val6') || ' '}
                     label="emailApplyToNulls"
                     type="text"
-                    value={get(formData, 'val6') || ''}
+                    value={getValue('val6') || ''}
                     onChange={(e) => setPathValue('val6', e.target.value)}
                 />
             </div>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val7')}
-                    helperText={get(validationError, 'val7') || ' '}
+                    error={!!getError('val7')}
+                    helperText={getError('val7') || ' '}
                     label="urlApplyToNulls"
                     type="text"
-                    value={get(formData, 'val7') || ''}
+                    value={getValue('val7') || ''}
                     onChange={(e) => setPathValue('val7', e.target.value)}
                 />
             </div>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val8')}
-                    helperText={get(validationError, 'val8') || ' '}
+                    error={!!getError('val8')}
+                    helperText={getError('val8') || ' '}
                     label="ibanApplyToNulls"
                     type="text"
-                    value={get(formData, 'val8') || ''}
+                    value={getValue('val8') || ''}
                     onChange={(e) => setPathValue('val8', e.target.value)}
                 />
             </div>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val9')}
-                    helperText={get(validationError, 'val9') || ' '}
+                    error={!!getError('val9')}
+                    helperText={getError('val9') || ' '}
                     label="equalityApplyToNulls"
                     type="text"
-                    value={get(formData, 'val9') || ''}
+                    value={getValue('val9') || ''}
                     onChange={(e) => setPathValue('val9', e.target.value)}
                 />
             </div>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val10')}
-                    helperText={get(validationError, 'val10') || ' '}
+                    error={!!getError('val10')}
+                    helperText={getError('val10') || ' '}
                     label="regexApplyToNulls"
                     type="text"
-                    value={get(formData, 'val10') || ''}
+                    value={getValue('val10') || ''}
                     onChange={(e) => setPathValue('val10', e.target.value)}
                 />
             </div>
             <div>
-                <Button className="myAddButton" variant="contained" onClick={() => handleAddElement()}>
+                <Button className="myAddButton" variant="contained" onClick={handleAddElement}>
                     <span className="myShinkableButtonSpan">Add New Element</span>
                     <AddIcon className="myShinkableButtonIcon" />
                 </Button>
             </div>
             <div className={'formListField'}>{listChildJsx}</div>
-            <div className={'errorInfoText'}>{get(validationError, 'listChild')}</div>
+            <div className={'errorInfoText'}>{getError('listChild')}</div>
 
             <ValidationResult isValid={isValid} />
             <CurrentRulesInfo currentRules={rules} />

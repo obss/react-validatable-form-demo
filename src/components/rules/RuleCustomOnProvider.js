@@ -1,6 +1,5 @@
 import { useValidatableForm } from 'react-validatable-form';
 import { Link } from 'react-router-dom';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import ValidationResult from '../ValidationResult';
@@ -13,7 +12,7 @@ const initialFormData = {
 const rules = [{ path: 'val', ruleSet: [{ rule: 'required' }, { rule: 'myCustomRule' }] }];
 
 const RuleCustomOnProvider = () => {
-    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
+    const { isValid, setPathValue, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
@@ -32,11 +31,11 @@ const RuleCustomOnProvider = () => {
             </p>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val')}
-                    helperText={get(validationError, 'val') || ' '}
+                    error={!!getError('val')}
+                    helperText={getError('val') || ' '}
                     label="val"
                     type="text"
-                    value={get(formData, 'val') || ''}
+                    value={getValue('val') || ''}
                     onChange={(e) => setPathValue('val', e.target.value)}
                 />
             </div>

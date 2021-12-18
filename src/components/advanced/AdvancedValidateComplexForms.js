@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import Checkbox from '@mui/material/Checkbox';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
@@ -63,11 +62,12 @@ const rules = [
 const AdvancedValidateComplexForms = () => {
     const {
         isValid,
-        validationError,
         formData,
         setPathValue,
         setFormIsSubmitted,
         setPathIsBlurred,
+        getValue,
+        getError,
     } = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
@@ -103,21 +103,21 @@ const AdvancedValidateComplexForms = () => {
             return (
                 <div key={lc.id} className="formListItem">
                     <TextField
-                        error={!!get(validationError, `listChild{${index}}.subkey1`)}
-                        helperText={get(validationError, `listChild{${index}}.subkey1`) || ' '}
+                        error={!!getError(`listChild{${index}}.subkey1`)}
+                        helperText={getError(`listChild{${index}}.subkey1`) || ' '}
                         label="lengthGreaterThan3"
                         type="text"
-                        value={get(formData, `listChild[${index}].subkey1`) || ''}
+                        value={getValue(`listChild[${index}].subkey1`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}].subkey1`, e.target.value)}
                         onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey1`)}
                         id={`listChild{${index}}.subkey1`}
                     />
                     <TextField
-                        error={!!get(validationError, `listChild{${index}}.subkey2`)}
-                        helperText={get(validationError, `listChild{${index}}.subkey2`) || ' '}
+                        error={!!getError(`listChild{${index}}.subkey2`)}
+                        helperText={getError(`listChild{${index}}.subkey2`) || ' '}
                         label="numberGreaterThan5"
                         type="number"
-                        value={get(formData, `listChild[${index}].subkey2`) || ''}
+                        value={getValue(`listChild[${index}].subkey2`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}].subkey2`, e.target.value)}
                         onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey2`)}
                         id={`listChild{${index}}.subkey2`}
@@ -125,7 +125,7 @@ const AdvancedValidateComplexForms = () => {
                     disable
                     {
                         <Checkbox
-                            checked={get(formData, `listChild[${index}].disableSubkey2Rule`) || false}
+                            checked={getValue(`listChild[${index}].disableSubkey2Rule`) || false}
                             onChange={(e) => setPathValue(`listChild[${index}].disableSubkey2Rule`, e.target.checked)}
                         />
                     }
@@ -153,41 +153,41 @@ const AdvancedValidateComplexForms = () => {
             <div>
                 <div className={'formField'}>
                     <TextField
-                        error={!!get(validationError, 'child1')}
-                        helperText={get(validationError, 'child1') || ' '}
+                        error={!!getError('child1')}
+                        helperText={getError('child1') || ' '}
                         label="child1"
                         type="text"
-                        value={get(formData, 'child1') || ''}
+                        value={getValue('child1') || ''}
                         onChange={(e) => setPathValue('child1', e.target.value)}
                         onBlur={() => setPathIsBlurred('child1')}
                         id="child1"
                     />
                     <TextField
-                        error={!!get(validationError, 'child2')}
-                        helperText={get(validationError, 'child2') || ' '}
+                        error={!!getError('child2')}
+                        helperText={getError('child2') || ' '}
                         label="child2"
                         type="text"
-                        value={get(formData, 'child2') || ''}
+                        value={getValue('child2') || ''}
                         onChange={(e) => setPathValue('child2', e.target.value)}
                         onBlur={() => setPathIsBlurred('child2')}
                         id="child2"
                     />
                     <TextField
-                        error={!!get(validationError, 'child3.subchild1')}
-                        helperText={get(validationError, 'child3.subchild1') || ' '}
+                        error={!!getError('child3.subchild1')}
+                        helperText={getError('child3.subchild1') || ' '}
                         label="child3.subchild1"
                         type="text"
-                        value={get(formData, 'child3.subchild1') || ''}
+                        value={getValue('child3.subchild1') || ''}
                         onChange={(e) => setPathValue('child3.subchild1', e.target.value)}
                         onBlur={() => setPathIsBlurred('child3.subchild1')}
                         id="child3.subchild1"
                     />
                     <TextField
-                        error={!!get(validationError, 'child3.subchild2')}
-                        helperText={get(validationError, 'child3.subchild2') || ' '}
+                        error={!!getError('child3.subchild2')}
+                        helperText={getError('child3.subchild2') || ' '}
                         label="child3.subchild2"
                         type="text"
-                        value={get(formData, 'child3.subchild2') || ''}
+                        value={getValue('child3.subchild2') || ''}
                         onChange={(e) => setPathValue('child3.subchild2', e.target.value)}
                         onBlur={() => setPathIsBlurred('child3.subchild2')}
                         id="child3.subchild2"
@@ -197,7 +197,7 @@ const AdvancedValidateComplexForms = () => {
                     <Button
                         className="myAddButton"
                         variant="contained"
-                        onClick={() => handleAddElement()}
+                        onClick={handleAddElement}
                         id={'listErrorFocusElement'}
                     >
                         <span className="myShinkableButtonSpan">Add New Element</span>
@@ -206,43 +206,44 @@ const AdvancedValidateComplexForms = () => {
                     <span style={{ marginLeft: 10 }}>disable all subkey2 rows</span>
                     {
                         <Checkbox
-                            checked={get(formData, `disableAllSubkey2Rule`) || false}
+                            checked={getValue(`disableAllSubkey2Rule`) || false}
                             onChange={(e) => setPathValue(`disableAllSubkey2Rule`, e.target.checked)}
                         />
                     }
                 </div>
                 <div className={'complexFormListField'}>{listChildJsx}</div>
-                <div className={'errorInfoText'}>{get(validationError, 'listChild')}</div>
+                <div className={'errorInfoText'}>{getError('listChild')}</div>
                 <div className={'formField'}>
                     <TextField
-                        error={!!get(validationError, 'bottomElement1')}
-                        helperText={get(validationError, 'bottomElement1') || ' '}
+                        error={!!getError('bottomElement1')}
+                        helperText={getError('bottomElement1') || ' '}
                         label="bottomElement1"
                         type="text"
-                        value={get(formData, 'bottomElement1') || ''}
+                        value={getValue('bottomElement1') || ''}
                         onChange={(e) => setPathValue('bottomElement1', e.target.value)}
                         onBlur={() => setPathIsBlurred('bottomElement1')}
                         id="bottomElement1"
                     />
                     <TextField
-                        error={!!get(validationError, 'bottomElement2')}
-                        helperText={get(validationError, 'bottomElement2') || ' '}
+                        error={!!getError('bottomElement2')}
+                        helperText={getError('bottomElement2') || ' '}
                         label="bottomElement2"
                         type="text"
-                        value={get(formData, 'bottomElement2') || ''}
+                        value={getValue('bottomElement2') || ''}
                         onChange={(e) => setPathValue('bottomElement2', e.target.value)}
                         onBlur={() => setPathIsBlurred('bottomElement2')}
                         id="bottomElement2"
                     />
                 </div>
                 <AdvancedSubComponent
-                    validationError={validationError}
+                    getValue={getValue}
+                    getError={getError}
                     formData={formData}
                     setPathValue={setPathValue}
                     setPathIsBlurred={setPathIsBlurred}
                 />
                 <div>
-                    <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>
+                    <Button className="mySubmitButton" variant="contained" onClick={handleFormSubmit}>
                         Submit Form
                     </Button>
                 </div>

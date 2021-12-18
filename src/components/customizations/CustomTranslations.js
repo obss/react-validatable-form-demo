@@ -17,7 +17,7 @@ const rules = [
 ];
 
 const CustomTranslations = () => {
-    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
+    const { isValid, setPathValue, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
@@ -37,21 +37,21 @@ const CustomTranslations = () => {
             <div>
                 <div>
                     <TextField
-                        error={!!validationError.val1}
-                        helperText={validationError.val1 || ' '}
+                        error={!!getError('val1')}
+                        helperText={getError('val1') || ' '}
                         label="val1 (requiredAndLengthGreaterThan)"
                         type="text"
-                        value={formData.val1}
+                        value={getValue('val1')}
                         onChange={(e) => setPathValue('val1', e.target.value)}
                     />
                 </div>
                 <div>
                     <TextField
-                        error={!!validationError.val2}
-                        helperText={validationError.val2 || ' '}
+                        error={!!getError('val2')}
+                        helperText={getError('val2') || ' '}
                         label="val2 (requiredAndLengthEqualTo)"
                         type="text"
-                        value={formData.val2}
+                        value={getValue('val2')}
                         onChange={(e) => setPathValue('val2', e.target.value)}
                     />
                 </div>

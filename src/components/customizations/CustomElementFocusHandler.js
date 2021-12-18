@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import './CustomElementFocusHandler.css';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
@@ -40,11 +39,12 @@ const rules = [
 const CustomElementFocusHandler = () => {
     const {
         isValid,
-        validationError,
         formData,
         setPathValue,
         setFormIsSubmitted,
         setPathIsBlurred,
+        getValue,
+        getError,
     } = useValidatableForm({
         rules,
         hideBeforeSubmit: true,
@@ -73,28 +73,28 @@ const CustomElementFocusHandler = () => {
             <div>
                 <div className={'formField'}>
                     <TextField
-                        error={!!get(validationError, 'textVal1')}
-                        helperText={get(validationError, 'textVal1') || ' '}
+                        error={!!getError('textVal1')}
+                        helperText={getError('textVal1') || ' '}
                         label="requiredField"
                         type="text"
-                        value={get(formData, 'textVal1') || ''}
+                        value={getValue('textVal1') || ''}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal1')}
                         id="textVal1"
                     />
                     <TextField
-                        error={!!get(validationError, 'textVal2')}
-                        helperText={get(validationError, 'textVal2') || ' '}
+                        error={!!getError('textVal2')}
+                        helperText={getError('textVal2') || ' '}
                         label="requiredAndLengthField"
                         type="text"
-                        value={get(formData, 'textVal2') || ''}
+                        value={getValue('textVal2') || ''}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal2')}
                         id="textVal2"
                     />
                     <Autocomplete
                         multiple
-                        value={get(formData, 'val3') || []}
+                        value={getValue('val3') || []}
                         onChange={(event, newValue) => {
                             setPathValue('val3', newValue);
                         }}
@@ -103,26 +103,26 @@ const CustomElementFocusHandler = () => {
                         renderInput={(params) => (
                             <TextField
                                 {...params}
-                                error={!!get(validationError, 'val3')}
-                                helperText={get(validationError, 'val3') || ' '}
+                                error={!!getError('val3')}
+                                helperText={getError('val3') || ' '}
                                 label="requiredAndListSize"
                             />
                         )}
                         id="val3"
                     />
                     <TextField
-                        error={!!get(validationError, 'textVal4')}
-                        helperText={get(validationError, 'textVal4') || ' '}
+                        error={!!getError('textVal4')}
+                        helperText={getError('textVal4') || ' '}
                         label="requiredAndUrl"
                         type="text"
-                        value={get(formData, 'textVal4') || ''}
+                        value={getValue('textVal4') || ''}
                         onChange={(e) => setPathValue('textVal4', e.target.value)}
                         onBlur={() => setPathIsBlurred('textVal4')}
                         id="textVal4"
                     />
                 </div>
                 <div>
-                    <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>
+                    <Button className="mySubmitButton" variant="contained" onClick={handleFormSubmit}>
                         Submit Form
                     </Button>
                 </div>

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -26,11 +25,12 @@ const rules = [
 const AdvancedFocusToErrorOnListAfterSubmit = () => {
     const {
         isValid,
-        validationError,
         formData,
         setPathValue,
         setFormIsSubmitted,
         setPathIsBlurred,
+        getValue,
+        getError,
     } = useValidatableForm({
         rules,
         initialFormData: { listChild: [''] },
@@ -65,11 +65,11 @@ const AdvancedFocusToErrorOnListAfterSubmit = () => {
             return (
                 <div key={index}>
                     <TextField
-                        error={!!get(validationError, `listChild{${index}}`)}
-                        helperText={get(validationError, `listChild{${index}}`) || ' '}
+                        error={!!getError(`listChild{${index}}`)}
+                        helperText={getError(`listChild{${index}}`) || ' '}
                         label="lengthGreaterThan3"
                         type="text"
-                        value={get(formData, `listChild[${index}]`) || ''}
+                        value={getValue(`listChild[${index}]`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}]`, e.target.value)}
                         onBlur={() => setPathIsBlurred(`listChild{${index}}`)}
                         id={`listChild{${index}}`}
@@ -108,9 +108,9 @@ const AdvancedFocusToErrorOnListAfterSubmit = () => {
                     </Button>
                 </div>
                 <div className={'formListField'}>{listChildJsx}</div>
-                <div className={'errorInfoText'}>{get(validationError, 'listChild')}</div>
+                <div className={'errorInfoText'}>{getError('listChild')}</div>
                 <div>
-                    <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>
+                    <Button className="mySubmitButton" variant="contained" onClick={handleFormSubmit}>
                         Submit Form
                     </Button>
                 </div>

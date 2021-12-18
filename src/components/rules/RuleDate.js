@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -27,7 +26,7 @@ const initialFormData = {
 };
 
 const RuleDate = () => {
-    const { isValid, validationError, formData, setPathValue, setRules } = useValidatableForm({
+    const { isValid, setPathValue, setRules, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
@@ -85,14 +84,10 @@ const RuleDate = () => {
                 <PickerComponent
                     label="val"
                     inputFormat={pickerFormat}
-                    value={get(formData, 'val')}
+                    value={getValue('val')}
                     onChange={(val) => setPathValue('val', val)}
                     renderInput={(params) => (
-                        <TextField
-                            {...params}
-                            error={!!get(validationError, 'val')}
-                            helperText={get(validationError, 'val') || ' '}
-                        />
+                        <TextField {...params} error={!!getError('val')} helperText={getError('val') || ' '} />
                     )}
                 />
 
@@ -110,7 +105,7 @@ const RuleDate = () => {
                     <PickerComponent
                         label="comparisonValue"
                         inputFormat={pickerFormat}
-                        value={get(formData, 'comparisonValue')}
+                        value={getValue('comparisonValue')}
                         onChange={(val) => setPathValue('comparisonValue', val)}
                         renderInput={(params) => <TextField className="comparisonDateComponent" {...params} />}
                     />

@@ -26,7 +26,7 @@ const rules = [
 ];
 
 const AdvancedHideBeforeSubmit = () => {
-    const { isValid, validationError, formData, setPathValue, setFormIsSubmitted, resetForm } = useValidatableForm({
+    const { isValid, formData, setPathValue, setFormIsSubmitted, resetForm, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
         hideBeforeSubmit: true,
@@ -49,24 +49,24 @@ const AdvancedHideBeforeSubmit = () => {
             <div>
                 <div className={'formField'}>
                     <TextField
-                        error={!!validationError.textVal1}
-                        helperText={validationError.textVal1 || ' '}
+                        error={!!getError('textVal1')}
+                        helperText={getError('textVal1') || ' '}
                         label="requiredField"
                         type="text"
-                        value={formData.textVal1}
+                        value={getValue('textVal1')}
                         onChange={(e) => setPathValue('textVal1', e.target.value)}
                     />
                     <TextField
-                        error={!!validationError.textVal2}
-                        helperText={validationError.textVal2 || ' '}
+                        error={!!getError('textVal2')}
+                        helperText={getError('textVal2') || ' '}
                         label="requiredAndLengthField"
                         type="text"
-                        value={formData.textVal2}
+                        value={getValue('textVal2')}
                         onChange={(e) => setPathValue('textVal2', e.target.value)}
                     />
                     <Autocomplete
                         multiple
-                        value={formData.val3}
+                        value={getValue('val3')}
                         onChange={(event, newValue) => {
                             setPathValue('val3', newValue);
                         }}
@@ -74,26 +74,26 @@ const AdvancedHideBeforeSubmit = () => {
                         renderInput={(params) => (
                             <TextField
                                 {...params}
-                                error={!!validationError.val3}
-                                helperText={validationError.val3 || ' '}
+                                error={!!getError('val3')}
+                                helperText={getError('val3') || ' '}
                                 label="requiredAndListSize"
                             />
                         )}
                     />
                     <TextField
-                        error={!!validationError.textVal4}
-                        helperText={validationError.textVal4 || ' '}
+                        error={!!getError('textVal4')}
+                        helperText={getError('textVal4') || ' '}
                         label="requiredAndUrl"
                         type="text"
-                        value={formData.textVal4}
+                        value={getValue('textVal4')}
                         onChange={(e) => setPathValue('textVal4', e.target.value)}
                     />
                 </div>
                 <div>
-                    <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>
+                    <Button className="mySubmitButton" variant="contained" onClick={handleFormSubmit}>
                         Submit Form
                     </Button>
-                    <Button className="mySubmitButton" variant="contained" onClick={() => resetForm()}>
+                    <Button className="mySubmitButton" variant="contained" onClick={resetForm}>
                         Reset Form
                     </Button>
                 </div>

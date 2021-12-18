@@ -1,5 +1,4 @@
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import ValidationResult from '../ValidationResult';
@@ -16,7 +15,7 @@ const rules = [
 ];
 
 const RuleRegex = () => {
-    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
+    const { isValid, setPathValue, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
@@ -37,22 +36,22 @@ const RuleRegex = () => {
             </p>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val')}
-                    helperText={get(validationError, 'val') || ' '}
+                    error={!!getError('val')}
+                    helperText={getError('val') || ' '}
                     label="val"
                     type="text"
-                    value={get(formData, 'val') || ''}
+                    value={getValue('val') || ''}
                     onChange={(e) => setPathValue('val', e.target.value)}
                 />
                 <span className="regexInfo">regex: /ab+c/</span>
             </div>
             <div>
                 <TextField
-                    error={!!get(validationError, 'val2')}
-                    helperText={get(validationError, 'val2') || ' '}
+                    error={!!getError('val2')}
+                    helperText={getError('val2') || ' '}
                     label="val2"
                     type="text"
-                    value={get(formData, 'val2') || ''}
+                    value={getValue('val2') || ''}
                     onChange={(e) => setPathValue('val2', e.target.value)}
                 />
                 <span className="regexInfo">regex: /\D\d\D/</span>

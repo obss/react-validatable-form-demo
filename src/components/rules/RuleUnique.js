@@ -1,6 +1,5 @@
 import { useValidatableForm } from 'react-validatable-form';
 import { Link } from 'react-router-dom';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -27,7 +26,7 @@ const rules = [
 ];
 
 const RuleUnique = () => {
-    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
+    const { isValid, formData, setPathValue, getValue, getError } = useValidatableForm({
         rules,
         initialFormData: {
             listChild: ['a', 'a'],
@@ -57,11 +56,11 @@ const RuleUnique = () => {
             return (
                 <div key={index}>
                     <TextField
-                        error={!!get(validationError, `listChild{${index}}`)}
-                        helperText={get(validationError, `listChild{${index}}`) || ' '}
+                        error={!!getError(`listChild{${index}}`)}
+                        helperText={getError(`listChild{${index}}`) || ' '}
                         label="unique"
                         type="text"
-                        value={get(formData, `listChild[${index}]`) || ''}
+                        value={getValue(`listChild[${index}]`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}]`, e.target.value)}
                     />
                     <Button className="myDeleteButton" variant="contained" onClick={() => handleDeleteElement(index)}>
@@ -92,11 +91,11 @@ const RuleUnique = () => {
             return (
                 <div key={lc.id}>
                     <TextField
-                        error={!!get(validationError, `listOfObjectsChild{${index}}.subkey1`)}
-                        helperText={get(validationError, `listOfObjectsChild{${index}}.subkey1`) || ' '}
+                        error={!!getError(`listOfObjectsChild{${index}}.subkey1`)}
+                        helperText={getError(`listOfObjectsChild{${index}}.subkey1`) || ' '}
                         label="unique subkey"
                         type="text"
-                        value={get(formData, `listOfObjectsChild[${index}].subkey1`) || ''}
+                        value={getValue(`listOfObjectsChild[${index}].subkey1`) || ''}
                         onChange={(e) => setPathValue(`listOfObjectsChild[${index}].subkey1`, e.target.value)}
                         id={`listOfObjectsChild{${index}}.subkey1`}
                     />
@@ -124,22 +123,22 @@ const RuleUnique = () => {
             </p>
             <div>
                 <div>
-                    <Button className="myAddButton" variant="contained" onClick={() => handleAddElement()}>
+                    <Button className="myAddButton" variant="contained" onClick={handleAddElement}>
                         <span className="myShinkableButtonSpan">Add New Element</span>
                         <AddIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
                 <div className={'formListField'}>{listChildJsx}</div>
-                <div className={'errorInfoText'}>{get(validationError, 'listChild')}</div>
+                <div className={'errorInfoText'}>{getError('listChild')}</div>
 
                 <div>
-                    <Button className="myAddButton" variant="contained" onClick={() => handleAddObjectElement()}>
+                    <Button className="myAddButton" variant="contained" onClick={handleAddObjectElement}>
                         <span className="myShinkableButtonSpan">Add New Element</span>
                         <AddIcon className="myShinkableButtonIcon" />
                     </Button>
                 </div>
                 <div className={'formListField'}>{listOfObjectsChildJsx}</div>
-                <div className={'errorInfoText'}>{get(validationError, 'listOfObjectsChild')}</div>
+                <div className={'errorInfoText'}>{getError('listOfObjectsChild')}</div>
                 <ValidationResult isValid={isValid} />
                 <CurrentRulesInfo currentRules={rules} />
             </div>

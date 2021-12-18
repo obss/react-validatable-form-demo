@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import { Link } from 'react-router-dom';
 import Checkbox from '@mui/material/Checkbox';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
@@ -57,11 +56,12 @@ const rules = [
 const AdvancedValidateListOfObjects = () => {
     const {
         isValid,
-        validationError,
         formData,
         setPathValue,
         setFormIsSubmitted,
         setPathIsBlurred,
+        getValue,
+        getError,
     } = useValidatableForm({
         rules,
         initialFormData: { listChild: [{ id: 1 }] },
@@ -99,22 +99,22 @@ const AdvancedValidateListOfObjects = () => {
                 <div key={lc.id} className="formListItem">
                     <TextField
                         style={{ width: 200 }}
-                        error={!!get(validationError, `listChild{${index}}.subkey1`)}
-                        helperText={get(validationError, `listChild{${index}}.subkey1`) || ' '}
+                        error={!!getError(`listChild{${index}}.subkey1`)}
+                        helperText={getError(`listChild{${index}}.subkey1`) || ' '}
                         label="lengthGreaterThan3"
                         type="text"
-                        value={get(formData, `listChild[${index}].subkey1`) || ''}
+                        value={getValue(`listChild[${index}].subkey1`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}].subkey1`, e.target.value)}
                         onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey1`)}
                         id={`listChild{${index}}.subkey1`}
                     />
                     <TextField
                         style={{ width: 200 }}
-                        error={!!get(validationError, `listChild{${index}}.subkey2`)}
-                        helperText={get(validationError, `listChild{${index}}.subkey2`) || ' '}
+                        error={!!getError(`listChild{${index}}.subkey2`)}
+                        helperText={getError(`listChild{${index}}.subkey2`) || ' '}
                         label="numberGreaterThan5"
                         type="number"
-                        value={get(formData, `listChild[${index}].subkey2`) || ''}
+                        value={getValue(`listChild[${index}].subkey2`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}].subkey2`, e.target.value)}
                         onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey2`)}
                         id={`listChild{${index}}.subkey2`}
@@ -122,17 +122,17 @@ const AdvancedValidateListOfObjects = () => {
                     disable
                     {
                         <Checkbox
-                            checked={get(formData, `listChild[${index}].disableSubkey2Rule`) || false}
+                            checked={getValue(`listChild[${index}].disableSubkey2Rule`) || false}
                             onChange={(e) => setPathValue(`listChild[${index}].disableSubkey2Rule`, e.target.checked)}
                         />
                     }
                     <TextField
                         style={{ width: 200 }}
-                        error={!!get(validationError, `listChild{${index}}.subkey3`)}
-                        helperText={get(validationError, `listChild{${index}}.subkey3`) || ' '}
+                        error={!!getError(`listChild{${index}}.subkey3`)}
+                        helperText={getError(`listChild{${index}}.subkey3`) || ' '}
                         label="required"
                         type="text"
-                        value={get(formData, `listChild[${index}].subkey3`) || ''}
+                        value={getValue(`listChild[${index}].subkey3`) || ''}
                         onChange={(e) => setPathValue(`listChild[${index}].subkey3`, e.target.value)}
                         onBlur={() => setPathIsBlurred(`listChild{${index}}.subkey3`)}
                         id={`listChild{${index}}.subkey3ElementId`}
@@ -172,15 +172,15 @@ const AdvancedValidateListOfObjects = () => {
                     <span style={{ marginLeft: 10 }}>disable all subkey2 rows</span>
                     {
                         <Checkbox
-                            checked={get(formData, `disableAllSubkey2Rule`) || false}
+                            checked={getValue(`disableAllSubkey2Rule`) || false}
                             onChange={(e) => setPathValue(`disableAllSubkey2Rule`, e.target.checked)}
                         />
                     }
                 </div>
                 <div className={'formListField'}>{listChildJsx}</div>
-                <div className={'errorInfoText'}>{get(validationError, 'listChild')}</div>
+                <div className={'errorInfoText'}>{getError('listChild')}</div>
                 <div>
-                    <Button className="mySubmitButton" variant="contained" onClick={() => handleFormSubmit()}>
+                    <Button className="mySubmitButton" variant="contained" onClick={handleFormSubmit}>
                         Submit Form
                     </Button>
                 </div>

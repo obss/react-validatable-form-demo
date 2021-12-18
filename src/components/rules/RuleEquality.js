@@ -1,5 +1,4 @@
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import ValidationResult from '../ValidationResult';
@@ -22,7 +21,7 @@ const rules = [
 ];
 
 const RuleEquality = () => {
-    const { isValid, validationError, formData, setPathValue } = useValidatableForm({
+    const { isValid, setPathValue, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
@@ -34,33 +33,33 @@ const RuleEquality = () => {
             </p>
             <div>
                 <FormGroup className={'checkboxOnRight'}>
-                    <FormControl error={!!get(validationError, 'val')}>
+                    <FormControl error={!!getError('val')}>
                         <FormControlLabel
                             control={
                                 <Checkbox
-                                    checked={get(formData, 'val') || false}
+                                    checked={getValue('val') || false}
                                     onChange={(e) => setPathValue('val', e.target.checked)}
                                 />
                             }
-                            label={<FormHelperText>{get(validationError, 'val') || ' '}</FormHelperText>}
+                            label={<FormHelperText>{getError('val') || ' '}</FormHelperText>}
                         />
                     </FormControl>
                 </FormGroup>
             </div>
             <div className="comparisonDiv">
                 <TextField
-                    error={!!get(validationError, 'val2')}
-                    helperText={get(validationError, 'val2') || ' '}
+                    error={!!getError('val2')}
+                    helperText={getError('val2') || ' '}
                     label="val2"
                     type="text"
-                    value={get(formData, 'val2') || ''}
+                    value={getValue('val2') || ''}
                     onChange={(e) => setPathValue('val2', e.target.value)}
                 />
                 <TextField
                     className="comparisonComponent"
                     label="comparisonValue"
                     type="text"
-                    value={get(formData, 'comparisonValue')}
+                    value={getValue('comparisonValue')}
                     onChange={(e) => setPathValue('comparisonValue', e.target.value)}
                 />
             </div>

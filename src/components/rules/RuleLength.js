@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -22,7 +21,7 @@ const initialFormData = {
 };
 
 const RuleLength = () => {
-    const { isValid, validationError, formData, setPathValue, setRules } = useValidatableForm({
+    const { isValid, setPathValue, setRules, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
@@ -63,11 +62,11 @@ const RuleLength = () => {
             </p>
             <div className="comparisonDiv">
                 <TextField
-                    error={!!get(validationError, 'val')}
-                    helperText={get(validationError, 'val') || ' '}
+                    error={!!getError('val')}
+                    helperText={getError('val') || ' '}
                     label="val"
                     type="text"
-                    value={get(formData, 'val')}
+                    value={getValue('val')}
                     onChange={(e) => setPathValue('val', e.target.value)}
                 />
 
@@ -86,7 +85,7 @@ const RuleLength = () => {
                         className="comparisonComponent"
                         label="comparisonValue"
                         type="number"
-                        value={get(formData, 'comparisonValue')}
+                        value={getValue('comparisonValue')}
                         onChange={(e) => setPathValue('comparisonValue', e.target.value)}
                     />
                 ) : (

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import get from 'lodash.get';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -23,7 +22,7 @@ const initialFormData = {
 };
 
 const RuleListSize = () => {
-    const { isValid, validationError, formData, setPathValue, setRules } = useValidatableForm({
+    const { isValid, setPathValue, setRules, getValue, getError } = useValidatableForm({
         rules,
         initialFormData,
     });
@@ -65,7 +64,7 @@ const RuleListSize = () => {
             <div className="comparisonDiv">
                 <Autocomplete
                     multiple
-                    value={get(formData, 'val')}
+                    value={getValue('val')}
                     onChange={(event, newValue) => {
                         setPathValue('val', newValue);
                     }}
@@ -73,8 +72,8 @@ const RuleListSize = () => {
                     renderInput={(params) => (
                         <TextField
                             {...params}
-                            error={!!validationError.val}
-                            helperText={validationError.val || ' '}
+                            error={!!getError('val')}
+                            helperText={getError('val') || ' '}
                             label="equalTo"
                         />
                     )}
@@ -95,7 +94,7 @@ const RuleListSize = () => {
                         className="comparisonComponent"
                         label="comparisonValue"
                         type="number"
-                        value={get(formData, 'comparisonValue')}
+                        value={getValue('comparisonValue')}
                         onChange={(e) => setPathValue('comparisonValue', e.target.value)}
                     />
                 ) : (
