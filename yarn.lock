@@ -10821,10 +10821,10 @@ react-transition-group@^4.4.1, react-transition-group@^4.4.2:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-validatable-form@2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/react-validatable-form/-/react-validatable-form-2.5.2.tgz#2a0be2f4375858c2786e85aa70004f7cd20b6a61"
-  integrity sha512-V2oOmFnZ5f88ArnEOdttDGfy1bBKIWCQj6JWbIc9OFhljJpBV6gccPR79mlx1EhNYTfgeuuCZVG1WxyRBnDodQ==
+react-validatable-form@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/react-validatable-form/-/react-validatable-form-2.6.0.tgz#9f55e2335d311bd341b8de089f5a51dc17740f0d"
+  integrity sha512-MT5SGv5GcMfi4rIu3FZUvElfIvaQYzcsymKQucp6CWX9wHTAlVnCtxFh44twe6A69JuKvPNWYNli106SgQZiOA==
   dependencies:
     lodash.get "4.4.2"
     lodash.set "4.3.2"
