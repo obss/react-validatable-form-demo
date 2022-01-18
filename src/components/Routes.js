@@ -46,6 +46,7 @@ import ExampleValidationError from './examples/ExampleValidationError';
 import ExampleSetRules from './examples/ExampleSetRules';
 import ExampleUnsetPathValue from './examples/ExampleUnsetPathValue';
 import ExampleValidationErrorOriginalResult from './examples/ExampleValidationErrorOriginalResult';
+import ExampleUnsetPathIsBlurred from './examples/ExampleUnsetPathIsBlurred';
 
 const Routes = (props) => {
     return (
@@ -170,6 +171,9 @@ const Routes = (props) => {
                     </Route>
                     <Route exact path="/examples/validation-error-original-result">
                         <ExampleValidationErrorOriginalResult />
+                    </Route>
+                    <Route exact path="/examples/unset-path-is-blurred">
+                        <ExampleUnsetPathIsBlurred />
                     </Route>
                     <Route exact path="/api/react-validatable-form-provider">
                         <ApiReactValidatableFormProvider openSettingsDialog={props.openSettingsDialog} />

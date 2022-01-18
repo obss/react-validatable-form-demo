@@ -3,8 +3,9 @@ import ApiInfo from '../ApiInfo';
 import CodeAccordion from '../CodeAccordion';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
 
-const useValidatableFormCode = `const {isValid, validationError, validationErrorOriginalResult, formData, setPathValue, unsetPathValue, setFormIsSubmitted,
-    setPathIsBlurred, setFormData, setRules, setFormDataAndRules, resetForm, getValue, getError, forceRunAllValidations } = 
+const useValidatableFormCode = `const {isValid, validationError, validationErrorOriginalResult, formData, setPathValue, 
+    unsetPathValue, setFormIsSubmitted, setPathIsBlurred, unsetPathIsBlurred, setFormData, 
+    setRules, setFormDataAndRules, resetForm, getValue, getError, forceRunAllValidations } = 
     useValidatableForm({
         rules,
         initialFormData,
@@ -170,6 +171,22 @@ const returnValuesApiInfoList = [
         ),
         desc:
             'Function to set element of path is blurred info true and unhide its current validation result if showAfterBlur parameter is set true.',
+    },
+    {
+        label: (
+            <div>
+                unsetPathIsBlurred(path){' '}
+                <Link className="inner-link" to="/api/path">
+                    See Path API
+                </Link>
+                {' - '}
+                <Link className="inner-link" to="/examples/unset-path-is-blurred">
+                    See Example
+                </Link>
+            </div>
+        ),
+        desc:
+            'Function to unset element of path is blurred info and hide its current validation result if showAfterBlur parameter is set true.',
     },
     {
         label: (

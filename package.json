@@ -1,6 +1,6 @@
 {
   "name": "react-validatable-form-demo",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "private": false,
   "homepage": "http://obss.github.io/react-validatable-form-demo",
   "devDependencies": {
@@ -37,7 +37,7 @@
     "react-router-dom": "5.2.0",
     "react-router-sitemap": "1.2.0",
     "react-scripts": "4.0.3",
-    "react-validatable-form": "2.6.0",
+    "react-validatable-form": "2.7.0",
     "web-vitals": "1.0.1"
   },
   "scripts": {

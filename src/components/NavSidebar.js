@@ -199,6 +199,10 @@ const allMenuItems = [
                 title: 'validationErrorOriginalResult',
                 itemId: '/examples/validation-error-original-result',
             },
+            {
+                title: 'unsetPathIsBlurred',
+                itemId: '/examples/unset-path-is-blurred',
+            },
         ],
     },
     {
@@ -237,6 +241,7 @@ const allMenuItems = [
                     'unsetPathValue',
                     'setFormIsSubmitted',
                     'setPathIsBlurred',
+                    'unsetPathIsBlurred',
                     'setFormData',
                     'setRules',
                     'setFormDataAndRules',
