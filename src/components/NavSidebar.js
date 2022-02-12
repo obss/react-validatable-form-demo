@@ -66,6 +66,10 @@ const allMenuItems = [
                 itemId: '/rules/equality',
             },
             {
+                title: 'includes',
+                itemId: '/rules/includes',
+            },
+            {
                 title: 'regex',
                 itemId: '/rules/regex',
             },

@@ -47,6 +47,7 @@ import ExampleSetRules from './examples/ExampleSetRules';
 import ExampleUnsetPathValue from './examples/ExampleUnsetPathValue';
 import ExampleValidationErrorOriginalResult from './examples/ExampleValidationErrorOriginalResult';
 import ExampleUnsetPathIsBlurred from './examples/ExampleUnsetPathIsBlurred';
+import RuleIncludes from './rules/RuleIncludes';
 
 const Routes = (props) => {
     return (
@@ -87,6 +88,9 @@ const Routes = (props) => {
                     </Route>
                     <Route exact path="/rules/equality">
                         <RuleEquality />
+                    </Route>
+                    <Route exact path="/rules/includes">
+                        <RuleIncludes />
                     </Route>
                     <Route exact path="/rules/regex">
                         <RuleRegex />
