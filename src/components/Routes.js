@@ -1,4 +1,4 @@
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { NavSidebar } from './NavSidebar';
 import Homepage from './Homepage';
 import RuleRequired from './rules/RuleRequired';
@@ -40,7 +40,6 @@ import ApiUseValidatableForm from './api/ApiUseValidatableForm';
 import ApiReactValidatableFormProvider from './api/ApiReactValidatableFormProvider';
 import ApiRules from './api/ApiRules';
 import ApiRule from './api/ApiRule';
-import Settings from './Settings';
 import ApiPath from './api/ApiPath';
 import ExampleValidationError from './examples/ExampleValidationError';
 import ExampleSetRules from './examples/ExampleSetRules';

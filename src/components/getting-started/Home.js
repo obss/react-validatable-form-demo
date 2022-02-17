@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
 import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
@@ -6,6 +6,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import './Installation.css';
 import { useState } from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 const npmCommand = 'npm install react-validatable-form';
 const yarnCommand = 'yarn add react-validatable-form';
@@ -89,37 +90,45 @@ const Home = () => {
                 </Tooltip>
             </Box>
             <Box display={'flex'} gap={1} flexWrap={'wrap'} py={1}>
-                <a href={'https://www.npmjs.com/package/react-validatable-form'}>
+                <a href={'https://www.npmjs.com/package/react-validatable-form'} target={'_blank'} rel="noreferrer">
                     <img
                         src={'https://img.shields.io/npm/v/react-validatable-form?label=npm%20%7C%20web'}
                         alt={'npm'}
                     />
                 </a>
-                <a href={'https://github.com/obss/react-validatable-form/blob/master/LICENSE'}>
+                <a
+                    href={'https://github.com/obss/react-validatable-form/blob/master/LICENSE'}
+                    target={'_blank'}
+                    rel="noreferrer"
+                >
                     <img
                         src={'https://img.shields.io/github/license/obss/react-validatable-form.svg'}
                         alt={'license'}
                     />
                 </a>
-                <a href={'https://github.com/obss/react-validatable-form/graphs/contributors'}>
+                <a
+                    href={'https://github.com/obss/react-validatable-form/graphs/contributors'}
+                    target={'_blank'}
+                    rel="noreferrer"
+                >
                     <img
                         src={'https://img.shields.io/github/contributors/obss/react-validatable-form'}
                         alt={'github'}
                     />
                 </a>
-                <a href={'https://github.com/obss/react-validatable-form/issues'}>
+                <a href={'https://github.com/obss/react-validatable-form/issues'} target={'_blank'} rel="noreferrer">
                     <img src={'https://img.shields.io/github/issues/obss/react-validatable-form.svg'} alt={'issue'} />
                 </a>
-                <a href={'https://github.com/obss/react-validatable-form'}>
+                <a href={'https://github.com/obss/react-validatable-form'} target={'_blank'} rel="noreferrer">
                     <img
                         src={'https://img.shields.io/snyk/vulnerabilities/github/obss/react-validatable-form'}
                         alt={'vulnerabilities'}
                     />
                 </a>
-                <a href={'https://www.npmjs.com/package/react-validatable-form'}>
+                <a href={'https://www.npmjs.com/package/react-validatable-form'} target={'_blank'} rel="noreferrer">
                     <img src={'https://img.shields.io/npm/dw/react-validatable-form.svg'} alt={'download'} />
                 </a>
-                <a href={'https://www.npmjs.com/package/react-validatable-form'}>
+                <a href={'https://www.npmjs.com/package/react-validatable-form'} target={'_blank'} rel="noreferrer">
                     <img src={'https://img.shields.io/bundlephobia/min/react-validatable-form'} alt={'size'} />
                 </a>
             </Box>
@@ -127,22 +136,21 @@ const Home = () => {
                 <Button
                     size={'large'}
                     href={'https://github.com/obss/react-validatable-form'}
+                    target={'_blank'}
                     variant={'outlined'}
                     sx={{ borderRadius: '30px' }}
                 >
                     GitHub
                 </Button>
-                <Button
-                    size={'large'}
-                    href={'http://localhost:3005/#/getting-started/installation'}
-                    variant={'contained'}
-                    sx={{ borderRadius: '30px' }}
-                >
-                    Get Started
-                </Button>
+                <Link to={'/getting-started/installation'}>
+                    <Button size={'large'} variant={'contained'} sx={{ borderRadius: '30px' }}>
+                        Get Started
+                    </Button>
+                </Link>
                 <Button
                     size={'large'}
                     href={'https://github.com/obss/react-validatable-form/issues'}
+                    target={'_blank'}
                     variant={'outlined'}
                     sx={{ borderRadius: '30px' }}
                 >

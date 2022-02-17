@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ReactValidatableFormProvider } from 'react-validatable-form';
-import { AppBar, Box, Dialog, DialogTitle, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Dialog, DialogTitle, Toolbar } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -13,7 +13,7 @@ import BodyWrapper from './BodyWrapper';
 import Routes from './Routes';
 import ExampleUsageWrapper from './ExampleUsageWrapper';
 import Settings from './Settings';
-import { HashRouter, Link, useHistory } from 'react-router-dom';
+import { HashRouter, Link } from 'react-router-dom';
 import MainDrawer from './MainDrawer';
 
 const MyCustomRuleFunction = (ruleParams) => {
@@ -241,7 +241,7 @@ const Main = () => {
     return (
         <HashRouter>
             <div className={'obssTriangle'}>
-                <a className={'triangleIcon'} href={'https://obss.com.tr/tr/'}>
+                <a className={'triangleIcon'} href={'https://obss.com.tr/'} target={'_blank'} rel="noreferrer">
                     <img src={process.env.PUBLIC_URL + '/obss.png'} alt={'obss'} />
                 </a>
             </div>
