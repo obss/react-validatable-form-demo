@@ -1,4 +1,3 @@
-import { Navigation } from 'react-minimal-side-navigation';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
@@ -8,18 +7,14 @@ import {
     AccordionDetails,
     AccordionSummary,
     Box,
-    Container,
-    Divider,
     InputAdornment,
     List,
     ListItem,
-    ListItemButton,
     ListItemText,
     TextField,
     Typography,
 } from '@mui/material';
 import { ExpandMore, Search } from '@mui/icons-material';
-import AccordionBody from 'react-bootstrap/AccordionBody';
 
 const allMenuItems = [
     {
@@ -345,13 +340,6 @@ export const NavSidebar = ({ menuIsHidden, onMenuItemSelect, toggleDrawer }) => 
         }
     }, [location]);
 
-    const onItemSelect = ({ itemId }) => {
-        if (itemId.includes('/') && location.pathname !== itemId) {
-            history.push(itemId);
-            onMenuItemSelect();
-        }
-    };
-
     const handleTextInput = (event) => {
         setSearchInput(event.target.value);
         if (event.target.value !== '') {
@@ -400,18 +388,6 @@ export const NavSidebar = ({ menuIsHidden, onMenuItemSelect, toggleDrawer }) => 
         });
     }
 
-    const navigations = filteredMenuItems.map((fm) => {
-        const itemWithSubItems = filteredMenuItems.filter((m) => m.itemId === fm.itemId);
-        const isActiveGroupElement = itemWithSubItems[0].subNav.filter((m) => m.itemId === firstPathname).length > 0;
-        let activeItemId = firstPathname;
-        if (!isActiveGroupElement && searchInput) {
-            activeItemId = fm.itemId;
-        }
-        return (
-            <Navigation key={fm.itemId} activeItemId={activeItemId} onSelect={onItemSelect} items={itemWithSubItems} />
-        );
-    });
-
     const accordionNavigations = filteredMenuItems.map((fm) => {
         return (
             <Accordion
@@ -426,7 +402,11 @@ export const NavSidebar = ({ menuIsHidden, onMenuItemSelect, toggleDrawer }) => 
                     <List disablePadding>
                         {fm.subNav.map((sn) => {
                             return (
-                                <div key={sn.itemId} onClick={handleClickList}>
+                                <div
+                                    className={location.pathname.includes(sn.itemId) ? 'selectedSideItem' : null}
+                                    key={sn.itemId}
+                                    onClick={handleClickList}
+                                >
                                     <Link to={sn.itemId}>
                                         <ListItem button>
                                             <ListItemText primary={sn.title} />

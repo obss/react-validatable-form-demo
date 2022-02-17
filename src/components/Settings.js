@@ -1,5 +1,4 @@
 import Button from '@mui/material/Button';
-import EditIcon from '@mui/icons-material/Edit';
 import Tooltip from '@mui/material/Tooltip';
 import './Settings.css';
 import { SettingsOutlined } from '@mui/icons-material';
