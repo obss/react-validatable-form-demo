@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactValidatableFormProvider } from 'react-validatable-form';
-import { Dialog, DialogTitle } from '@mui/material';
+import { AppBar, Box, Dialog, DialogTitle, Toolbar, Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -12,6 +12,9 @@ import './Main.css';
 import BodyWrapper from './BodyWrapper';
 import Routes from './Routes';
 import ExampleUsageWrapper from './ExampleUsageWrapper';
+import Settings from './Settings';
+import { HashRouter, Link, useHistory } from 'react-router-dom';
+import MainDrawer from './MainDrawer';
 
 const MyCustomRuleFunction = (ruleParams) => {
     const { value } = ruleParams;
@@ -78,6 +81,7 @@ const Main = () => {
     const [currentSettings, setCurrentSettings] = useState(defaultSettings);
     const [settingsDialogOpen, setSettingsDialogOpen] = useState(false);
     const [menuIsHidden, setMenuIsHidden] = useState(false);
+    const [anchor, setAnchor] = useState(false);
 
     useEffect(() => {
         setMenuIsHidden(isMobile);
@@ -222,12 +226,45 @@ const Main = () => {
         </div>
     );
 
+    const toggleDrawer = (open) => {
+        setAnchor(open);
+    };
+
+    const handleMenuButton = () => {
+        if (isMobile) {
+            toggleDrawer(!anchor);
+        } else {
+            setMenuIsHidden(!menuIsHidden);
+        }
+    };
+
     return (
-        <>
-            <div className="headerDiv"></div>
-            <IconButton onClick={() => setMenuIsHidden(!menuIsHidden)} className="menuButton">
-                <MenuIcon />
-            </IconButton>
+        <HashRouter>
+            <div className={'obssTriangle'}>
+                <a className={'triangleIcon'} href={'https://obss.com.tr/tr/'}>
+                    <img src={process.env.PUBLIC_URL + '/obss.png'} alt={'obss'} />
+                </a>
+            </div>
+            <Box flexGrow={1}>
+                <AppBar color={'transparent'} position={'relative'}>
+                    <Toolbar>
+                        <IconButton onClick={() => handleMenuButton()} className="menuButton">
+                            <MenuIcon />
+                        </IconButton>
+                        <Link to={'/'}>
+                            <img
+                                width={48}
+                                className={'menuLogo'}
+                                src={process.env.PUBLIC_URL + '/logo.png'}
+                                alt={'logo'}
+                            />
+                        </Link>
+                        <Box flexGrow={1} />
+                        <Settings openSettingsDialog={openSettingsDialog} />
+                    </Toolbar>
+                </AppBar>
+            </Box>
+            <MainDrawer anchor={anchor} open={anchor} toggleDrawer={toggleDrawer} />
             <Dialog open={settingsDialogOpen} onClose={() => setSettingsDialogOpen(false)}>
                 <DialogTitle>
                     <ExampleUsageWrapper
@@ -250,17 +287,18 @@ const Main = () => {
                 elementFocusHandler={customElementFocusHandler}
             >
                 <BodyWrapper>
-                    <div className="flex h-screen">
+                    <div className="flex">
                         <Routes
                             onMenuItemSelect={handleOnMenuItemSelect}
                             openSettingsDialog={openSettingsDialog}
                             menuIsHidden={menuIsHidden}
                             onOutsideClick={handleOutsideClick}
+                            toggleDrawer={toggleDrawer}
                         />
                     </div>
                 </BodyWrapper>
             </ReactValidatableFormProvider>
-        </>
+        </HashRouter>
     );
 };
 

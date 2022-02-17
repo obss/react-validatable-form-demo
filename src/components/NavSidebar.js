@@ -1,16 +1,36 @@
 import { Navigation } from 'react-minimal-side-navigation';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
-import { InputAdornment, TextField } from '@mui/material';
-import { Search } from '@mui/icons-material';
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Box,
+    Container,
+    Divider,
+    InputAdornment,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    TextField,
+    Typography,
+} from '@mui/material';
+import { ExpandMore, Search } from '@mui/icons-material';
+import AccordionBody from 'react-bootstrap/AccordionBody';
 
 const allMenuItems = [
     {
         title: 'Getting Started',
         itemId: 'group1',
         subNav: [
+            {
+                title: 'Home',
+                itemId: '/getting-started/home',
+                keywords: ['home', 'npm', 'yarn'],
+            },
             {
                 title: 'Installation',
                 itemId: '/getting-started/installation',
@@ -296,31 +316,61 @@ const allMenuItems = [
     },
 ];
 
-export const NavSidebar = ({ menuIsHidden, onMenuItemSelect }) => {
+export const NavSidebar = ({ menuIsHidden, onMenuItemSelect, toggleDrawer }) => {
     const history = useHistory();
     const location = useLocation();
     const [searchInput, setSearchInput] = useState('');
     const [firstPathname, setFirstPathname] = useState(null);
+    const [expanded, setExpanded] = useState('');
 
     useEffect(() => {
         setSearchInput('');
         if (location.pathname === '/') {
-            setFirstPathname('/getting-started/installation');
+            setFirstPathname('/getting-started/home');
         } else {
             setFirstPathname(location.pathname);
         }
+        if (location.pathname.includes('/getting-started/')) {
+            setExpanded('group1');
+        } else if (location.pathname.includes('/rules/')) {
+            setExpanded('group2');
+        } else if (location.pathname.includes('/advanced/')) {
+            setExpanded('group3');
+        } else if (location.pathname.includes('/customizations/')) {
+            setExpanded('group4');
+        } else if (location.pathname.includes('/examples/')) {
+            setExpanded('group5');
+        } else if (location.pathname.includes('/api/')) {
+            setExpanded('group6');
+        }
     }, [location]);
-
-    const onNameClick = () => {
-        history.push('/');
-        onMenuItemSelect();
-    };
 
     const onItemSelect = ({ itemId }) => {
         if (itemId.includes('/') && location.pathname !== itemId) {
             history.push(itemId);
             onMenuItemSelect();
         }
+    };
+
+    const handleTextInput = (event) => {
+        setSearchInput(event.target.value);
+        if (event.target.value !== '') {
+            setExpanded('open');
+        } else {
+            setExpanded('');
+        }
+    };
+
+    const handleAccordionChange = (id) => {
+        if (id === expanded) {
+            setExpanded('');
+        } else {
+            setExpanded(id);
+        }
+    };
+
+    const handleClickList = () => {
+        toggleDrawer(false);
     };
 
     let filteredMenuItems = JSON.parse(JSON.stringify(allMenuItems));
@@ -362,21 +412,46 @@ export const NavSidebar = ({ menuIsHidden, onMenuItemSelect }) => {
         );
     });
 
+    const accordionNavigations = filteredMenuItems.map((fm) => {
+        return (
+            <Accordion
+                expanded={expanded === fm.itemId || expanded === 'open'}
+                key={fm.itemId}
+                onChange={() => handleAccordionChange(fm.itemId)}
+            >
+                <AccordionSummary aria-controls="panel1a-content" expandIcon={<ExpandMore />}>
+                    <Typography> {fm.title} </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <List disablePadding>
+                        {fm.subNav.map((sn) => {
+                            return (
+                                <div key={sn.itemId} onClick={handleClickList}>
+                                    <Link to={sn.itemId}>
+                                        <ListItem button>
+                                            <ListItemText primary={sn.title} />
+                                        </ListItem>
+                                    </Link>
+                                </div>
+                            );
+                        })}
+                    </List>
+                </AccordionDetails>
+            </Accordion>
+        );
+    });
+
     const menuStatus = menuIsHidden ? 'sideMenuHidden' : 'sideMenuOpen';
 
     return (
         <>
             <div
-                className={`${menuStatus} mysidemenu fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 ease-out transform translate-x-0 bg-white border-r-2 lg:translate-x-0 lg:static lg:inset-0 ${'ease-out translate-x-0'}`}
+                className={`${menuStatus} mysidemenu inset-y-0 left-0 z-30 overflow-y-auto transition duration-300 ease-out transform translate-x-0 bg-white border-r-2 lg:translate-x-0 lg:static lg:inset-0 ${'ease-out translate-x-0'}`}
             >
-                <div className="flex items-center justify-center text-center py-6 libraryName" onClick={onNameClick}>
-                    <span className="mx-2 text-xl font-semibold text-black">react-validatable-form</span>
-                </div>
-
                 <div className="flex items-center justify-center text-center">
                     <TextField
                         className="menu-search-input"
-                        label="search"
+                        label="Search"
                         InputProps={{
                             endAdornment: (
                                 <InputAdornment position="end">
@@ -385,10 +460,12 @@ export const NavSidebar = ({ menuIsHidden, onMenuItemSelect }) => {
                             ),
                         }}
                         value={searchInput}
-                        onChange={(e) => setSearchInput(e.target.value)}
+                        onChange={handleTextInput}
                     />
                 </div>
-                {navigations}
+                <Box flexGrow={1} pt={1}>
+                    {accordionNavigations}
+                </Box>
             </div>
         </>
     );
