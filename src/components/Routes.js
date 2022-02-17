@@ -48,14 +48,21 @@ import ExampleUnsetPathValue from './examples/ExampleUnsetPathValue';
 import ExampleValidationErrorOriginalResult from './examples/ExampleValidationErrorOriginalResult';
 import ExampleUnsetPathIsBlurred from './examples/ExampleUnsetPathIsBlurred';
 import RuleIncludes from './rules/RuleIncludes';
+import Home from './getting-started/Home';
 
 const Routes = (props) => {
     return (
-        <HashRouter>
-            <NavSidebar menuIsHidden={props.menuIsHidden} onMenuItemSelect={props.onMenuItemSelect} />
+        <>
+            <NavSidebar
+                toggleDrawer={props.toggleDrawer}
+                menuIsHidden={props.menuIsHidden}
+                onMenuItemSelect={props.onMenuItemSelect}
+            />
             <div className="generalDiv" onClick={props.onOutsideClick}>
-                <Settings openSettingsDialog={props.openSettingsDialog} />
                 <Switch>
+                    <Route exact path="/getting-started/home">
+                        <Home />
+                    </Route>
                     <Route exact path="/getting-started/installation">
                         <Installation />
                     </Route>
@@ -199,7 +206,7 @@ const Routes = (props) => {
                     </Route>
                 </Switch>
             </div>
-        </HashRouter>
+        </>
     );
 };
 

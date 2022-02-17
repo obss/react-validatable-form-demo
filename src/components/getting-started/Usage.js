@@ -77,6 +77,13 @@ const rules = [{ path: 'val', ruleSet: [{ rule: 'required' }] }];
             <div className="codeBox">
                 <span>{hookCode}</span>
             </div>
+            <iframe
+                src="https://codesandbox.io/embed/vigorous-paper-dht66q"
+                className="codesandboxIFrame"
+                title="vigorous-paper-dht66q"
+                allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+            ></iframe>
         </ExampleUsageWrapper>
     );
 };
