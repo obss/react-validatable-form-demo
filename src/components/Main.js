@@ -93,12 +93,6 @@ const Main = () => {
         }
     };
 
-    const handleOnMenuItemSelect = () => {
-        if (isMobile) {
-            setMenuIsHidden(true);
-        }
-    };
-
     const openSettingsDialog = () => {
         setSettingsDialogOpen(true);
     };
@@ -248,16 +242,17 @@ const Main = () => {
             <Box flexGrow={1}>
                 <AppBar color={'transparent'} position={'relative'}>
                     <Toolbar>
-                        <IconButton onClick={() => handleMenuButton()} className="menuButton">
+                        <IconButton onClick={handleMenuButton} className="menuButton">
                             <MenuIcon />
                         </IconButton>
-                        <Link to={'/'}>
+                        <Link to={'/'} className="bannerLink">
                             <img
                                 width={48}
                                 className={'menuLogo'}
                                 src={process.env.PUBLIC_URL + '/logo.png'}
                                 alt={'logo'}
                             />
+                            <span className="bannerText">react-validatable-form</span>
                         </Link>
                         <Box flexGrow={1} />
                         <Settings openSettingsDialog={openSettingsDialog} />
@@ -289,7 +284,6 @@ const Main = () => {
                 <BodyWrapper>
                     <div className="flex">
                         <Routes
-                            onMenuItemSelect={handleOnMenuItemSelect}
                             openSettingsDialog={openSettingsDialog}
                             menuIsHidden={menuIsHidden}
                             onOutsideClick={handleOutsideClick}

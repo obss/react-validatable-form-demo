@@ -1,4 +1,4 @@
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
@@ -311,20 +311,13 @@ const allMenuItems = [
     },
 ];
 
-export const NavSidebar = ({ menuIsHidden, onMenuItemSelect, toggleDrawer }) => {
-    const history = useHistory();
+export const NavSidebar = ({ menuIsHidden, toggleDrawer }) => {
     const location = useLocation();
     const [searchInput, setSearchInput] = useState('');
-    const [firstPathname, setFirstPathname] = useState(null);
     const [expanded, setExpanded] = useState('');
 
     useEffect(() => {
         setSearchInput('');
-        if (location.pathname === '/') {
-            setFirstPathname('/getting-started/home');
-        } else {
-            setFirstPathname(location.pathname);
-        }
         if (location.pathname.includes('/getting-started/')) {
             setExpanded('group1');
         } else if (location.pathname.includes('/rules/')) {

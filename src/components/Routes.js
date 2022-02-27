@@ -52,11 +52,7 @@ import Home from './getting-started/Home';
 const Routes = (props) => {
     return (
         <>
-            <NavSidebar
-                toggleDrawer={props.toggleDrawer}
-                menuIsHidden={props.menuIsHidden}
-                onMenuItemSelect={props.onMenuItemSelect}
-            />
+            <NavSidebar toggleDrawer={props.toggleDrawer} menuIsHidden={props.menuIsHidden} />
             <div className="generalDiv" onClick={props.onOutsideClick}>
                 <Switch>
                     <Route exact path="/getting-started/home">

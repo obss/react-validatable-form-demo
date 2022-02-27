@@ -3,6 +3,7 @@
   "version": "2.8.0",
   "private": false,
   "homepage": "http://obss.github.io/react-validatable-form-demo",
+  "license": "MIT",
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-preset-es2015": "6.24.1",
