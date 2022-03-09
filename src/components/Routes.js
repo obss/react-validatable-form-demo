@@ -48,6 +48,8 @@ import ExampleValidationErrorOriginalResult from './examples/ExampleValidationEr
 import ExampleUnsetPathIsBlurred from './examples/ExampleUnsetPathIsBlurred';
 import RuleIncludes from './rules/RuleIncludes';
 import Home from './getting-started/Home';
+import ExampleAntUsage from './examples/ExampleAntUsage';
+import '../App.css';
 
 const Routes = (props) => {
     return (
@@ -147,6 +149,9 @@ const Routes = (props) => {
                     </Route>
                     <Route exact path="/examples/mui">
                         <ExampleMuiUsage />
+                    </Route>
+                    <Route exact path="/examples/ant">
+                        <ExampleAntUsage />
                     </Route>
                     <Route exact path="/examples/prime-react">
                         <ExamplePrimeReact />

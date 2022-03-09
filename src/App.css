@@ -348,3 +348,7 @@ input {
 .selectedSideItem{
     background-color: lightgrey;
 }
+
+.generalDiv{
+    width: 100%;
+}
