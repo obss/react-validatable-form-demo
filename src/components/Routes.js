@@ -150,7 +150,7 @@ const Routes = (props) => {
                     <Route exact path="/examples/mui">
                         <ExampleMuiUsage />
                     </Route>
-                    <Route exact path="/examples/ant">
+                    <Route exact path="/examples/antd">
                         <ExampleAntUsage />
                     </Route>
                     <Route exact path="/examples/prime-react">

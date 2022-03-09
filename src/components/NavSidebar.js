@@ -179,8 +179,8 @@ const allMenuItems = [
                 keywords: ['materialui', 'material-ui'],
             },
             {
-                title: 'Ant Components',
-                itemId: '/examples/ant',
+                title: 'Ant Design Components',
+                itemId: '/examples/antd',
             },
             {
                 title: 'PrimeReact Components',

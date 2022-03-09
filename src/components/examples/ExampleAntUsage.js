@@ -42,7 +42,7 @@ const ExampleAntUsage = () => {
 
     return (
         <ExampleUsageWrapper
-            header="Example Usage with Ant Components"
+            header="Example Usage with Ant Design Components"
             codeUrl="components/examples/ExampleAntUsage.js"
         >
             <div>
