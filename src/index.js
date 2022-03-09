@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'antd/lib/input/style/index.css';
+import 'antd/lib/button/style/index.css';
+import 'antd/dist/antd.css';
 import './styles/sidenavigation.css';
 import App from './App';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
