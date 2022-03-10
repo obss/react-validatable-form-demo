@@ -1,7 +1,7 @@
 import { useValidatableForm } from 'react-validatable-form';
 import { useState } from 'react';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
-import { Button, Form, Input, Modal, Select, Typography } from 'antd';
+import { Button, Input, Modal, Select, Typography } from 'antd';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
 import { options } from '../../constants/Data';
@@ -100,7 +100,7 @@ const ExampleAntUsage = () => {
                         style={{ width: '100%' }}
                         status={getError('selectVal') ? 'error' : null}
                         placeholder={'Select Val'}
-                        onChange={(event, newValue) => {
+                        onChange={(event) => {
                             setPathValue('selectVal', event);
                         }}
                         optionLabelProp="label"
