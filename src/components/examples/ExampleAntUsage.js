@@ -1,7 +1,7 @@
 import { useValidatableForm } from 'react-validatable-form';
 import { useState } from 'react';
 import ExampleUsageWrapper from '../ExampleUsageWrapper';
-import { Button, Form, Input, Modal, Select } from 'antd';
+import { Button, Form, Input, Modal, Select, Typography } from 'antd';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
 import { options } from '../../constants/Data';
@@ -58,6 +58,9 @@ const ExampleAntUsage = () => {
                         onBlur={() => setPathIsBlurred('textVal1')}
                         id="textVal1"
                     />
+                    {getError('textVal1') ? (
+                        <Typography.Text type={'danger'}> {getError('textVal1')} </Typography.Text>
+                    ) : null}
                 </div>
                 <div>
                     <Input
@@ -70,6 +73,9 @@ const ExampleAntUsage = () => {
                         onBlur={() => setPathIsBlurred('textVal2')}
                         id="textVal2"
                     />
+                    {getError('textVal2') ? (
+                        <Typography.Text type={'danger'}> {getError('textVal2')} </Typography.Text>
+                    ) : null}
                 </div>
                 <div>
                     <Input
@@ -82,6 +88,9 @@ const ExampleAntUsage = () => {
                         onBlur={() => setPathIsBlurred('numVal')}
                         id="numVal"
                     />
+                    {getError('numVal') ? (
+                        <Typography.Text type={'danger'}> {getError('numVal')} </Typography.Text>
+                    ) : null}
                 </div>
                 <div>
                     <Select
@@ -105,6 +114,9 @@ const ExampleAntUsage = () => {
                             );
                         })}
                     </Select>
+                    {getError('selectVal') ? (
+                        <Typography.Text type={'danger'}> {getError('selectVal')} </Typography.Text>
+                    ) : null}
                 </div>
 
                 <div>
