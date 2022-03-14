@@ -191,6 +191,10 @@ const allMenuItems = [
                 itemId: '/examples/react-bootstrap',
             },
             {
+                title: 'React Native Usage',
+                itemId: '/examples/react-native',
+            },
+            {
                 title: 'setFormData',
                 itemId: '/examples/set-form-data',
             },

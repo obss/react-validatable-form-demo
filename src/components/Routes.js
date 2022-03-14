@@ -50,6 +50,7 @@ import RuleIncludes from './rules/RuleIncludes';
 import Home from './getting-started/Home';
 import ExampleAntUsage from './examples/ExampleAntUsage';
 import '../App.css';
+import ExampleReactNativeUsage from './examples/ExampleReactNativeUsage';
 
 const Routes = (props) => {
     return (
@@ -158,6 +159,9 @@ const Routes = (props) => {
                     </Route>
                     <Route exact path="/examples/react-bootstrap">
                         <ExampleReactBootstrap />
+                    </Route>
+                    <Route exact path="/examples/react-native">
+                        <ExampleReactNativeUsage />
                     </Route>
                     <Route exact path="/examples/set-form-data">
                         <ExampleSetFormData />
