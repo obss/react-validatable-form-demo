@@ -20,7 +20,7 @@ const MyCustomRuleFunction = (ruleParams) => {
     const { value } = ruleParams;
 
     if (!value) {
-        return 'this field include is a required field';
+        return 'this field is a required field';
     }
 
     if (!value.includes('a') && value.length < 5) {
@@ -30,8 +30,23 @@ const MyCustomRuleFunction = (ruleParams) => {
     return null;
 };
 
+const MyCustomRule2Function = (ruleParams) => {
+    const { value } = ruleParams;
+
+    if (!value) {
+        return {};
+    }
+
+    if (!value.includes('a') && value.length < 5) {
+        return { value: value };
+    }
+
+    return null;
+};
+
 const customRules = {
     myCustomRule: MyCustomRuleFunction,
+    myCustomRule2: MyCustomRule2Function,
 };
 
 const defaultSettings = {
@@ -45,14 +60,26 @@ const defaultSettings = {
     customElementFocusHandlerEnabled: false,
 };
 
+const defaultTranslations = {
+    en: {
+        myCustomRule2:
+            "This is myCustomRule2. This field should have letter 'a' or its length should be greater than 4",
+    },
+    tr: {
+        myCustomRule2: "Bu kural myCustomRule2. Bu alan 'a' harfi içermeli veya uzunluğu 4'den büyük olmalı",
+    },
+};
+
 const customTranslations = {
     en: {
         required: 'This field is really required',
         'length.greaterThan': 'Believe me, this field should really have greater than ${comparisonValue} characters',
         'length.equalTo': 'You should be careful because this field should have ${comparisonValue} characters',
+        myCustomRule2: "Believe me, this field should have letter 'a' or its length should be greater than 4",
     },
     de: {
         required: 'Dieses Feld wird benötigt',
+        myCustomRule2: 'Dieses Feld sollte den Buchstaben „a“ haben oder länger als 4 sein',
     },
 };
 
@@ -111,6 +138,8 @@ const Main = () => {
     let translations = null;
     if (currentSettings.translationsEnabled) {
         translations = customTranslations;
+    } else {
+        translations = defaultTranslations;
     }
 
     let dateFormatterFunction = null;

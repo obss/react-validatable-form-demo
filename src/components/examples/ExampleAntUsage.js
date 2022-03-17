@@ -60,7 +60,9 @@ const ExampleAntUsage = () => {
                     />
                     {getError('textVal1') ? (
                         <Typography.Text type={'danger'}> {getError('textVal1')} </Typography.Text>
-                    ) : null}
+                    ) : (
+                        <div className={'my-antd-empty-feedback'}></div>
+                    )}
                 </div>
                 <div>
                     <Input
@@ -75,7 +77,9 @@ const ExampleAntUsage = () => {
                     />
                     {getError('textVal2') ? (
                         <Typography.Text type={'danger'}> {getError('textVal2')} </Typography.Text>
-                    ) : null}
+                    ) : (
+                        <div className={'my-antd-empty-feedback'}></div>
+                    )}
                 </div>
                 <div>
                     <Input
@@ -90,7 +94,9 @@ const ExampleAntUsage = () => {
                     />
                     {getError('numVal') ? (
                         <Typography.Text type={'danger'}> {getError('numVal')} </Typography.Text>
-                    ) : null}
+                    ) : (
+                        <div className={'my-antd-empty-feedback'}></div>
+                    )}
                 </div>
                 <div>
                     <Select
@@ -116,7 +122,9 @@ const ExampleAntUsage = () => {
                     </Select>
                     {getError('selectVal') ? (
                         <Typography.Text type={'danger'}> {getError('selectVal')} </Typography.Text>
-                    ) : null}
+                    ) : (
+                        <div className={'my-antd-empty-feedback'}></div>
+                    )}
                 </div>
 
                 <div>
