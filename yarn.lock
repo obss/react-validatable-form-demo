@@ -2803,7 +2803,7 @@ ansi-styles@^5.0.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-5.2.0.tgz#07449690ad45777d1924ac2abb2fc8895dba836b"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
 
-antd@^4.19.1:
+antd@4.19.1:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/antd/-/antd-4.19.1.tgz#af44c0972b7086588ee3d031e3fbe0af006371f9"
   integrity sha512-bPy/MSLzJGcHQH549B3WpTRitt1O3b35cD6UhAR+4AhKZjFmOqNc+gSUY5j+IsaKfdv+FeOGmUOqAr2jrc3Oyg==
@@ -11339,10 +11339,10 @@ react-transition-group@^4.4.1, react-transition-group@^4.4.2:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-validatable-form@2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/react-validatable-form/-/react-validatable-form-2.8.0.tgz#a89a9dc574db208d5f863a496cc9ff1bd90a0d42"
-  integrity sha512-nBKsioIfBucG8UR9KetVzDh7IDwWTMNgH0+LWZuV2G+utcI/J8nzh6oh87i1ReGR9WVba4JzHbKfS8WKu26czg==
+react-validatable-form@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-validatable-form/-/react-validatable-form-3.0.0.tgz#e1f1d12373bc0efab33fe4cd5e593330e662c590"
+  integrity sha512-KwGZ/dC8psWQHW+8UMKBCSIiIZgFgK+SPU9Oa3qgVCxyUMy2C6TMxUi/22rCxOdW+3TNcH4URgwu920a9ML5Dw==
   dependencies:
     lodash.get "4.4.2"
     lodash.set "4.3.2"

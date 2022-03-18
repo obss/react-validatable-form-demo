@@ -7,6 +7,7 @@ import CurrentRulesInfo from '../CurrentRulesInfo';
 const initialFormData = {
     val1: 'a',
     val2: 'a',
+    val3: 's',
     checkVal: false,
 };
 
@@ -30,6 +31,17 @@ const rules = [
         ],
     },
     { path: 'val2', ruleSet: ['required', { rule: 'length', equalTo: 5, customMessage: customMessageFunc }] },
+    {
+        path: 'val3',
+        ruleSet: [
+            'required',
+            {
+                rule: 'myCustomRule2',
+                customMessage:
+                    "Hello, this is myCustomRule2 customMessage. This field is not valid, because text ${value} should either include letter 'a' or its length should be greater than 4",
+            },
+        ],
+    },
 ];
 
 const CustomMessage = () => {
@@ -50,7 +62,7 @@ const CustomMessage = () => {
                         helperText={getError('val1') || ' '}
                         label="val1 (customMessage as string)"
                         type="text"
-                        value={getValue('val1')}
+                        value={getValue('val1') || ''}
                         onChange={(e) => setPathValue('val1', e.target.value)}
                     />
                 </div>
@@ -60,8 +72,18 @@ const CustomMessage = () => {
                         helperText={getError('val2') || ' '}
                         label="val2 (customMessage as function)"
                         type="text"
-                        value={getValue('val2')}
+                        value={getValue('val2') || ''}
                         onChange={(e) => setPathValue('val2', e.target.value)}
+                    />
+                </div>
+                <div>
+                    <TextField
+                        error={!!getError('val3')}
+                        helperText={getError('val3') || ' '}
+                        label="val3 (customMessage for custom rule)"
+                        type="text"
+                        value={getValue('val3') || ''}
+                        onChange={(e) => setPathValue('val3', e.target.value)}
                     />
                 </div>
                 <ValidationResult isValid={isValid} />

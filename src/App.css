@@ -175,6 +175,11 @@ input {
     height: 21px;
 }
 
+.my-antd-empty-feedback {
+    margin-top: 0.25rem;
+    height: 20px;
+}
+
 .my-bootstrap-form input,
 .my-bootstrap-form select {
     width: 400px;
