@@ -8,12 +8,14 @@ import CurrentRulesInfo from '../CurrentRulesInfo';
 const initialFormData = {
     val1: '',
     val2: '',
+    val3: 'not email',
     checkVal: false,
 };
 
 const rules = [
     { path: 'val1', ruleSet: ['required', { rule: 'length', greaterThan: 8 }] },
     { path: 'val2', ruleSet: ['required', { rule: 'length', equalTo: 5 }] },
+    { path: 'val3', ruleSet: ['required', 'email'] },
 ];
 
 const CustomTranslations = () => {
@@ -53,6 +55,16 @@ const CustomTranslations = () => {
                         type="text"
                         value={getValue('val2')}
                         onChange={(e) => setPathValue('val2', e.target.value)}
+                    />
+                </div>
+                <div>
+                    <TextField
+                        error={!!getError('val3')}
+                        helperText={getError('val3') || ' '}
+                        label="val3 (email)"
+                        type="text"
+                        value={getValue('val3')}
+                        onChange={(e) => setPathValue('val3', e.target.value)}
                     />
                 </div>
                 <ValidationResult isValid={isValid} />

@@ -8,11 +8,13 @@ import CurrentRulesInfo from '../CurrentRulesInfo';
 const initialFormData = {
     val: 'b',
     val2: 's',
+    val3: 'd',
 };
 
 const rules = [
     { path: 'val', ruleSet: [{ rule: 'required' }, { rule: 'myCustomRule' }] },
     { path: 'val2', ruleSet: [{ rule: 'required' }, { rule: 'myCustomRule2' }] },
+    { path: 'val3', ruleSet: [{ rule: 'required' }, { rule: 'myCustomRule3' }] },
 ];
 
 const RuleCustomOnProvider = () => {
@@ -51,6 +53,16 @@ const RuleCustomOnProvider = () => {
                     type="text"
                     value={getValue('val2') || ''}
                     onChange={(e) => setPathValue('val2', e.target.value)}
+                />
+            </div>
+            <div>
+                <TextField
+                    error={!!getError('val3')}
+                    helperText={getError('val3') || ' '}
+                    label="val3"
+                    type="text"
+                    value={getValue('val3') || ''}
+                    onChange={(e) => setPathValue('val3', e.target.value)}
                 />
             </div>
             <ValidationResult isValid={isValid} />
