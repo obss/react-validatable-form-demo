@@ -3,11 +3,13 @@ import ExampleUsageWrapper from '../ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import ValidationResult from '../ValidationResult';
 import CurrentRulesInfo from '../CurrentRulesInfo';
+import React from 'react';
 
 const initialFormData = {
     val1: 'a',
     val2: 'a',
     val3: 's',
+    val4: 'sdd',
     checkVal: false,
 };
 
@@ -16,6 +18,15 @@ const customMessageFunc = (errorParams) => {
         return `This field's length should be ${errorParams.comparisonValue}, your input's (${errorParams.value}) is greater than this value`;
     }
     return `This field's length should be ${errorParams.comparisonValue}, your input's (${errorParams.value}) is less than this value`;
+};
+
+const customMessageFuncJsx = (errorParams) => {
+    return (
+        <span>
+            This field{"'"}s length should be <b>{errorParams.comparisonValue} </b>, your input length is{' '}
+            <b> {errorParams.value} </b>
+        </span>
+    );
 };
 
 const rules = [
@@ -39,6 +50,24 @@ const rules = [
                 rule: 'myCustomRule2',
                 customMessage:
                     "Hello, this is myCustomRule2 customMessage. This field is not valid, because text ${value} should either include letter 'a' or its length should be greater than 4",
+            },
+        ],
+    },
+    {
+        path: 'val4',
+        ruleSet: [
+            {
+                rule: 'required',
+                customMessage: (
+                    <span>
+                        This field is <b> required </b>
+                    </span>
+                ),
+            },
+            {
+                rule: 'length',
+                equalTo: 6,
+                customMessage: customMessageFuncJsx,
             },
         ],
     },
@@ -84,6 +113,16 @@ const CustomMessage = () => {
                         type="text"
                         value={getValue('val3') || ''}
                         onChange={(e) => setPathValue('val3', e.target.value)}
+                    />
+                </div>
+                <div>
+                    <TextField
+                        error={!!getError('val4')}
+                        helperText={getError('val4') || ' '}
+                        label="val4 (customMessage for jsx)"
+                        type="text"
+                        value={getValue('val4') || ''}
+                        onChange={(e) => setPathValue('val4', e.target.value)}
                     />
                 </div>
                 <ValidationResult isValid={isValid} />

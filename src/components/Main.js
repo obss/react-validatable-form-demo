@@ -44,9 +44,28 @@ const MyCustomRule2Function = (ruleParams) => {
     return null;
 };
 
+const MyCustomRule3Function = (ruleParams) => {
+    const { value } = ruleParams;
+
+    if (!value) {
+        return <span>this field is a required field</span>;
+    }
+
+    if (!value.includes('a') && value.length < 10) {
+        return (
+            <span>
+                text <b> {value} </b> should either include letter <i> a </i> or its length should be greater than 9
+            </span>
+        );
+    }
+
+    return null;
+};
+
 const customRules = {
     myCustomRule: MyCustomRuleFunction,
     myCustomRule2: MyCustomRule2Function,
+    myCustomRule3: MyCustomRule3Function,
 };
 
 const defaultSettings = {
@@ -76,6 +95,11 @@ const customTranslations = {
         'length.greaterThan': 'Believe me, this field should really have greater than ${comparisonValue} characters',
         'length.equalTo': 'You should be careful because this field should have ${comparisonValue} characters',
         myCustomRule2: "Believe me, this field should have letter 'a' or its length should be greater than 4",
+        email: (
+            <span>
+                Do you think this is a <b> email </b>
+            </span>
+        ),
     },
     de: {
         required: 'Dieses Feld wird benötigt',
