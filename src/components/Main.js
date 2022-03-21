@@ -97,7 +97,7 @@ const customTranslations = {
         myCustomRule2: "Believe me, this field should have letter 'a' or its length should be greater than 4",
         email: (
             <span>
-                Do you think this is a <b> email </b>
+                Do you think this is an <b> email </b>?
             </span>
         ),
     },
