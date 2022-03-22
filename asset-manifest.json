@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/react-validatable-form-demo/static/css/main.a6b1892e.chunk.css",
-    "main.js": "/react-validatable-form-demo/static/js/main.fbb0d8d8.chunk.js",
-    "main.js.map": "/react-validatable-form-demo/static/js/main.fbb0d8d8.chunk.js.map",
-    "runtime-main.js": "/react-validatable-form-demo/static/js/runtime-main.f74f4344.js",
-    "runtime-main.js.map": "/react-validatable-form-demo/static/js/runtime-main.f74f4344.js.map",
+    "main.js": "/react-validatable-form-demo/static/js/main.c723a826.chunk.js",
+    "main.js.map": "/react-validatable-form-demo/static/js/main.c723a826.chunk.js.map",
+    "runtime-main.js": "/react-validatable-form-demo/static/js/runtime-main.5949a980.js",
+    "runtime-main.js.map": "/react-validatable-form-demo/static/js/runtime-main.5949a980.js.map",
     "static/css/2.017f6632.chunk.css": "/react-validatable-form-demo/static/css/2.017f6632.chunk.css",
-    "static/js/2.49dbeb50.chunk.js": "/react-validatable-form-demo/static/js/2.49dbeb50.chunk.js",
-    "static/js/2.49dbeb50.chunk.js.map": "/react-validatable-form-demo/static/js/2.49dbeb50.chunk.js.map",
-    "static/js/3.ddb13d61.chunk.js": "/react-validatable-form-demo/static/js/3.ddb13d61.chunk.js",
-    "static/js/3.ddb13d61.chunk.js.map": "/react-validatable-form-demo/static/js/3.ddb13d61.chunk.js.map",
+    "static/js/2.7930faa0.chunk.js": "/react-validatable-form-demo/static/js/2.7930faa0.chunk.js",
+    "static/js/2.7930faa0.chunk.js.map": "/react-validatable-form-demo/static/js/2.7930faa0.chunk.js.map",
+    "static/js/3.7843008d.chunk.js": "/react-validatable-form-demo/static/js/3.7843008d.chunk.js",
+    "static/js/3.7843008d.chunk.js.map": "/react-validatable-form-demo/static/js/3.7843008d.chunk.js.map",
     "index.html": "/react-validatable-form-demo/index.html",
     "static/css/2.017f6632.chunk.css.map": "/react-validatable-form-demo/static/css/2.017f6632.chunk.css.map",
     "static/css/main.a6b1892e.chunk.css.map": "/react-validatable-form-demo/static/css/main.a6b1892e.chunk.css.map",
-    "static/js/2.49dbeb50.chunk.js.LICENSE.txt": "/react-validatable-form-demo/static/js/2.49dbeb50.chunk.js.LICENSE.txt"
+    "static/js/2.7930faa0.chunk.js.LICENSE.txt": "/react-validatable-form-demo/static/js/2.7930faa0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f74f4344.js",
+    "static/js/runtime-main.5949a980.js",
     "static/css/2.017f6632.chunk.css",
-    "static/js/2.49dbeb50.chunk.js",
+    "static/js/2.7930faa0.chunk.js",
     "static/css/main.a6b1892e.chunk.css",
-    "static/js/main.fbb0d8d8.chunk.js"
+    "static/js/main.c723a826.chunk.js"
   ]
 }
