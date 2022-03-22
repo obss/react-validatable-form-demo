@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-validatable-form-demo/static/css/main.a6b1892e.chunk.css",
-    "main.js": "/react-validatable-form-demo/static/js/main.d130ab63.chunk.js",
-    "main.js.map": "/react-validatable-form-demo/static/js/main.d130ab63.chunk.js.map",
+    "main.js": "/react-validatable-form-demo/static/js/main.fbb0d8d8.chunk.js",
+    "main.js.map": "/react-validatable-form-demo/static/js/main.fbb0d8d8.chunk.js.map",
     "runtime-main.js": "/react-validatable-form-demo/static/js/runtime-main.f74f4344.js",
     "runtime-main.js.map": "/react-validatable-form-demo/static/js/runtime-main.f74f4344.js.map",
     "static/css/2.017f6632.chunk.css": "/react-validatable-form-demo/static/css/2.017f6632.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.017f6632.chunk.css",
     "static/js/2.49dbeb50.chunk.js",
     "static/css/main.a6b1892e.chunk.css",
-    "static/js/main.d130ab63.chunk.js"
+    "static/js/main.fbb0d8d8.chunk.js"
   ]
 }
