@@ -65,7 +65,6 @@ const ApiReactValidatableFormProvider = (props) => {
             <div className="apiInfoSectionHeader">
                 Provider Parameters
                 <div>
-                    ruleSet (array){' '}
                     <span className="inner-link" onClick={props.openSettingsDialog}>
                         See Example Usages
                     </span>
