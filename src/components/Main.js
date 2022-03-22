@@ -15,6 +15,7 @@ import ExampleUsageWrapper from './ExampleUsageWrapper';
 import Settings from './Settings';
 import { HashRouter, Link } from 'react-router-dom';
 import MainDrawer from './MainDrawer';
+import { HelmetProvider } from 'react-helmet-async';
 
 const MyCustomRuleFunction = (ruleParams) => {
     const { value } = ruleParams;
@@ -334,16 +335,18 @@ const Main = () => {
                 focusToErrorAfterSubmit={currentSettings.focusToErrorAfterSubmit}
                 elementFocusHandler={customElementFocusHandler}
             >
-                <BodyWrapper>
-                    <div className="flex">
-                        <Routes
-                            openSettingsDialog={openSettingsDialog}
-                            menuIsHidden={menuIsHidden}
-                            onOutsideClick={handleOutsideClick}
-                            toggleDrawer={toggleDrawer}
-                        />
-                    </div>
-                </BodyWrapper>
+                <HelmetProvider>
+                    <BodyWrapper>
+                        <div className="flex">
+                            <Routes
+                                openSettingsDialog={openSettingsDialog}
+                                menuIsHidden={menuIsHidden}
+                                onOutsideClick={handleOutsideClick}
+                                toggleDrawer={toggleDrawer}
+                            />
+                        </div>
+                    </BodyWrapper>
+                </HelmetProvider>
             </ReactValidatableFormProvider>
         </HashRouter>
     );
