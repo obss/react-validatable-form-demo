@@ -1,6 +1,6 @@
 {
   "name": "react-validatable-form-demo",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "private": false,
   "homepage": "http://obss.github.io/react-validatable-form-demo",
   "license": "MIT",
@@ -35,11 +35,12 @@
     "react": "17.0.2",
     "react-bootstrap": "2.0.0-rc.0",
     "react-dom": "17.0.2",
+    "react-helmet-async": "^1.2.3",
     "react-minimal-side-navigation": "1.9.2",
     "react-router-dom": "5.2.0",
     "react-router-sitemap": "1.2.0",
     "react-scripts": "4.0.3",
-    "react-validatable-form": "3.0.0",
+    "react-validatable-form": "3.1.0",
     "web-vitals": "1.0.1"
   },
   "scripts": {
