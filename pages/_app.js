@@ -1,50 +1,53 @@
-import '../styles/globals.css'
-import './../styles/Settings.css'
-import './../styles/Appbar.css'
-import './../styles/ApiInfo.css'
-import './../styles/CodeAccordion.css'
-import './../styles/Main.css'
-import './../styles/CurrentRulesInfo.css'
-import './../styles/ExampleUsageWrapper.css'
-import './../styles/FormSubmitResult.css'
-import './../styles/Homepage.css'
-import './../styles/ValidationResult.css'
-import './../styles/ExampleUsageWrapper.css'
-import './../styles/Home.css'
-import './../styles/Installation.css'
-import './../styles/Usage.css'
-import './../styles/MyBootstrap.css'
-import './../styles/CustomElementFocusHandler.css'
-import 'primereact/resources/primereact.min.css'
-import 'primereact/resources/themes/saga-blue/theme.css'
+import '../styles/globals.css';
+import './../styles/Settings.css';
+import './../styles/Appbar.css';
+import './../styles/ApiInfo.css';
+import './../styles/CodeAccordion.css';
+import './../styles/Main.css';
+import './../styles/CurrentRulesInfo.css';
+import './../styles/ExampleUsageWrapper.css';
+import './../styles/FormSubmitResult.css';
+import './../styles/Homepage.css';
+import './../styles/ValidationResult.css';
+import './../styles/ExampleUsageWrapper.css';
+import './../styles/Home.css';
+import './../styles/Installation.css';
+import './../styles/Usage.css';
+import './../styles/MyBootstrap.css';
+import './../styles/CustomElementFocusHandler.css';
+import 'primereact/resources/primereact.min.css';
+import 'primereact/resources/themes/saga-blue/theme.css';
 import '../styles/antd.css';
 
-import Image from 'next/image'
-import Link from 'next/link'
+import Head from "next/head";
+import Image from 'next/image';
+import Link from 'next/link';
 import {
     AppBar,
     Autocomplete,
     Box,
-    Checkbox, Dialog, DialogTitle,
+    Checkbox,
+    Dialog,
+    DialogTitle,
     FormControlLabel,
     IconButton,
     TextField,
     Toolbar,
-    useMediaQuery
-} from "@mui/material";
+    useMediaQuery,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Settings from "../components/Settings";
-import {useEffect, useState} from "react";
-import MainDrawer from "../components/MainDrawer";
-import ExampleUsageWrapper from "../components/ExampleUsageWrapper";
-import {NavSidebar} from "../components/NavSidebar";
-import {ReactValidatableFormProvider} from "react-validatable-form";
-import {LocalizationProvider} from "@mui/lab";
+import Settings from '../components/Settings';
+import { useEffect, useState } from 'react';
+import MainDrawer from '../components/MainDrawer';
+import ExampleUsageWrapper from '../components/ExampleUsageWrapper';
+import { NavSidebar } from '../components/NavSidebar';
+import { ReactValidatableFormProvider } from 'react-validatable-form';
+import { LocalizationProvider } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import {prefix} from "../utils/prefix";
+import { prefix } from '../utils/prefix';
 
 const MyCustomRuleFunction = (ruleParams) => {
-    const {value} = ruleParams;
+    const { value } = ruleParams;
 
     if (!value) {
         return 'this field is a required field';
@@ -58,21 +61,21 @@ const MyCustomRuleFunction = (ruleParams) => {
 };
 
 const MyCustomRule2Function = (ruleParams) => {
-    const {value} = ruleParams;
+    const { value } = ruleParams;
 
     if (!value) {
         return {};
     }
 
     if (!value.includes('a') && value.length < 5) {
-        return {value: value};
+        return { value: value };
     }
 
     return null;
 };
 
 const MyCustomRule3Function = (ruleParams) => {
-    const {value} = ruleParams;
+    const { value } = ruleParams;
 
     if (!value) {
         return <span>this field is a required field</span>;
@@ -154,8 +157,7 @@ const customDateWithTimeFormatterFunction = (dateParam) => {
 
 const defaultLangOptions = ['en', 'tr'];
 
-function MyApp({Component, pageProps}) {
-
+function MyApp({ Component, pageProps }) {
     const isMobile = useMediaQuery('(max-width:1024px)');
     const [currentSettings, setCurrentSettings] = useState(defaultSettings);
     const [settingsDialogOpen, setSettingsDialogOpen] = useState(false);
@@ -177,7 +179,7 @@ function MyApp({Component, pageProps}) {
     };
 
     const handleSettingChange = (key, value) => {
-        const newSettings = {...currentSettings};
+        const newSettings = { ...currentSettings };
         newSettings[key] = value;
         if (key === 'translationsEnabled' && !value) {
             if (currentSettings.lang === 'de') {
@@ -231,8 +233,8 @@ function MyApp({Component, pageProps}) {
                     console.log(newValue);
                 }}
                 options={currentLangOptions}
-                renderInput={(params) => <TextField {...params} label="lang"/>}
-                style={{width: 200}}
+                renderInput={(params) => <TextField {...params} label="lang" />}
+                style={{ width: 200 }}
             />
             <FormControlLabel
                 control={
@@ -314,69 +316,72 @@ function MyApp({Component, pageProps}) {
         }
     };
 
-    return <div>
-        <div className={'obssTriangle'}>
-            <a className={'triangleIcon'} href={'https://obss.com.tr/'} target={'_blank'} rel="noreferrer">
-                <img src={`${prefix}/obss.png`} width={'50px'} height={'50px'} alt={'obss'}/>
-            </a>
-        </div>
-        <Box flexGrow={1}>
-            <AppBar color={"transparent"} position={"relative"}>
-                <Toolbar>
-                    <IconButton onClick={handleMenuButton} className="menuButton">
-                        <MenuIcon/>
-                    </IconButton>
+    return (
+        <div>
+            <Head>
+                <link rel="shortcut icon" href={`${prefix}/favicon.png`} />
+            </Head>
+            <div className={'obssTriangle'}>
+                <a className={'triangleIcon'} href={'https://obss.com.tr/'} target={'_blank'} rel="noreferrer">
+                    <img src={`${prefix}/obss.png`} width={'50px'} height={'50px'} alt={'obss'} />
+                </a>
+            </div>
+            <Box flexGrow={1}>
+                <AppBar color={'transparent'} position={'relative'}>
+                    <Toolbar>
+                        <IconButton onClick={handleMenuButton} className="menuButton">
+                            <MenuIcon />
+                        </IconButton>
                         <Link href={'/'}>
                             <a>
-                                <img src={`${prefix}/logo.png`} alt={'logo'} width={"48px"} height={"48px"} />
+                                <img src={`${prefix}/logo.png`} alt={'logo'} width={'48px'} height={'48px'} />
                             </a>
                         </Link>
-                    <Link href={'/'}>
-                        <a className={"bannerText"}>
-                            <div className={"bannerLink"}>
-                                react-validatable-form
-                            </div>
-                        </a>
-                    </Link>
-                    <Box flexGrow={1}/>
-                    <Settings openSettingsDialog={openSettingsDialog}/>
-                </Toolbar>
-            </AppBar>
-        </Box>
-        <MainDrawer anchor={anchor} open={anchor} toggleDrawer={toggleDrawer}/>
-        <Dialog open={settingsDialogOpen} onClose={() => setSettingsDialogOpen(false)}>
-            <DialogTitle>
-                <ExampleUsageWrapper
-                    header="Edit ReactValidatableFormProvider Props"
-                    codeUrl="components/Main.js"
-                    wrapperClassName="modalHeaderWrapper"
-                />
-            </DialogTitle>
-            {dialogContent}
-        </Dialog>
-        <div style={{display: "flex"}}>
-            <div className={"navbarDiv"}>
-                <NavSidebar toggleDrawer={toggleDrawer} menuIsHidden={menuIsHidden}/>
-            </div>
-            <div className={"generalDiv"}>
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <ReactValidatableFormProvider
-                        lang={currentSettings.lang}
-                        customRules={customRules}
-                        translations={translations}
-                        dateFormatterFunction={dateFormatterFunction}
-                        dateWithTimeFormatterFunction={dateWithTimeFormatterFunction}
-                        hideBeforeSubmit={currentSettings.hideBeforeSubmit}
-                        showAfterBlur={currentSettings.showAfterBlur}
-                        focusToErrorAfterSubmit={currentSettings.focusToErrorAfterSubmit}
-                        elementFocusHandler={customElementFocusHandler}
-                    >
-                        <Component {...pageProps} />
-                    </ReactValidatableFormProvider>
-                </LocalizationProvider>
+                        <Link href={'/'}>
+                            <a className={'bannerText'}>
+                                <div className={'bannerLink'}>react-validatable-form</div>
+                            </a>
+                        </Link>
+                        <Box flexGrow={1} />
+                        <Settings openSettingsDialog={openSettingsDialog} />
+                    </Toolbar>
+                </AppBar>
+            </Box>
+            <MainDrawer anchor={anchor} open={anchor} toggleDrawer={toggleDrawer} />
+            <Dialog open={settingsDialogOpen} onClose={() => setSettingsDialogOpen(false)}>
+                <DialogTitle>
+                    <ExampleUsageWrapper
+                        header="Edit ReactValidatableFormProvider Props"
+                        codeUrl="components/Main.js"
+                        wrapperClassName="modalHeaderWrapper"
+                    />
+                </DialogTitle>
+                {dialogContent}
+            </Dialog>
+            <div style={{ display: 'flex' }}>
+                <div className={'navbarDiv'}>
+                    <NavSidebar toggleDrawer={toggleDrawer} menuIsHidden={menuIsHidden} />
+                </div>
+                <div className={'generalDiv'}>
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <ReactValidatableFormProvider
+                            lang={currentSettings.lang}
+                            customRules={customRules}
+                            translations={translations}
+                            dateFormatterFunction={dateFormatterFunction}
+                            dateWithTimeFormatterFunction={dateWithTimeFormatterFunction}
+                            hideBeforeSubmit={currentSettings.hideBeforeSubmit}
+                            showAfterBlur={currentSettings.showAfterBlur}
+                            focusToErrorAfterSubmit={currentSettings.focusToErrorAfterSubmit}
+                            elementFocusHandler={customElementFocusHandler}
+                        >
+                            <Component {...pageProps} />
+                        </ReactValidatableFormProvider>
+                    </LocalizationProvider>
+                </div>
             </div>
         </div>
-    </div>
+    );
 }
 
-export default MyApp
+export default MyApp;
