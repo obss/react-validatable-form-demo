@@ -14,12 +14,11 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_BASE_PATH: /react-validatable-form-demo-nextjs
+      NEXT_PUBLIC_BASE_PATH: /react-validatable-form-demo
 
     strategy:
       matrix:
         node-version: [14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -38,10 +37,5 @@ jobs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
-<<<<<<< HEAD
           branch: gh-pages # The branch the action should deploy to.
           folder: out # The folder the action should deploy.
-=======
-          branch: gh-pages
-          folder: out
->>>>>>> origin/master
