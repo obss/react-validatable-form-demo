@@ -19,6 +19,7 @@ import 'primereact/resources/primereact.min.css'
 import 'primereact/resources/themes/saga-blue/theme.css'
 import '../styles/antd.css';
 
+import Image from 'next/image'
 import Link from 'next/link'
 import {
     AppBar,
