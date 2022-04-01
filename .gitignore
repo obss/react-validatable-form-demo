@@ -13,6 +13,10 @@
 # production
 /build
 
+# next.js
+/.next/
+/build/
+
 # misc
 .DS_Store
 .env.local

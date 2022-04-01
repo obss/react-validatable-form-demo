@@ -1,0 +1,8 @@
+.bannerLink{
+    display: flex;
+    align-items: center;
+}
+
+.bannerImage{
+    margin-left: 10px;
+}
