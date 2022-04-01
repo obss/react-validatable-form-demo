@@ -1,8 +1,7 @@
 {
-  "name": "react-validatable-form-demo-nextjs",
+  "name": "react-validatable-form-demo",
   "version": "3.1.0",
   "private": false,
-  "homepage": "http://obss.github.io/react-validatable-form-demo",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
