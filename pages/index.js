@@ -1,5 +1,12 @@
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
 const IndexPage = () => {
-    return <div></div>;
+    const router = useRouter();
+    useEffect(() => {
+        router.replace('/getting-started/home');
+    }, []);
+    return <div>Redirecting Homepage...</div>;
 };
 
 export default IndexPage;
