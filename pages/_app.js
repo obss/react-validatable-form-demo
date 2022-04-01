@@ -322,16 +322,20 @@ function MyApp({ Component, pageProps }) {
             <Head>
                 <link rel="shortcut icon" href={`${prefix}/favicon.png`} />
             </Head>
-            <Script src="https://www.googletagmanager.com/gtag/js?id=GTM-T94RSQN" strategy="afterInteractive" />
-            <Script id="google-analytics" strategy="afterInteractive">
-                {`
+            {process.env.NEXT_PUBLIC_ENV === 'production' && (
+                <>
+                    <Script src="https://www.googletagmanager.com/gtag/js?id=GTM-T94RSQN" strategy="afterInteractive" />
+                    <Script id="google-analytics" strategy="afterInteractive">
+                        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'GTM-T94RSQN');
         `}
-            </Script>
+                    </Script>
+                </>
+            )}
             <div className={'obssTriangle'}>
                 <a className={'triangleIcon'} href={'https://obss.com.tr/'} target={'_blank'} rel="noreferrer">
                     <img src={`${prefix}/obss.png`} width={'50px'} height={'50px'} alt={'obss'} />

@@ -33,7 +33,7 @@ const Home = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="react-validatable-form">
+        <ExampleUsageWrapper header="react-validatable-form" hidePageHeader>
             <Box
                 className={'homeContainer'}
                 display={'flex'}

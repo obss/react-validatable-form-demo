@@ -31,7 +31,7 @@ const ExampleUsageWrapper = (props) => {
             <Head>
                 <title>{props.header}</title>
             </Head>
-            <span className="pageTitle">{props.header}</span>
+            {!props.hidePageHeader && <span className="pageTitle">{props.header}</span>}
             {urlsJsx}
             <div className="mainWrapperDiv">{props.children}</div>
         </div>
