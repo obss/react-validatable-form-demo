@@ -19,7 +19,8 @@ import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import '../styles/antd.css';
 
-import Head from "next/head";
+import Head from 'next/head';
+import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -321,6 +322,16 @@ function MyApp({ Component, pageProps }) {
             <Head>
                 <link rel="shortcut icon" href={`${prefix}/favicon.png`} />
             </Head>
+            <Script src="https://www.googletagmanager.com/gtag/js?id=GTM-T94RSQN" strategy="afterInteractive" />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'GTM-T94RSQN');
+        `}
+            </Script>
             <div className={'obssTriangle'}>
                 <a className={'triangleIcon'} href={'https://obss.com.tr/'} target={'_blank'} rel="noreferrer">
                     <img src={`${prefix}/obss.png`} width={'50px'} height={'50px'} alt={'obss'} />

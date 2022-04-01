@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 const CODE_BASE_URL = 'https://github.com/obss/react-validatable-form-demo/blob/master/src/';
 
 const ExampleUsageWrapper = (props) => {
@@ -26,6 +28,9 @@ const ExampleUsageWrapper = (props) => {
 
     return (
         <div className={wrapperClassName}>
+            <Head>
+                <title>{props.header}</title>
+            </Head>
             <span className="pageTitle">{props.header}</span>
             {urlsJsx}
             <div className="mainWrapperDiv">{props.children}</div>
