@@ -4,12 +4,11 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3155",
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint",
-    "deploy": "rimraf node_modules/.cache/gh-pages && gh-pages -b gh-pages -d build"
+    "lint": "next lint"
   },
   "dependencies": {
     "@date-io/date-fns": "2.11.0",
@@ -27,7 +26,6 @@
     "date-fns": "2.25.0",
     "lodash.get": "^4.4.2",
     "next": "12.1.2",
-    "next-sitemap": "^2.5.17",
     "prettier": "2.2.1",
     "primereact": "6.6.0",
     "react": "17.0.2",
