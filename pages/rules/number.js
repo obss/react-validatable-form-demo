@@ -66,7 +66,7 @@ const Number = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="number" codeUrl="components/rules/number.js">
+        <ExampleUsageWrapper header="number" codeUrl="pages/rules/number.js">
             <p className="infoParagraph">
                 <b>number</b> rule checks if the given value is a valid number. If <b>onlyIntegers</b> parameter is set,
                 it also checks if given value is an integer. <b>{ruleOptions.join(', ')}</b> parameters are used to make

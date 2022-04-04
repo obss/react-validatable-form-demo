@@ -93,7 +93,7 @@ const ValidationErrorOriginalResult = () => {
     return (
         <ExampleUsageWrapper
             header="validationErrorOriginalResult"
-            codeUrl="components/examples/validation-error-original-result.js"
+            codeUrl="pages/examples/validation-error-original-result.js"
         >
             <div>
                 {formFilledState === 0

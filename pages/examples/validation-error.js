@@ -88,7 +88,7 @@ const ValidationError = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="validationError" codeUrl="components/examples/ValidationError.js">
+        <ExampleUsageWrapper header="validationError" codeUrl="pages/examples/validation-error.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'

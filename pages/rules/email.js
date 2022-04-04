@@ -17,7 +17,7 @@ const Email = () => {
     });
 
     return (
-        <ExampleUsageWrapper header="email" codeUrl="components/rules/email.js">
+        <ExampleUsageWrapper header="email" codeUrl="pages/rules/email.js">
             <p className="infoParagraph">
                 <b>email</b> rule checks if the given value is a valid email.
             </p>

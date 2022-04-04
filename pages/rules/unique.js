@@ -113,7 +113,7 @@ const Unique = () => {
     }
 
     return (
-        <ExampleUsageWrapper header="Unique" codeUrl="components/rules/Unique.js">
+        <ExampleUsageWrapper header="Unique" codeUrl="pages/rules/unique.js">
             <p className="infoParagraph">
                 <b>unique</b> rule checks if non-unique values exist on a{' '}
                 <Link className="inner-link" href="/library-api/path">

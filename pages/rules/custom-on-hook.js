@@ -25,7 +25,7 @@ const CustomOnHook = () => {
     });
 
     return (
-        <ExampleUsageWrapper header="customly defined on hook" codeUrl="components/rules/custom-on-hook.js">
+        <ExampleUsageWrapper header="customly defined on hook" codeUrl="pages/rules/custom-on-hook.js">
             <p className="infoParagraph">Custom rules can be defined as a function and given as a rule definition.</p>
             <div>
                 <TextField

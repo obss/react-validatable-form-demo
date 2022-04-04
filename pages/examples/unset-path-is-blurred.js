@@ -68,7 +68,7 @@ const UnsetPathIsBlurred = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="unsetPathIsBlurred" codeUrl="components/examples/UnsetPathIsBlurred.js">
+        <ExampleUsageWrapper header="unsetPathIsBlurred" codeUrl="pages/examples/unset-path-is-blurred.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'

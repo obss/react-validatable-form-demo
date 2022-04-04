@@ -56,7 +56,7 @@ const FocusToErrorAfterSubmit = () => {
     return (
         <ExampleUsageWrapper
             header="focusToErrorAfterSubmit"
-            codeUrl="components/advanced/FocusToErrorAfterSubmit.js"
+            codeUrl="pages/advanced/focus-to-error-after-submit.js"
         >
             <p className="infoParagraph">
                 <b>focusToErrorAfterSubmit</b> parameter is used to automatically focus to the first element with a

@@ -21,7 +21,7 @@ const Regex = () => {
     });
 
     return (
-        <ExampleUsageWrapper header="regex" codeUrl="components/rules/Regex.js">
+        <ExampleUsageWrapper header="regex" codeUrl="pages/rules/regex.js">
             <p className="infoParagraph">
                 <b>regex</b> rule checks if the given value is a valid string according to given{' '}
                 <a

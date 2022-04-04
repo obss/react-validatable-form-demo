@@ -367,7 +367,7 @@ function MyApp({ Component, pageProps }) {
                 <DialogTitle>
                     <ExampleUsageWrapper
                         header="Edit ReactValidatableFormProvider Props"
-                        codeUrl="components/Main.js"
+                        codeUrl="pages/_app.js"
                         wrapperClassName="modalHeaderWrapper"
                     />
                 </DialogTitle>

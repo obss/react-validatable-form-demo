@@ -15,8 +15,8 @@ const ruleParametersApiInfoList = [
         desc: (
             <span>
                 Identifier (name) of the rule to be run. (Can also be a{' '}
-                <Link className="inner-link" href="/rules/custom-on-hook">
-                    custom function
+                <Link href="/rules/custom-on-hook">
+                    <a className={"inner-link"}> custom function </a>
                 </Link>
                 )
             </span>
@@ -27,20 +27,20 @@ const ruleParametersApiInfoList = [
         desc: (
             <span>
                 Comparison identifier that can be used only by{' '}
-                <Link className="inner-link" href="/rules/number">
-                    number
+                <Link href="/rules/number">
+                    <a className={"inner-link"}> number </a>
                 </Link>
                 {', '}
-                <Link className="inner-link" href="/rules/length">
-                    length
+                <Link href="/rules/length">
+                    <a className={"inner-link"}> length </a>
                 </Link>
                 {', '}
-                <Link className="inner-link" href="/rules/list-size">
-                    listSize
+                <Link href="/rules/list-size">
+                    <a className={"inner-link"}> listSize </a>
                 </Link>
                 {' and '}
-                <Link className="inner-link" href="/rules/date">
-                    date
+                <Link href="/rules/date">
+                    <a className={"inner-link"}> date </a>
                 </Link>{' '}
                 rules.
             </span>
@@ -51,8 +51,8 @@ const ruleParametersApiInfoList = [
         desc: (
             <span>
                 Decides whether only integer are allowed that can be used only by{' '}
-                <Link className="inner-link" href="/rules/number">
-                    number
+                <Link href="/rules/number">
+                    <a className={"inner-link"}> number </a>
                 </Link>{' '}
                 rule.
             </span>
@@ -63,8 +63,8 @@ const ruleParametersApiInfoList = [
         desc: (
             <span>
                 Decides whether hours and minutes are taken into account that can be used only by{' '}
-                <Link className="inner-link" href="/rules/date">
-                    date
+                <Link href="/rules/date">
+                    <a className={"inner-link"}> date </a>
                 </Link>{' '}
                 rule.
             </span>
@@ -74,8 +74,8 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 applyToNulls (boolean){' '}
-                <Link className="inner-link" href="/customizations/apply-to-nulls">
-                    See Example
+                <Link href="/customizations/apply-to-nulls">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -85,8 +85,8 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 disableIf (func){' '}
-                <Link className="inner-link" href="/customizations/conditional-rules">
-                    See Example
+                <Link href="/customizations/conditional-rules">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -96,8 +96,8 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 enableIf (func){' '}
-                <Link className="inner-link" href="/customizations/conditional-rules">
-                    See Example
+                <Link href="/customizations/conditional-rules">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -107,8 +107,8 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 customMessage (string || func){' '}
-                <Link className="inner-link" href="/customizations/custom-message">
-                    See Example
+                <Link href="/customizations/custom-message">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),

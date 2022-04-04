@@ -43,7 +43,7 @@ const ReactBootstrap = () => {
     return (
         <ExampleUsageWrapper
             header="Example Usage with React-Bootstrap Components"
-            codeUrl="components/examples/react-bootstrap.js"
+            codeUrl="pages/examples/react-bootstrap.js"
         >
             <Form className="my-bootstrap-form">
                 <Form.Group controlId="textVal1">

@@ -142,8 +142,8 @@ const ValidateComplexForms = () => {
         <ExampleUsageWrapper
             header="Validate Complex Forms"
             codeUrl={[
-                'components/advanced/validate-complex-forms.js',
-                'components/advanced/SubComponent.js',
+                'pages/advanced/validate-complex-forms.js',
+                'components/SubComponent.js',
             ]}
         >
             <p className="infoParagraph">

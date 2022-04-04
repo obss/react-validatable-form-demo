@@ -15,7 +15,7 @@ const Required = () => {
     });
 
     return (
-        <ExampleUsageWrapper header="required" codeUrl="components/rules/Required.js">
+        <ExampleUsageWrapper header="required" codeUrl="pages/rules/required.js">
             <p className="infoParagraph">
                 <b>required</b> rule checks if the given value is <b>undefined</b>, <b>null</b>, <b>empty string</b> or{' '}
                 <b>empty array</b>.

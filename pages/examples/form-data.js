@@ -87,7 +87,7 @@ const FormData = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="formData" codeUrl="components/examples/form-data.js">
+        <ExampleUsageWrapper header="formData" codeUrl="pages/examples/form-data.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'

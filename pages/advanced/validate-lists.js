@@ -68,7 +68,7 @@ const AdvancedValidateLists = () => {
     }
 
     return (
-        <ExampleUsageWrapper header="Validate Lists" codeUrl="components/advanced/validate-lists.js">
+        <ExampleUsageWrapper header="Validate Lists" codeUrl="pages/advanced/validate-lists.js">
             <p className="infoParagraph">
                 An array of values can be validated using{' '}
                 <Link className="inner-link" href="/library-api/path">

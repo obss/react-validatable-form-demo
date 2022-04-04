@@ -65,7 +65,7 @@ const PrimeReact = () => {
     return (
         <ExampleUsageWrapper
             header="Example Usage with PrimeReact Components"
-            codeUrl="components/examples/prime-react.js"
+            codeUrl="pages/examples/prime-react.js"
         >
             <div>
                 <div className="my-prime-div">

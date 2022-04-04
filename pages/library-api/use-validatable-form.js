@@ -19,8 +19,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 rules (array){' '}
-                <Link className="inner-link" href="/library-api/rules">
-                    See rules API
+                <Link href="/library-api/rules">
+                    <a className={"inner-link"}> See rules API </a>
                 </Link>
             </div>
         ),
@@ -34,8 +34,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 hideBeforeSubmit (boolean){' '}
-                <Link className="inner-link" href="/advanced/hide-before-submit">
-                    See Example
+                <Link href="/advanced/hide-before-submit">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -45,8 +45,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 showAfterBlur (boolean){' '}
-                <Link className="inner-link" href="/advanced/show-after-blur">
-                    See Example
+                <Link href="/advanced/show-after-blur">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -56,8 +56,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 focusToErrorAfterSubmit (boolean){' '}
-                <Link className="inner-link" href="/advanced/focus-to-error-after-submit">
-                    See Example
+                <Link href="/advanced/focus-to-error-after-submit">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -68,8 +68,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 elementFocusHandler (function){' '}
-                <Link className="inner-link" href="/customizations/custom-element-focus-handler">
-                    See Example
+                <Link href="/customizations/custom-element-focus-handler">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -87,8 +87,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 validationError (object){' '}
-                <Link className="inner-link" href="/examples/validation-error">
-                    See Example
+                <Link href="/examples/validation-error">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -99,8 +99,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 validationErrorOriginalResult (object){' '}
-                <Link className="inner-link" href="/examples/validation-error-original-result">
-                    See Example
+                <Link href="/examples/validation-error-original-result">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -111,8 +111,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 formData (object){' '}
-                <Link className="inner-link" href="/examples/form-data">
-                    See Example
+                <Link href="/examples/form-data">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -122,12 +122,12 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setPathValue(path, value){' '}
-                <Link className="inner-link" href="/library-api/path">
-                    See Path API
+                <Link href="/library-api/path">
+                    <a className={"inner-link"}> See Path API </a>
                 </Link>
                 {' - '}
-                <Link className="inner-link" href="/examples/set-path-value">
-                    See Example
+                <Link href="/examples/set-path-value">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -137,12 +137,12 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 unsetPathValue(path, value){' '}
-                <Link className="inner-link" href="/library-api/path">
-                    See Path API
+                <Link href="/library-api/path">
+                    <a className={"inner-link"}> See Path API </a>
                 </Link>
                 {' - '}
-                <Link className="inner-link" href="/examples/unset-path-value">
-                    See Example
+                <Link href="/examples/unset-path-value">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -152,8 +152,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setFormIsSubmitted(){' '}
-                <Link className="inner-link" href="/advanced/hide-before-submit">
-                    See Example
+                <Link href="/advanced/hide-before-submit">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -164,8 +164,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setPathIsBlurred(path){' '}
-                <Link className="inner-link" href="/library-api/path">
-                    See Path API
+                <Link href="/library-api/path">
+                    <a className={"inner-link"}> See Path API </a>
                 </Link>
             </div>
         ),
@@ -176,12 +176,12 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 unsetPathIsBlurred(path){' '}
-                <Link className="inner-link" href="/library-api/path">
-                    See Path API
+                <Link href="/library-api/path">
+                    <a className={"inner-link"}> See Path API </a>
                 </Link>
                 {' - '}
-                <Link className="inner-link" href="/examples/unset-path-is-blurred">
-                    See Example
+                <Link href="/examples/unset-path-is-blurred">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -192,8 +192,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setFormData(newFormData, pathToBeRun){' '}
-                <Link className="inner-link" href="/examples/set-form-data">
-                    See Example
+                <Link href="/examples/set-form-data">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -203,8 +203,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setRules(newRules){' '}
-                <Link className="inner-link" href="/examples/set-rules">
-                    See Example
+                <Link href="/examples/set-rules">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -214,8 +214,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setFormDataAndRules(newFormData, newRules){' '}
-                <Link className="inner-link" href="/examples/set-form-data-and-rules">
-                    See Example
+                <Link href="/examples/set-form-data-and-rules">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),
@@ -226,8 +226,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 resetForm(){' '}
-                <Link className="inner-link" href="/advanced/show-after-blur">
-                    See Example
+                <Link href="/advanced/show-after-blur">
+                    <a className={"inner-link"}> See Example </a>
                 </Link>
             </div>
         ),

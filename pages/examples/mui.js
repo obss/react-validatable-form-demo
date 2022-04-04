@@ -43,7 +43,7 @@ const Mui = () => {
     return (
         <ExampleUsageWrapper
             header="Example Usage with MUI Components"
-            codeUrl="components/examples/Mui.js"
+            codeUrl="pages/examples/mui.js"
         >
             <div>
                 <div>

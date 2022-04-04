@@ -73,7 +73,7 @@ const SetRules = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="setRules" codeUrl="components/examples/set-rules.js">
+        <ExampleUsageWrapper header="setRules" codeUrl="pages/examples/set-rules.js">
             <div>
                 {'Click "Change Rule" button to set new rules'}
                 <br />
