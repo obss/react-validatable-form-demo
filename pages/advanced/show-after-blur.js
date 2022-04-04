@@ -45,7 +45,7 @@ const ShowAfterBlur = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="showAfterBlur" codeUrl="components/advanced/ShowAfterBlur.js">
+        <ExampleUsageWrapper header="showAfterBlur" codeUrl="pages/advanced/show-after-blur.js">
             <p className="infoParagraph">
                 <b>showAfterBlur</b> parameter is used to show validation error of a path after{' '}
                 <b>setPathIsBlurred(path)</b> function is called. Later, validation errors can also be hidden by calling{' '}

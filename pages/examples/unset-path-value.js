@@ -71,7 +71,7 @@ const UnsetPathValue = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="unsetPathValue" codeUrl="components/examples/unset-path-value.js">
+        <ExampleUsageWrapper header="unsetPathValue" codeUrl="pages/examples/unset-path-value.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'

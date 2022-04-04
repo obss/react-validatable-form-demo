@@ -87,7 +87,7 @@ const SetFormDataAndRules = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="setFormDataAndRules" codeUrl="components/examples/SetFormDataAndRules.js">
+        <ExampleUsageWrapper header="setFormDataAndRules" codeUrl="pages/examples/set-form-data-and-rules.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'

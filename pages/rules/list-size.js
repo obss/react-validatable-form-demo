@@ -56,7 +56,7 @@ const ListSize = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="listSize" codeUrl="components/rules/list-size.js">
+        <ExampleUsageWrapper header="listSize" codeUrl="pages/rules/list-size.js">
             <p className="infoParagraph">
                 <b>listSize</b> rule checks the length of an array. <b>{ruleOptions.join(', ')}</b> parameters are used
                 to make comparisons with given comparison values.

@@ -43,7 +43,7 @@ const Antd = () => {
     return (
         <ExampleUsageWrapper
             header="Example Usage with Ant Design Components"
-            codeUrl="components/examples/antd.js"
+            codeUrl="pages/examples/antd.js"
         >
             <div>
                 <div>

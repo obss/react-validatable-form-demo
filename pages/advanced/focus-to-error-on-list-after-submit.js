@@ -86,7 +86,7 @@ const FocusToErrorOnListAfterSubmit = () => {
     return (
         <ExampleUsageWrapper
             header="focusToErrorAfterSubmit on Lists"
-            codeUrl="components/advanced/focus-to-error-on-list-after-submit.js"
+            codeUrl="pages/advanced/focus-to-error-on-list-after-submit.js"
         >
             <p className="infoParagraph">
                 <b>focusToErrorAfterSubmit</b> parameter is used to automatically focus to the first element of list

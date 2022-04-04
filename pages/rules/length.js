@@ -55,7 +55,7 @@ const Length = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="length" codeUrl="components/rules/length.js">
+        <ExampleUsageWrapper header="length" codeUrl="pages/rules/length.js">
             <p className="infoParagraph">
                 <b>length</b> rule checks the length of a string. <b>{ruleOptions.join(', ')}</b> parameters are used to
                 make comparisons with given comparison values.

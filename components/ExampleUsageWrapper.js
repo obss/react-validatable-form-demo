@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const CODE_BASE_URL = 'https://github.com/obss/react-validatable-form-demo/blob/master/src/';
+const CODE_BASE_URL = 'https://github.com/obss/react-validatable-form-demo/blob/master/';
 
 const ExampleUsageWrapper = (props) => {
     let urlsJsx = null;

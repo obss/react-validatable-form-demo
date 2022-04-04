@@ -17,7 +17,7 @@ const Iban = () => {
     });
 
     return (
-        <ExampleUsageWrapper header="iban" codeUrl="components/rules/iban.js">
+        <ExampleUsageWrapper header="iban" codeUrl="pages/rules/iban.js">
             <p className="infoParagraph">
                 <b>iban</b> rule checks if the given value is a valid IBAN.
             </p>

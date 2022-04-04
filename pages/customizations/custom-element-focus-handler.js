@@ -63,7 +63,7 @@ const CustomElementFocusHandler = () => {
     return (
         <ExampleUsageWrapper
             header="elementFocusHandler"
-            codeUrl="components/customizations/custom-element-focus-handler.js"
+            codeUrl="pages/customizations/custom-element-focus-handler.js"
         >
             <p className="infoParagraph">
                 <b>elementFocusHandler</b> parameter is used to manually handle focusing to the first element with a

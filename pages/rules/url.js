@@ -17,7 +17,7 @@ const Url = () => {
     });
 
     return (
-        <ExampleUsageWrapper header="url" codeUrl="components/rules/url.js">
+        <ExampleUsageWrapper header="url" codeUrl="pages/rules/url.js">
             <p className="infoParagraph">
                 <b>url</b> rule checks if the given value is a valid url.
             </p>

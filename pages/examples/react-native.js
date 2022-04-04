@@ -4,7 +4,7 @@ const ReactNative = () => {
     return (
         <ExampleUsageWrapper
             header={'Example Usage with React Native'}
-            codeUrl={'components/examples/ReactNative.js'}
+            codeUrl={'pages/examples/react-native.js'}
         >
             <iframe
                 src="https://snack.expo.io/embedded/@maliksenpai/reactnativevalidatableform"

@@ -149,7 +149,7 @@ const ValidateListOfObjects = () => {
     return (
         <ExampleUsageWrapper
             header="Validate List of Objects"
-            codeUrl="components/advanced/ValidateListOfObjects.js"
+            codeUrl="pages/advanced/validate-list-of-objects.js"
         >
             <p className="infoParagraph">
                 An array of objects with more than one subkeys can be validated using{' '}

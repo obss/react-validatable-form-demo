@@ -36,7 +36,7 @@ const Pure = () => {
     return (
         <ExampleUsageWrapper
             header="Example Usage with Pure React Components"
-            codeUrl="components/examples/Pure.js"
+            codeUrl="pages/examples/pure.js"
         >
             <div>
                 <div className={getError('textVal1') && 'hasError'}>

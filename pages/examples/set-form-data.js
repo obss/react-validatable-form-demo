@@ -63,7 +63,7 @@ const SetFormData = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="setFormData" codeUrl="components/examples/SetFormData.js">
+        <ExampleUsageWrapper header="setFormData" codeUrl="pages/examples/set-form-data.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'

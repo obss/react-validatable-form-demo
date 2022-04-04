@@ -30,7 +30,7 @@ const Includes = () => {
     });
 
     return (
-        <ExampleUsageWrapper header={'includes'} codeUrl={'components/rules/Includes.js'}>
+        <ExampleUsageWrapper header={'includes'} codeUrl={'pages/rules/includes.js'}>
             <p className={'infoParagraph'}>
                 <b> includes </b> rule checks if the given value includes comparison value.
             </p>

@@ -74,7 +74,7 @@ const DateRule = () => {
     const pickerFormat = withTime ? null : 'MM/dd/yyyy';
 
     return (
-        <ExampleUsageWrapper header="date" codeUrl="components/rules/date.js">
+        <ExampleUsageWrapper header="date" codeUrl="pages/rules/date.js">
             <p className="infoParagraph">
                 <b>date</b> rule checks if the given value is a valid date. If <b>withTime</b> parameter is set, it
                 compares hours and minutes, too. <b>{ruleOptions.join(', ')}</b> parameters are used to make comparisons

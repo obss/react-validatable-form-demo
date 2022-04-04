@@ -69,7 +69,7 @@ const ApplyToNulls = () => {
     }
 
     return (
-        <ExampleUsageWrapper header="applyToNulls" codeUrl="components/customizations/apply-to-nulls.js">
+        <ExampleUsageWrapper header="applyToNulls" codeUrl="pages/customizations/apply-to-nulls.js">
             <p className="infoParagraph">
                 By default <b>react-validatable-form</b> interprets <b>undefined</b>, <b>null</b>, <b>empty string</b>{' '}
                 or <b>empty array</b> values as valid values. If you want any rule to be applied to these values,{' '}

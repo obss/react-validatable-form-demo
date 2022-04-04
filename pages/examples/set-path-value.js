@@ -60,7 +60,7 @@ const SetPathValues = () => {
     };
 
     return (
-        <ExampleUsageWrapper header="setPathValue" codeUrl="components/examples/SetPathValues.js">
+        <ExampleUsageWrapper header="setPathValue" codeUrl="pages/examples/set-path-value.js">
             <div>
                 {formFilledState === 0
                     ? 'Please wait for 2 seconds...'

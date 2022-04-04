@@ -26,7 +26,7 @@ const CustomOnProvider = () => {
     return (
         <ExampleUsageWrapper
             header="custom on provider"
-            codeUrl={['components/rules/custom-on-provider.js', 'components/Main.js']}
+            codeUrl={['pages/rules/custom-on-provider.js', 'pages/_app.js']}
         >
             <p className="infoParagraph">
                 Custom rules can be defined as a function and passed to{' '}
