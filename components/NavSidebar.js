@@ -80,6 +80,7 @@ const allMenuItems = [
             {
                 title: 'equality',
                 itemId: '/rules/equality',
+                keywords: ['equalTo', 'isOneOf']
             },
             {
                 title: 'includes',

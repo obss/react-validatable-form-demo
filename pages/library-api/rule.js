@@ -47,6 +47,30 @@ const ruleParametersApiInfoList = [
         ),
     },
     {
+        label: 'equalTo',
+        desc: (
+            <span>
+                The equality identifier that can be used with the {' '}
+                <Link href={'/rules/equality'}>
+                    <a className={"inner-link"}> equality </a>
+                </Link> {' '}
+                rule.
+            </span>
+        )
+    },
+    {
+        label: 'isOneOf',
+        desc: (
+            <span>
+                Checking that it is included in the list available with the {' '}
+                <Link href={'/rules/equality'}>
+                    <a className={"inner-link"}> equality </a>
+                </Link> {' '}
+                rule
+            </span>
+        )
+    },
+    {
         label: 'onlyIntegers (boolean)',
         desc: (
             <span>
