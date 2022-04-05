@@ -47,7 +47,14 @@ const ruleParametersApiInfoList = [
         ),
     },
     {
-        label: 'equalTo',
+        label: (
+            <div>
+                equalTo {' '}
+                <Link href="/rules/equality">
+                    <a className={"inner-link"}> See Example </a>
+                </Link>
+            </div>
+        ),
         desc: (
             <span>
                 The equality identifier that can be used with the {' '}
@@ -59,7 +66,14 @@ const ruleParametersApiInfoList = [
         )
     },
     {
-        label: 'isOneOf',
+        label: (
+            <div>
+                isOneOf {' '}
+                <Link href="/rules/equality">
+                    <a className={"inner-link"}> See Example </a>
+                </Link>
+            </div>
+        ),
         desc: (
             <span>
                 Checking that it is included in the list available with the {' '}
