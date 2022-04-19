@@ -80,7 +80,7 @@ const Equality = () => {
     });
 
     return (
-        <ExampleUsageWrapper header="equality" codeUrl="components/rules/equality.js">
+        <ExampleUsageWrapper header="equality" codeUrl="pages/rules/equality.js">
             <p className="infoParagraph">
                 <b>equality</b> rule checks if the given value is equal to comparison value.
             </p>
