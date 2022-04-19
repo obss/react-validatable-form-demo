@@ -5,7 +5,7 @@ const nextConfig = {
     basePath: process.env.NEXT_PUBLIC_BASE_PATH,
     assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
     env: {
-        VERSION: '3.2.1',
+        VERSION: '3.4.0',
     },
     images: {
         loader: 'akamai',
