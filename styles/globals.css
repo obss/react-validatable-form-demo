@@ -1,384 +1,390 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 select,
 input {
-  border: 1px solid;
+    border: 1px solid;
 }
 
 .pureButton {
-  border: 1px solid;
-  padding-left: 20px;
-  padding-right: 20px;
+    border: 1px solid;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .pureButton:hover {
-  background-color: lightgray;
+    background-color: lightgray;
 }
 
 .libraryName {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .libraryName:hover {
-  background-color: rgb(243, 243, 243);
+    background-color: rgb(243, 243, 243);
 }
 
 .errorInfoText {
-  color: red;
-  min-height: 25px;
-  margin-bottom: 25px;
+    color: red;
+    min-height: 25px;
+    margin-bottom: 25px;
 }
 
 .hasError input,
 .hasError select {
-  border: 1px solid red;
+    border: 1px solid red;
 }
 
 .hasError .errorText {
-  font-size: small;
-  color: red;
+    font-size: small;
+    color: red;
 }
 
 .errorText {
-  min-height: 20px;
+    min-height: 20px;
 }
 
 .MuiFormControl-root,
 .MuiAutocomplete-root {
-  width: 400px;
-  max-width: 90vw;
+    width: 400px;
+    max-width: 90vw;
 }
+
+.comparisonDiv .MuiFormControl-root,
+.comparisonDiv .MuiAutocomplete-root {
+    width: 100%;
+    max-width: min(400px, 90vw);
+}
+
 .formListField .MuiFormControl-root,
 .formListField .MuiAutocomplete-root {
-  width: 400px;
-  max-width: 65vw;
+    width: 400px;
+    max-width: 65vw;
 }
 
 .formField {
-  display: flex;
-  justify-content: space-evenly;
-  width: 800px;
-  max-width: 90vw;
-  flex-wrap: wrap;
-  gap: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 800px;
+    max-width: 90vw;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .complexFormListField .MuiFormControl-root,
 .complexFormListField .MuiAutocomplete-root {
-  width: 300px;
-  max-width: 60vw;
+    width: 300px;
+    max-width: 60vw;
 }
 
 .formListItem > div {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 @media (max-width: 1024px) {
-  .formListItem {
-    border: 1px solid black;
-    margin-bottom: 10px;
-  }
+    .formListItem {
+        border: 1px solid black;
+        margin-bottom: 10px;
+    }
 }
 
 .formField > div {
-  width: 200px;
-  flex: 45%;
+    width: 200px;
+    flex: 45%;
 }
 
 @media (max-width: 1024px) {
-  .formField {
-    flex-direction: column;
-  }
-  .formField > div {
-    width: 90vw;
-  }
+    .formField {
+        flex-direction: column;
+    }
+    .formField > div {
+        width: 90vw;
+    }
 }
 
 .mySubmitButton {
-  margin-top: 20px !important;
-  margin-left: 60px !important;
+    margin-top: 20px !important;
+    margin-left: 60px !important;
 }
 
 @media (max-width: 1024px) {
-  .mySubmitButton {
-    margin-left: 20px !important;
-  }
+    .mySubmitButton {
+        margin-left: 20px !important;
+    }
 }
 
 .myAddButton {
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
 }
 
 .myDeleteButton {
-  margin-left: 20px !important;
+    margin-left: 20px !important;
 }
 
 .ruleOptionComponent {
-  width: 280px !important;
+    width: 280px !important;
 }
 
 .comparisonComponent {
-  width: 200px !important;
+    width: 200px !important;
 }
 
 .comparisonDateComponent {
-  width: 250px !important;
+    width: 250px !important;
 }
 
 .comparisonDiv {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 @media (max-width: 1024px) {
-  .comparisonDiv {
-    flex-direction: column;
-  }
+    .comparisonDiv {
+        flex-direction: column;
+    }
 }
 
 .textAndCheckboxDiv {
-  display: flex;
+    display: flex;
 }
 
 @media (max-width: 1024px) {
-  .textAndCheckboxDiv {
-    flex-direction: column;
-  }
+    .textAndCheckboxDiv {
+        flex-direction: column;
+    }
 }
 
 .checkboxOnRight {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .regexInfo {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .my-prime-div {
-  display: grid;
+    display: grid;
 }
 
 .p-error {
-  min-height: 20px;
+    min-height: 20px;
 }
 
 .my-prime-div .p-component {
-  width: 400px;
-  max-width: 90vw;
+    width: 400px;
+    max-width: 90vw;
 }
 
 .my-bootstrap-empty-feedback {
-  margin-top: 0.25rem;
-  height: 21px;
+    margin-top: 0.25rem;
+    height: 21px;
 }
 
 .my-antd-empty-feedback {
-  margin-top: 0.25rem;
-  height: 20px;
+    margin-top: 0.25rem;
+    height: 20px;
 }
 
 .my-bootstrap-form input,
 .my-bootstrap-form select {
-  width: 400px;
-  max-width: 90vw;
+    width: 400px;
+    max-width: 90vw;
 }
 
 .apiInfoSectionHeader {
-  margin-top: 20px;
-  font-size: x-large;
-  font-weight: bold;
+    margin-top: 20px;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 .inner-link {
-  color: #5b7adb;
-  cursor: pointer;
+    color: #5b7adb;
+    cursor: pointer;
 }
 
 .inner-link:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .modalHeaderWrapper {
-  text-align: center;
+    text-align: center;
 }
 
 .modalHeaderWrapper .pageTitle {
-  display: block;
-  word-break: break-all;
+    display: block;
+    word-break: break-all;
 }
 
 .modalHeaderWrapper .mainWrapperDiv {
-  display: none;
+    display: none;
 }
 
 .menu-search-input {
-  width: 90%;
+    width: 90%;
 }
 
 .mysidemenu {
-  padding-top: 10px;
-  width: 20vw;
-  min-width: 200px;
+    padding-top: 10px;
+    width: 20vw;
+    min-width: 200px;
 }
 
 .sideMenuHidden {
-  display: none;
+    display: none;
 }
 
 .menuButton {
-  z-index: 1;
-  border: none !important;
-  outline: none !important;
+    z-index: 1;
+    border: none !important;
+    outline: none !important;
 }
 
 .menuLogo {
-  margin-left: 30px;
+    margin-left: 30px;
 }
 
 .menuButton > svg {
-  fill: #1976d2;
+    fill: #1976d2;
 }
 
 .infoParagraph {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .pageCodeWrapper {
-  max-width: 90vw;
-  overflow-x: auto;
+    max-width: 90vw;
+    overflow-x: auto;
 }
 
 .pageCode {
-  white-space: pre;
+    white-space: pre;
 }
 
 .pathApiTable {
-  margin-top: 20px;
-  border: 1px solid black;
+    margin-top: 20px;
+    border: 1px solid black;
 }
 
 .pathApiTable td {
-  border: 2px solid black;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
+    border: 2px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
 }
 
 .pathApiTableInfoCol {
-  width: 400px;
-  font-weight: bold;
-  font-size: x-large;
+    width: 400px;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 .pathApiTableExampleCol {
-  width: 400px;
-  font-weight: bold;
-  font-size: x-large;
+    width: 400px;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 @media (max-width: 1024px) {
-  .myShinkableButtonSpan {
-    display: none;
-  }
+    .myShinkableButtonSpan {
+        display: none;
+    }
 }
 
 @media (min-width: 1024px) {
-  .myShinkableButtonIcon {
-    display: none;
-  }
+    .myShinkableButtonIcon {
+        display: none;
+    }
 }
 
 .side-navigation-panel
-.side-navigation-panel-select
-.side-navigation-panel-select-wrap
-.side-navigation-panel-select-option-selected {
-  background-color: white !important;
+    .side-navigation-panel-select
+    .side-navigation-panel-select-wrap
+    .side-navigation-panel-select-option-selected {
+    background-color: white !important;
 }
 
 .side-navigation-panel
-.side-navigation-panel-select
-.side-navigation-panel-select-wrap
-.side-navigation-panel-select-option-selected:hover {
-  background-color: rgb(243, 243, 243) !important;
+    .side-navigation-panel-select
+    .side-navigation-panel-select-wrap
+    .side-navigation-panel-select-option-selected:hover {
+    background-color: rgb(243, 243, 243) !important;
 }
 
 .infoParagraph {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  max-width: 90vw;
-  font-size: large;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 90vw;
+    font-size: large;
 }
 
 .obssTriangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  right: 0;
-  border-width: 0 75px 75px 0;
-  border-color: transparent #1975d2 transparent transparent;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    right: 0;
+    border-width: 0 75px 75px 0;
+    border-color: transparent #1975d2 transparent transparent;
 }
 
-.obssTriangle:hover{
-  border-color: transparent #1565c0 transparent transparent;
+.obssTriangle:hover {
+    border-color: transparent #1565c0 transparent transparent;
 }
 
 .triangleIcon {
-  position: fixed;
-  top: 0;
-  right: 5px;
-  color: white;
-  width: 48px;
-  transform: rotate(45deg);
-  writing-mode: vertical-lr;
+    position: fixed;
+    top: 0;
+    right: 5px;
+    color: white;
+    width: 48px;
+    transform: rotate(45deg);
+    writing-mode: vertical-lr;
 }
 
 .codesandboxIFrame {
-  padding-top: 20px;
-  width: 100%;
-  height: 500px;
-  border: 0;
-  border-radius: 4px;
-  overflow: hidden;
+    padding-top: 20px;
+    width: 100%;
+    height: 500px;
+    border: 0;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.selectedSideItem{
-  background-color: lightgrey;
+.selectedSideItem {
+    background-color: lightgrey;
 }
 
-.generalDiv{
-  width: 100%;
+.generalDiv {
+    width: 100%;
 }
 
-.navbar-area{
-  align-items: center;
-  text-align: center;
+.navbar-area {
+    align-items: center;
+    text-align: center;
 }
 
-.comparisonArea{
-  padding-bottom: 20px;
+.comparisonArea {
+    padding-bottom: 20px;
 }

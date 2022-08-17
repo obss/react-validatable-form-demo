@@ -232,6 +232,10 @@ const allMenuItems = [
                 title: 'unsetPathIsBlurred',
                 itemId: '/examples/unset-path-is-blurred',
             },
+            {
+                title: 'isPathValid',
+                itemId: '/examples/is-path-valid',
+            },
         ],
     },
     {
@@ -266,6 +270,9 @@ const allMenuItems = [
                     'isValid',
                     'validationError',
                     'validationErrorOriginalResult',
+                    'formData',
+                    'formIsSubmitted',
+                    'blurredPathList',
                     'setPathValue',
                     'unsetPathValue',
                     'setFormIsSubmitted',
@@ -275,6 +282,7 @@ const allMenuItems = [
                     'setRules',
                     'setFormDataAndRules',
                     'resetForm',
+                    'isPathValid',
                     'getValue',
                     'getError',
                     'forceRunAllValidations',

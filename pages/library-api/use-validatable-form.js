@@ -20,7 +20,7 @@ const hookParametersApiInfoList = [
             <div>
                 rules (array){' '}
                 <Link href="/library-api/rules">
-                    <a className={"inner-link"}> See rules API </a>
+                    <a className={'inner-link'}> See rules API </a>
                 </Link>
             </div>
         ),
@@ -35,7 +35,7 @@ const hookParametersApiInfoList = [
             <div>
                 hideBeforeSubmit (boolean){' '}
                 <Link href="/advanced/hide-before-submit">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -46,7 +46,7 @@ const hookParametersApiInfoList = [
             <div>
                 showAfterBlur (boolean){' '}
                 <Link href="/advanced/show-after-blur">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -57,7 +57,7 @@ const hookParametersApiInfoList = [
             <div>
                 focusToErrorAfterSubmit (boolean){' '}
                 <Link href="/advanced/focus-to-error-after-submit">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -69,7 +69,7 @@ const hookParametersApiInfoList = [
             <div>
                 elementFocusHandler (function){' '}
                 <Link href="/customizations/custom-element-focus-handler">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -88,7 +88,7 @@ const returnValuesApiInfoList = [
             <div>
                 validationError (object){' '}
                 <Link href="/examples/validation-error">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -100,7 +100,7 @@ const returnValuesApiInfoList = [
             <div>
                 validationErrorOriginalResult (object){' '}
                 <Link href="/examples/validation-error-original-result">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -112,7 +112,7 @@ const returnValuesApiInfoList = [
             <div>
                 formData (object){' '}
                 <Link href="/examples/form-data">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -121,13 +121,35 @@ const returnValuesApiInfoList = [
     {
         label: (
             <div>
+                formIsSubmitted (boolean){' '}
+                <Link href="/advanced/hide-before-submit">
+                    <a className={'inner-link'}> See Example </a>
+                </Link>
+            </div>
+        ),
+        desc: 'Returns current formIsSubmitted info.',
+    },
+    {
+        label: (
+            <div>
+                blurredPathList (array){' '}
+                <Link href="/advanced/show-after-blur">
+                    <a className={'inner-link'}> See Example </a>
+                </Link>
+            </div>
+        ),
+        desc: 'Returns current blurredPathList info.',
+    },
+    {
+        label: (
+            <div>
                 setPathValue(path, value){' '}
                 <Link href="/library-api/path">
-                    <a className={"inner-link"}> See Path API </a>
+                    <a className={'inner-link'}> See Path API </a>
                 </Link>
                 {' - '}
                 <Link href="/examples/set-path-value">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -138,11 +160,11 @@ const returnValuesApiInfoList = [
             <div>
                 unsetPathValue(path, value){' '}
                 <Link href="/library-api/path">
-                    <a className={"inner-link"}> See Path API </a>
+                    <a className={'inner-link'}> See Path API </a>
                 </Link>
                 {' - '}
                 <Link href="/examples/unset-path-value">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -153,7 +175,7 @@ const returnValuesApiInfoList = [
             <div>
                 setFormIsSubmitted(){' '}
                 <Link href="/advanced/hide-before-submit">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -165,7 +187,7 @@ const returnValuesApiInfoList = [
             <div>
                 setPathIsBlurred(path){' '}
                 <Link href="/library-api/path">
-                    <a className={"inner-link"}> See Path API </a>
+                    <a className={'inner-link'}> See Path API </a>
                 </Link>
             </div>
         ),
@@ -177,11 +199,11 @@ const returnValuesApiInfoList = [
             <div>
                 unsetPathIsBlurred(path){' '}
                 <Link href="/library-api/path">
-                    <a className={"inner-link"}> See Path API </a>
+                    <a className={'inner-link'}> See Path API </a>
                 </Link>
                 {' - '}
                 <Link href="/examples/unset-path-is-blurred">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -193,7 +215,7 @@ const returnValuesApiInfoList = [
             <div>
                 setFormData(newFormData, pathToBeRun){' '}
                 <Link href="/examples/set-form-data">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -204,7 +226,7 @@ const returnValuesApiInfoList = [
             <div>
                 setRules(newRules){' '}
                 <Link href="/examples/set-rules">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -215,7 +237,7 @@ const returnValuesApiInfoList = [
             <div>
                 setFormDataAndRules(newFormData, newRules){' '}
                 <Link href="/examples/set-form-data-and-rules">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
@@ -227,11 +249,22 @@ const returnValuesApiInfoList = [
             <div>
                 resetForm(){' '}
                 <Link href="/advanced/show-after-blur">
-                    <a className={"inner-link"}> See Example </a>
+                    <a className={'inner-link'}> See Example </a>
                 </Link>
             </div>
         ),
         desc: 'Function to reset form submitted info and elements blurred info.',
+    },
+    {
+        label: (
+            <div>
+                isPathValid(path){' '}
+                <Link href="/examples/is-path-valid">
+                    <a className={'inner-link'}> See Example </a>
+                </Link>
+            </div>
+        ),
+        desc: 'Function to get if path can be interpreted as valid.',
     },
     {
         label: 'getValue(path)',

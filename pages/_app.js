@@ -1,3 +1,7 @@
+import 'primereact/resources/primereact.min.css';
+import 'primereact/resources/themes/saga-blue/theme.css';
+import '../styles/antd.css';
+import './../styles/MyBootstrap.css';
 import '../styles/globals.css';
 import './../styles/Settings.css';
 import './../styles/Appbar.css';
@@ -13,15 +17,10 @@ import './../styles/ExampleUsageWrapper.css';
 import './../styles/Home.css';
 import './../styles/Installation.css';
 import './../styles/Usage.css';
-import './../styles/MyBootstrap.css';
 import './../styles/CustomElementFocusHandler.css';
-import 'primereact/resources/primereact.min.css';
-import 'primereact/resources/themes/saga-blue/theme.css';
-import '../styles/antd.css';
 
 import Head from 'next/head';
 import Script from 'next/script';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
     AppBar,
@@ -37,14 +36,14 @@ import {
     useMediaQuery,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Settings from '../components/Settings';
 import { useEffect, useState } from 'react';
+import { ReactValidatableFormProvider } from 'react-validatable-form';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import Settings from '../components/Settings';
 import MainDrawer from '../components/MainDrawer';
 import ExampleUsageWrapper from '../components/ExampleUsageWrapper';
 import { NavSidebar } from '../components/NavSidebar';
-import { ReactValidatableFormProvider } from 'react-validatable-form';
-import { LocalizationProvider } from '@mui/lab';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { prefix } from '../utils/prefix';
 
 const MyCustomRuleFunction = (ruleParams) => {
@@ -337,7 +336,7 @@ function MyApp({ Component, pageProps }) {
                 </>
             )}
             <div className={'obssTriangle'}>
-                <a className={'triangleIcon'} href={'https://obss.com.tr/'} target={'_blank'} rel="noreferrer">
+                <a className={'triangleIcon'} href={'https://obss.tech/'} target={'_blank'} rel="noreferrer">
                     <img src={`${prefix}/obss.png`} width={'50px'} height={'50px'} alt={'obss'} />
                 </a>
             </div>
