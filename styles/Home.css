@@ -7,7 +7,7 @@
 
 @media (max-width: 1024px) {
     .homeContainer{
-        width: 100vw;
-        padding-inline: 20px;
+        width: 90vw;
+        padding-inline: 10px;
     }
 }
