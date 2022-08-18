@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
 import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
@@ -11,6 +11,7 @@ const npmCommand = 'npm install react-validatable-form';
 const yarnCommand = 'yarn add react-validatable-form';
 
 const Home = () => {
+    const isSmallDevice = useMediaQuery('(max-width:600px)');
     const [npmCopied, setNpmCopied] = useState(false);
     const [yarnCopied, setYarnCopied] = useState(false);
 
@@ -164,7 +165,7 @@ const Home = () => {
                         Contact Us
                     </Button>
                 </Box>
-                <video width={'500px'} autoPlay loop playsInline muted>
+                <video width={isSmallDevice ? '300px' : '500px'} autoPlay loop playsInline muted>
                     <source src={`${prefix}/example_video.mp4`} type={'video/mp4'} />
                 </video>
             </Box>
