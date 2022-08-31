@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Box, Typography, useMediaQuery } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
@@ -150,11 +151,11 @@ const Home = () => {
                     >
                         GitHub
                     </Button>
-                    <a href={'/getting-started/installation'}>
+                    <Link href={'/getting-started/installation'}>
                         <Button size={'large'} variant={'contained'} sx={{ borderRadius: '30px' }}>
                             Get Started
                         </Button>
-                    </a>
+                    </Link>
                     <Button
                         size={'large'}
                         href={'https://github.com/obss/react-validatable-form/issues'}
