@@ -21,9 +21,6 @@
     "@mui/styles": "5.9.3",
     "@mui/utils": "5.9.3",
     "@mui/x-date-pickers": "5.0.0-beta.3",
-    "@testing-library/jest-dom": "5.11.4",
-    "@testing-library/react": "11.1.0",
-    "@testing-library/user-event": "12.1.10",
     "antd": "4.22.6",
     "bootstrap": "5.2.0",
     "date-fns": "2.29.1",
@@ -39,15 +36,9 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "react-scripts": "5.0.1",
-    "react-validatable-form": "3.5.1",
-    "web-vitals": "1.0.1"
+    "react-validatable-form": "3.5.1"
   },
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-react": "6.24.1",
-    "babel-register": "6.26.0",
     "eslint": "8.12.0",
     "eslint-config-next": "12.1.2"
   },
