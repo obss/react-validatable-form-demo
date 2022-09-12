@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import Link from 'next/link'
+import Link from 'next/link';
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -54,21 +54,14 @@ const rules = [
 ];
 
 const ValidateListOfObjects = () => {
-    const {
-        isValid,
-        formData,
-        setPathValue,
-        setFormIsSubmitted,
-        setPathIsBlurred,
-        getValue,
-        getError,
-    } = useValidatableForm({
-        rules,
-        initialFormData: { listChild: [{ id: 1 }] },
-        hideBeforeSubmit: true,
-        showAfterBlur: true,
-        focusToErrorAfterSubmit: true,
-    });
+    const { isValid, formData, setPathValue, setFormIsSubmitted, setPathIsBlurred, getValue, getError } =
+        useValidatableForm({
+            rules,
+            initialFormData: { listChild: [{ id: 1 }] },
+            hideBeforeSubmit: true,
+            showAfterBlur: true,
+            focusToErrorAfterSubmit: true,
+        });
     const [nextId, setNextId] = useState(2);
     const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -147,10 +140,7 @@ const ValidateListOfObjects = () => {
     }
 
     return (
-        <ExampleUsageWrapper
-            header="Validate List of Objects"
-            codeUrl="pages/advanced/validate-list-of-objects.js"
-        >
+        <ExampleUsageWrapper header="Validate List of Objects" codeUrl="pages/advanced/validate-list-of-objects.js">
             <p className="infoParagraph">
                 An array of objects with more than one subkeys can be validated using{' '}
                 <Link className="inner-link" href="/library-api/path">

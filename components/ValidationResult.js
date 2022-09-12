@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import {prefix} from "../utils/prefix";
+import { prefix } from '../utils/prefix';
 
 const ValidationResult = ({ isValid }) => {
     let imgSrc;

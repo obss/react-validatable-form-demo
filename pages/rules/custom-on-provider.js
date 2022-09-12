@@ -1,5 +1,5 @@
 import { useValidatableForm } from 'react-validatable-form';
-import Link from 'next/link'
+import Link from 'next/link';
 import ExampleUsageWrapper from '../../components/ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import ValidationResult from '../../components/ValidationResult';

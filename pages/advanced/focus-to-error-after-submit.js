@@ -29,21 +29,14 @@ const rules = [
 ];
 
 const FocusToErrorAfterSubmit = () => {
-    const {
-        isValid,
-        formData,
-        setPathValue,
-        setFormIsSubmitted,
-        setPathIsBlurred,
-        getValue,
-        getError,
-    } = useValidatableForm({
-        rules,
-        initialFormData,
-        hideBeforeSubmit: true,
-        showAfterBlur: true,
-        focusToErrorAfterSubmit: true,
-    });
+    const { isValid, formData, setPathValue, setFormIsSubmitted, setPathIsBlurred, getValue, getError } =
+        useValidatableForm({
+            rules,
+            initialFormData,
+            hideBeforeSubmit: true,
+            showAfterBlur: true,
+            focusToErrorAfterSubmit: true,
+        });
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const handleFormSubmit = () => {
@@ -54,10 +47,7 @@ const FocusToErrorAfterSubmit = () => {
     };
 
     return (
-        <ExampleUsageWrapper
-            header="focusToErrorAfterSubmit"
-            codeUrl="pages/advanced/focus-to-error-after-submit.js"
-        >
+        <ExampleUsageWrapper header="focusToErrorAfterSubmit" codeUrl="pages/advanced/focus-to-error-after-submit.js">
             <p className="infoParagraph">
                 <b>focusToErrorAfterSubmit</b> parameter is used to automatically focus to the first element with a
                 validation error. In order to find the element on DOM, <b>path</b> value should be equal to the HTML

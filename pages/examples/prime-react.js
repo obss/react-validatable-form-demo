@@ -38,21 +38,14 @@ const primeReactElementsFocusHandler = (elementId) => {
 };
 
 const PrimeReact = () => {
-    const {
-        isValid,
-        formData,
-        setPathValue,
-        setFormIsSubmitted,
-        setPathIsBlurred,
-        getValue,
-        getError,
-    } = useValidatableForm({
-        rules,
-        hideBeforeSubmit: true,
-        showAfterBlur: true,
-        focusToErrorAfterSubmit: true,
-        elementFocusHandler: primeReactElementsFocusHandler,
-    });
+    const { isValid, formData, setPathValue, setFormIsSubmitted, setPathIsBlurred, getValue, getError } =
+        useValidatableForm({
+            rules,
+            hideBeforeSubmit: true,
+            showAfterBlur: true,
+            focusToErrorAfterSubmit: true,
+            elementFocusHandler: primeReactElementsFocusHandler,
+        });
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const handleFormSubmit = () => {
@@ -63,10 +56,7 @@ const PrimeReact = () => {
     };
 
     return (
-        <ExampleUsageWrapper
-            header="Example Usage with PrimeReact Components"
-            codeUrl="pages/examples/prime-react.js"
-        >
+        <ExampleUsageWrapper header="Example Usage with PrimeReact Components" codeUrl="pages/examples/prime-react.js">
             <div>
                 <div className="my-prime-div">
                     <label htmlFor="textVal1">Text1</label>

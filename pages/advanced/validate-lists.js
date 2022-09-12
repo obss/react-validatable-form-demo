@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
-import Link from 'next/link'
+import Link from 'next/link';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';

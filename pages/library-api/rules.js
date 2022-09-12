@@ -3,7 +3,6 @@ import ApiInfo from '../../components/ApiInfo';
 import CodeAccordion from '../../components/CodeAccordion';
 import ExampleUsageWrapper from '../../components/ExampleUsageWrapper';
 
-
 const rulesFormCode = `const rules = [
     {
         listPath: 'listChild',
@@ -77,7 +76,7 @@ const rulesParametersApiInfoList = [
             <div>
                 ruleSet (array){' '}
                 <Link href="/library-api/rule">
-                    <a className={"inner-link"}> See Rule API </a>
+                    <a className={'inner-link'}> See Rule API </a>
                 </Link>
             </div>
         ),
@@ -89,8 +88,7 @@ const rulesParametersApiInfoList = [
     },
     {
         label: 'listElementId (string)',
-        desc:
-            'Custom listElementId prefix to focus to elements with validation errors after submit (listPath is used if empty).',
+        desc: 'Custom listElementId prefix to focus to elements with validation errors after submit (listPath is used if empty).',
     },
     {
         label: 'dependantPaths (array)',

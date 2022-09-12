@@ -17,21 +17,13 @@ const rules = [
 ];
 
 const IsPathValid = () => {
-    const {
-        isValid,
-        formData,
-        setPathValue,
-        setFormIsSubmitted,
-        setPathIsBlurred,
-        getValue,
-        getError,
-        isPathValid,
-    } = useValidatableForm({
-        rules,
-        hideBeforeSubmit: true,
-        showAfterBlur: true,
-        focusToErrorAfterSubmit: true,
-    });
+    const { isValid, formData, setPathValue, setFormIsSubmitted, setPathIsBlurred, getValue, getError, isPathValid } =
+        useValidatableForm({
+            rules,
+            hideBeforeSubmit: true,
+            showAfterBlur: true,
+            focusToErrorAfterSubmit: true,
+        });
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const handleFormSubmit = () => {
@@ -42,10 +34,7 @@ const IsPathValid = () => {
     };
 
     return (
-        <ExampleUsageWrapper
-            header="isPathValid"
-            codeUrl="pages/examples/is-path-valid.js"
-        >
+        <ExampleUsageWrapper header="isPathValid" codeUrl="pages/examples/is-path-valid.js">
             <Form className="my-bootstrap-form">
                 <Form.Group controlId="textVal1">
                     <Form.Label>Text1</Form.Label>

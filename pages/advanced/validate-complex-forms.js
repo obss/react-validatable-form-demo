@@ -10,7 +10,7 @@ import ValidationResult from '../../components/ValidationResult';
 import CurrentRulesInfo from '../../components/CurrentRulesInfo';
 import ExampleUsageWrapper from '../../components/ExampleUsageWrapper';
 import FormSubmitResult from '../../components/FormSubmitResult';
-import SubComponent from "../../components/SubComponent";
+import SubComponent from '../../components/SubComponent';
 
 const disableSubkey2 = (formData, index) => {
     return formData.disableAllSubkey2Rule || formData.listChild[index].disableSubkey2Rule;
@@ -60,20 +60,13 @@ const rules = [
 ];
 
 const ValidateComplexForms = () => {
-    const {
-        isValid,
-        formData,
-        setPathValue,
-        setFormIsSubmitted,
-        setPathIsBlurred,
-        getValue,
-        getError,
-    } = useValidatableForm({
-        rules,
-        hideBeforeSubmit: true,
-        showAfterBlur: true,
-        focusToErrorAfterSubmit: true,
-    });
+    const { isValid, formData, setPathValue, setFormIsSubmitted, setPathIsBlurred, getValue, getError } =
+        useValidatableForm({
+            rules,
+            hideBeforeSubmit: true,
+            showAfterBlur: true,
+            focusToErrorAfterSubmit: true,
+        });
     const [nextId, setNextId] = useState(1);
     const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -141,10 +134,7 @@ const ValidateComplexForms = () => {
     return (
         <ExampleUsageWrapper
             header="Validate Complex Forms"
-            codeUrl={[
-                'pages/advanced/validate-complex-forms.js',
-                'components/SubComponent.js',
-            ]}
+            codeUrl={['pages/advanced/validate-complex-forms.js', 'components/SubComponent.js']}
         >
             <p className="infoParagraph">
                 <b>react-validatable-form</b> can handle validation of complex forms. The form can have multiple paths,

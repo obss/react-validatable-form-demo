@@ -3,15 +3,7 @@ import ExampleUsageWrapper from '../../components/ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import ValidationResult from '../../components/ValidationResult';
 import CurrentRulesInfo from '../../components/CurrentRulesInfo';
-import {
-    Autocomplete,
-    Checkbox,
-    FormControl,
-    FormControlLabel,
-    FormGroup,
-    FormHelperText,
-    Typography,
-} from '@mui/material';
+import { Autocomplete, Checkbox, FormControl, FormControlLabel, FormGroup, FormHelperText } from '@mui/material';
 import { options } from '../../constants/Data';
 
 const initialFormData = {

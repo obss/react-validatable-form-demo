@@ -1,5 +1,5 @@
 import ExampleUsageWrapper from './../../components/ExampleUsageWrapper';
-import Link from 'next/link'
+import Link from 'next/link';
 
 const Usage = (props) => {
     const providerCode = `import { ReactValidatableFormProvider } from 'react-validatable-form';

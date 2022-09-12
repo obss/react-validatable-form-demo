@@ -12,20 +12,13 @@ const rules = [
 ];
 
 const Pure = () => {
-    const {
-        isValid,
-        formData,
-        setPathValue,
-        setFormIsSubmitted,
-        setPathIsBlurred,
-        getValue,
-        getError,
-    } = useValidatableForm({
-        rules,
-        hideBeforeSubmit: true,
-        showAfterBlur: true,
-        focusToErrorAfterSubmit: true,
-    });
+    const { isValid, formData, setPathValue, setFormIsSubmitted, setPathIsBlurred, getValue, getError } =
+        useValidatableForm({
+            rules,
+            hideBeforeSubmit: true,
+            showAfterBlur: true,
+            focusToErrorAfterSubmit: true,
+        });
 
     const handleFormSubmit = () => {
         const submitResultValid = setFormIsSubmitted();
@@ -34,10 +27,7 @@ const Pure = () => {
         }
     };
     return (
-        <ExampleUsageWrapper
-            header="Example Usage with Pure React Components"
-            codeUrl="pages/examples/pure.js"
-        >
+        <ExampleUsageWrapper header="Example Usage with Pure React Components" codeUrl="pages/examples/pure.js">
             <div>
                 <div className={getError('textVal1') && 'hasError'}>
                     <label htmlFor="textVal1">Text1: </label>

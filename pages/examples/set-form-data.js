@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
 import get from 'lodash.get';
-import {Autocomplete, Button, TextField} from '@mui/material';
+import { Autocomplete, Button, TextField } from '@mui/material';
 import { Dialog, DialogTitle } from '@mui/material';
 import { options } from '../../constants/Data';
 import ValidationResult from '../../components/ValidationResult';
@@ -17,18 +17,11 @@ const rules = [
 ];
 
 const SetFormData = () => {
-    const {
-        isValid,
-        validationError,
-        formData,
-        setPathValue,
-        setFormData,
-        setFormIsSubmitted,
-        setPathIsBlurred,
-    } = useValidatableForm({
-        rules,
-        focusToErrorAfterSubmit: true,
-    });
+    const { isValid, validationError, formData, setPathValue, setFormData, setFormIsSubmitted, setPathIsBlurred } =
+        useValidatableForm({
+            rules,
+            focusToErrorAfterSubmit: true,
+        });
     const [dialogOpen, setDialogOpen] = useState(false);
     const [formFilledState, setFormFilledState] = useState(0);
 

@@ -17,20 +17,13 @@ const rules = [
 ];
 
 const Antd = () => {
-    const {
-        isValid,
-        formData,
-        setPathValue,
-        setFormIsSubmitted,
-        setPathIsBlurred,
-        getValue,
-        getError,
-    } = useValidatableForm({
-        rules,
-        hideBeforeSubmit: true,
-        showAfterBlur: true,
-        focusToErrorAfterSubmit: true,
-    });
+    const { isValid, formData, setPathValue, setFormIsSubmitted, setPathIsBlurred, getValue, getError } =
+        useValidatableForm({
+            rules,
+            hideBeforeSubmit: true,
+            showAfterBlur: true,
+            focusToErrorAfterSubmit: true,
+        });
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const handleFormSubmit = () => {
@@ -41,10 +34,7 @@ const Antd = () => {
     };
 
     return (
-        <ExampleUsageWrapper
-            header="Example Usage with Ant Design Components"
-            codeUrl="pages/examples/antd.js"
-        >
+        <ExampleUsageWrapper header="Example Usage with Ant Design Components" codeUrl="pages/examples/antd.js">
             <div>
                 <div>
                     <Input

@@ -17,20 +17,13 @@ const rules = [
 ];
 
 const Mui = () => {
-    const {
-        isValid,
-        formData,
-        setPathValue,
-        setFormIsSubmitted,
-        setPathIsBlurred,
-        getValue,
-        getError,
-    } = useValidatableForm({
-        rules,
-        hideBeforeSubmit: true,
-        showAfterBlur: true,
-        focusToErrorAfterSubmit: true,
-    });
+    const { isValid, formData, setPathValue, setFormIsSubmitted, setPathIsBlurred, getValue, getError } =
+        useValidatableForm({
+            rules,
+            hideBeforeSubmit: true,
+            showAfterBlur: true,
+            focusToErrorAfterSubmit: true,
+        });
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const handleFormSubmit = () => {
@@ -41,10 +34,7 @@ const Mui = () => {
     };
 
     return (
-        <ExampleUsageWrapper
-            header="Example Usage with MUI Components"
-            codeUrl="pages/examples/mui.js"
-        >
+        <ExampleUsageWrapper header="Example Usage with MUI Components" codeUrl="pages/examples/mui.js">
             <div>
                 <div>
                     <TextField

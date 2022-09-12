@@ -1,63 +1,55 @@
 {
-  "name": "react-validatable-form-demo",
-  "version": "3.5.1",
-  "private": false,
-  "license": "MIT",
-  "scripts": {
-    "dev": "next dev -p 3155",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@date-io/date-fns": "2.11.0",
-    "@emotion/cache": "11.10.1",
-    "@emotion/react": "11.10.0",
-    "@emotion/styled": "11.10.0",
-    "@mui/icons-material": "5.8.4",
-    "@mui/lab": "5.0.0-alpha.93",
-    "@mui/material": "5.9.3",
-    "@mui/styles": "5.9.3",
-    "@mui/utils": "5.9.3",
-    "@mui/x-date-pickers": "5.0.0-beta.3",
-    "antd": "4.22.6",
-    "bootstrap": "5.2.0",
-    "date-fns": "2.29.1",
-    "lodash.get": "^4.4.2",
-    "next": "12.2.5",
-    "prettier": "2.2.1",
-    "primereact": "8.3.0",
-    "react": "18.2.0",
-    "react-bootstrap": "2.5.0",
-    "react-dom": "18.2.0",
-    "react-minimal-side-navigation": "1.9.2",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.23.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "react-validatable-form": "3.5.1"
-  },
-  "devDependencies": {
-    "eslint": "8.12.0",
-    "eslint-config-next": "12.1.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "react-validatable-form-demo",
+    "version": "3.6.0",
+    "private": false,
+    "license": "MIT",
+    "scripts": {
+        "dev": "next dev -p 3155",
+        "build": "next build",
+        "start": "next start",
+        "export": "next export",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@date-io/date-fns": "2.15.0",
+        "@emotion/react": "11.10.4",
+        "@emotion/styled": "11.10.4",
+        "@mui/icons-material": "5.10.3",
+        "@mui/lab": "5.0.0-alpha.98",
+        "@mui/material": "5.10.4",
+        "@mui/styles": "5.10.3",
+        "@mui/utils": "5.10.3",
+        "@mui/x-date-pickers": "5.0.1",
+        "antd": "4.23.1",
+        "bootstrap": "5.2.1",
+        "date-fns": "2.29.2",
+        "next": "12.3.0",
+        "primereact": "8.5.0",
+        "react": "18.2.0",
+        "react-bootstrap": "2.5.0",
+        "react-dom": "18.2.0",
+        "react-minimal-side-navigation": "1.9.2",
+        "react-validatable-form": "3.6.0"
+    },
+    "devDependencies": {
+        "eslint": "8.23.1",
+        "eslint-config-prettier": "8.5.0",
+        "eslint-config-next": "12.3.0",
+        "eslint-plugin-prettier": "4.2.1",
+        "eslint-plugin-react": "7.31.8",
+        "eslint-plugin-react-hooks": "4.6.0",
+        "prettier": "2.7.1"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }

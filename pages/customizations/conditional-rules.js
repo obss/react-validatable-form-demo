@@ -39,10 +39,7 @@ const ConditionalRules = () => {
     });
 
     return (
-        <ExampleUsageWrapper
-            header="disableIf & enableIf"
-            codeUrl={'pages/customizations/conditional-rules.js'}
-        >
+        <ExampleUsageWrapper header="disableIf & enableIf" codeUrl={'pages/customizations/conditional-rules.js'}>
             <p className="infoParagraph">
                 Any validation rule can be disabled if the defined <b>disableIf</b> function returns true. Any
                 validation rule can only be enabled if the defined <b>enableIf</b> function returns true.

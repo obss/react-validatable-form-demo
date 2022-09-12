@@ -3,7 +3,7 @@ import ExampleUsageWrapper from '../../components/ExampleUsageWrapper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
-import Link from 'next/link'
+import Link from 'next/link';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ValidationResult from '../../components/ValidationResult';
 import CurrentRulesInfo from '../../components/CurrentRulesInfo';

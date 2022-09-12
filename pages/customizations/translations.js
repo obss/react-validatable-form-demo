@@ -1,5 +1,5 @@
 import { useValidatableForm } from 'react-validatable-form';
-import Link from 'next/link'
+import Link from 'next/link';
 import TextField from '@mui/material/TextField';
 import ValidationResult from '../../components/ValidationResult';
 import CurrentRulesInfo from '../../components/CurrentRulesInfo';
@@ -25,10 +25,7 @@ const Translations = () => {
     });
 
     return (
-        <ExampleUsageWrapper
-            header="translations"
-            codeUrl={['pages/customizations/translations.js', 'pages/_app.js']}
-        >
+        <ExampleUsageWrapper header="translations" codeUrl={['pages/customizations/translations.js', 'pages/_app.js']}>
             <p className="infoParagraph">
                 Validation error messages of any rules can be customized in app by passing <b>translations</b> param to{' '}
                 <Link className="inner-link" href="/library-api/react-validatable-form-provider">

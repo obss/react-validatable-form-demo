@@ -168,12 +168,6 @@ function MyApp({ Component, pageProps }) {
         setMenuIsHidden(isMobile);
     }, [isMobile]);
 
-    const handleOutsideClick = () => {
-        if (isMobile) {
-            setMenuIsHidden(true);
-        }
-    };
-
     const openSettingsDialog = () => {
         setSettingsDialogOpen(true);
     };

@@ -1,52 +1,32 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "next/core-web-vitals"
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
     },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": [
-    "react",
-    "prettier",
-    "react-hooks"
-  ],
-  "rules": {
-    "no-unused-vars": "warn",
-    "react/jsx-fragments": ["error", "syntax"],
-    "react/prop-types": "off",
-    "import/prefer-default-export": "off",
-    "react/react-in-jsx-scope": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "off",
-    "react/display-name": "off",
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      }
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "next/core-web-vitals"
     ],
-    "react/jsx-props-no-spreading": "off",
-    "jsx-a11y/anchor-is-valid": "off"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
+    "rules": {
+        "no-unused-vars": "warn",
+        "react/jsx-fragments": ["error", "syntax"],
+        "react/prop-types": "off",
+        "import/prefer-default-export": "off",
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "off",
+        "react/display-name": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "react/jsx-props-no-spreading": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "@next/next/no-img-element": "off"
     }
-  }
 }
