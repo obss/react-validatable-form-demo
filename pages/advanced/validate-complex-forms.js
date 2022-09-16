@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
@@ -11,6 +11,7 @@ import CurrentRulesInfo from '../../components/CurrentRulesInfo';
 import ExampleUsageWrapper from '../../components/ExampleUsageWrapper';
 import FormSubmitResult from '../../components/FormSubmitResult';
 import SubComponent from '../../components/SubComponent';
+import AdvancedSubAutonomousComponent from '../../components/AdvancedSubAutonomousComponent';
 
 const disableSubkey2 = (formData, index) => {
     return formData.disableAllSubkey2Rule || formData.listChild[index].disableSubkey2Rule;
@@ -69,10 +70,22 @@ const ValidateComplexForms = () => {
         });
     const [nextId, setNextId] = useState(1);
     const [dialogOpen, setDialogOpen] = useState(false);
+    const [autonomousChildFormData, setAutonomousChildFormData] = useState({});
+    const [autonomousChildIsValid, setAutonomousChildIsValid] = useState(false);
+    const autonomousChildRef = useRef();
+
+    const handleAutonomousFormDataIsChanged = (formDataParam) => {
+        setAutonomousChildFormData(formDataParam);
+    };
+
+    const handleAutonomousIsValidChanged = (isValidParam) => {
+        setAutonomousChildIsValid(isValidParam);
+    };
 
     const handleFormSubmit = () => {
         const submitResultValid = setFormIsSubmitted();
-        if (submitResultValid) {
+        autonomousChildRef.current.handleSetFormIsSubmitted();
+        if (submitResultValid && autonomousChildIsValid) {
             setDialogOpen(true);
         }
     };
@@ -134,13 +147,22 @@ const ValidateComplexForms = () => {
     return (
         <ExampleUsageWrapper
             header="Validate Complex Forms"
-            codeUrl={['pages/advanced/validate-complex-forms.js', 'components/SubComponent.js']}
+            codeUrl={[
+                'pages/advanced/validate-complex-forms.js',
+                'components/SubComponent.js',
+                'components/AdvancedSubAutonomousComponent.js',
+            ]}
         >
             <p className="infoParagraph">
                 <b>react-validatable-form</b> can handle validation of complex forms. The form can have multiple paths,
                 listPaths and subcomponents.
             </p>
             <div>
+                <AdvancedSubAutonomousComponent
+                    ref={autonomousChildRef}
+                    handleAutonomousFormDataIsChanged={handleAutonomousFormDataIsChanged}
+                    handleAutonomousIsValidChanged={handleAutonomousIsValidChanged}
+                />
                 <div className={'formField'}>
                     <TextField
                         error={!!getError('child1')}
@@ -242,7 +264,7 @@ const ValidateComplexForms = () => {
             </div>
             <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
                 <DialogTitle>Form Data Submitted</DialogTitle>
-                <FormSubmitResult formData={formData} />
+                <FormSubmitResult formData={{ ...formData, ...autonomousChildFormData }} />
             </Dialog>
         </ExampleUsageWrapper>
     );
