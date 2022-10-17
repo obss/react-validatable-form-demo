@@ -1,6 +1,6 @@
 {
     "name": "react-validatable-form-demo",
-    "version": "3.6.0",
+    "version": "3.7.0",
     "private": false,
     "license": "MIT",
     "scripts": {
@@ -11,25 +11,25 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@date-io/date-fns": "2.15.0",
+        "@date-io/date-fns": "2.16.0",
         "@emotion/react": "11.10.4",
         "@emotion/styled": "11.10.4",
-        "@mui/icons-material": "5.10.3",
-        "@mui/lab": "5.0.0-alpha.98",
-        "@mui/material": "5.10.4",
-        "@mui/styles": "5.10.3",
-        "@mui/utils": "5.10.3",
-        "@mui/x-date-pickers": "5.0.1",
-        "antd": "4.23.1",
-        "bootstrap": "5.2.1",
-        "date-fns": "2.29.2",
+        "@mui/icons-material": "5.10.9",
+        "@mui/lab": "5.0.0-alpha.103",
+        "@mui/material": "5.10.9",
+        "@mui/styles": "5.10.9",
+        "@mui/utils": "5.10.9",
+        "@mui/x-date-pickers": "5.0.4",
+        "antd": "4.23.5",
+        "bootstrap": "5.2.2",
+        "date-fns": "2.29.3",
         "next": "12.3.0",
-        "primereact": "8.5.0",
+        "primereact": "8.6.1",
         "react": "18.2.0",
         "react-bootstrap": "2.5.0",
         "react-dom": "18.2.0",
         "react-minimal-side-navigation": "1.9.2",
-        "react-validatable-form": "3.6.0"
+        "react-validatable-form": "3.7.0"
     },
     "devDependencies": {
         "eslint": "8.23.1",
