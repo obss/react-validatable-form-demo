@@ -92,7 +92,6 @@ const DateRule = () => {
                 />
 
                 <Autocomplete
-                    className="ruleOptionComponent"
                     value={ruleOption}
                     onChange={(event, newValue) => {
                         handleRuleOptionChange(newValue);
