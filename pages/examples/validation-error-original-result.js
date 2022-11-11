@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useValidatableForm } from 'react-validatable-form';
 import TextField from '@mui/material/TextField';
-import { Autocomplete, Button } from '@mui/material';
-import { Dialog, DialogTitle } from '@mui/material';
+import { Autocomplete, Button, Dialog, DialogTitle } from '@mui/material';
 import { options } from '../../constants/Data';
 import ValidationResult from '../../components/ValidationResult';
 import CurrentRulesInfo from '../../components/CurrentRulesInfo';

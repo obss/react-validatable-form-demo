@@ -1,7 +1,6 @@
 {
     "name": "react-validatable-form-demo",
-    "version": "3.7.0",
-    "private": false,
+    "version": "4.0.0",
     "license": "MIT",
     "scripts": {
         "dev": "next dev -p 3155",
@@ -26,12 +25,12 @@
         "react-bootstrap": "2.5.0",
         "react-dom": "18.2.0",
         "react-minimal-side-navigation": "1.9.2",
-        "react-validatable-form": "3.7.0"
+        "react-validatable-form": "4.0.0"
     },
     "devDependencies": {
         "eslint": "8.23.1",
-        "eslint-config-prettier": "8.5.0",
         "eslint-config-next": "12.3.0",
+        "eslint-config-prettier": "8.5.0",
         "eslint-plugin-prettier": "4.2.1",
         "eslint-plugin-react": "7.31.8",
         "eslint-plugin-react-hooks": "4.6.0",
