@@ -53,8 +53,8 @@ const rulesParametersApiInfoList = [
         label: (
             <div>
                 path (string){' '}
-                <Link href="/library-api/path">
-                    <a className="inner-link"> See Path API </a>
+                <Link href="/library-api/path" className="inner-link">
+                    See Path API
                 </Link>
             </div>
         ),
@@ -64,8 +64,8 @@ const rulesParametersApiInfoList = [
         label: (
             <div>
                 listPath (string){' '}
-                <Link href="/library-api/path">
-                    <a className="inner-link"> See Path API </a>
+                <Link href="/library-api/path" className="inner-link">
+                    See Path API
                 </Link>
             </div>
         ),
@@ -75,8 +75,8 @@ const rulesParametersApiInfoList = [
         label: (
             <div>
                 ruleSet (array){' '}
-                <Link href="/library-api/rule">
-                    <a className={'inner-link'}> See Rule API </a>
+                <Link href="/library-api/rule" className={'inner-link'}>
+                    See Rule API
                 </Link>
             </div>
         ),

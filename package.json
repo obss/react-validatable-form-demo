@@ -19,7 +19,7 @@
         "antd": "4.23.5",
         "bootstrap": "5.2.2",
         "date-fns": "2.29.3",
-        "next": "12.3.0",
+        "next": "13.0.6",
         "primereact": "8.6.1",
         "react": "18.2.0",
         "react-bootstrap": "2.5.0",

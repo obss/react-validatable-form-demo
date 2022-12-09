@@ -151,7 +151,7 @@ const Home = () => {
                     >
                         GitHub
                     </Button>
-                    <Link href={'/getting-started/installation'}>
+                    <Link href={'/getting-started/installation'} legacyBehavior>
                         <Button size={'large'} variant={'contained'} sx={{ borderRadius: '30px' }}>
                             Get Started
                         </Button>

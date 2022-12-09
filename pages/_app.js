@@ -340,14 +340,10 @@ function MyApp({ Component, pageProps }) {
                             <MenuIcon />
                         </IconButton>
                         <Link href={'/'}>
-                            <a>
-                                <img src={`${prefix}/logo.png`} alt={'logo'} width={'48px'} height={'48px'} />
-                            </a>
+                            <img src={`${prefix}/logo.png`} alt={'logo'} width={'48px'} height={'48px'} />
                         </Link>
-                        <Link href={'/'}>
-                            <a className={'bannerText'}>
-                                <div className={'bannerLink'}>react-validatable-form</div>
-                            </a>
+                        <Link href={'/'} className={'bannerText'}>
+                            <div className={'bannerLink'}>react-validatable-form</div>
                         </Link>
                         <Box flexGrow={1} />
                         <Settings openSettingsDialog={openSettingsDialog} />

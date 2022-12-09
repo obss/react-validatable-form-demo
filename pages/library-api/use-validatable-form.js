@@ -19,8 +19,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 rules (array){' '}
-                <Link href="/library-api/rules">
-                    <a className={'inner-link'}> See rules API </a>
+                <Link href="/library-api/rules" className={'inner-link'}>
+                    See rules API
                 </Link>
             </div>
         ),
@@ -34,8 +34,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 hideBeforeSubmit (boolean){' '}
-                <Link href="/advanced/hide-before-submit">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/advanced/hide-before-submit" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -45,8 +45,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 showAfterBlur (boolean){' '}
-                <Link href="/advanced/show-after-blur">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/advanced/show-after-blur" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -56,8 +56,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 focusToErrorAfterSubmit (boolean){' '}
-                <Link href="/advanced/focus-to-error-after-submit">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/advanced/focus-to-error-after-submit" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -67,8 +67,8 @@ const hookParametersApiInfoList = [
         label: (
             <div>
                 elementFocusHandler (function){' '}
-                <Link href="/customizations/custom-element-focus-handler">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/customizations/custom-element-focus-handler" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -85,8 +85,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 validationError (object){' '}
-                <Link href="/examples/validation-error">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/validation-error" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -96,8 +96,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 validationErrorOriginalResult (object){' '}
-                <Link href="/examples/validation-error-original-result">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/validation-error-original-result" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -107,8 +107,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 formData (object){' '}
-                <Link href="/examples/form-data">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/form-data" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -118,8 +118,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 formIsSubmitted (boolean){' '}
-                <Link href="/advanced/hide-before-submit">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/advanced/hide-before-submit" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -129,8 +129,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 blurredPathList (array){' '}
-                <Link href="/advanced/show-after-blur">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/advanced/show-after-blur" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -140,12 +140,12 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setPathValue(path, value){' '}
-                <Link href="/library-api/path">
-                    <a className={'inner-link'}> See Path API </a>
+                <Link href="/library-api/path" className={'inner-link'}>
+                    See Path API
                 </Link>
                 {' - '}
-                <Link href="/examples/set-path-value">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/set-path-value" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -155,12 +155,12 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 unsetPathValue(path, value){' '}
-                <Link href="/library-api/path">
-                    <a className={'inner-link'}> See Path API </a>
+                <Link href="/library-api/path" className={'inner-link'}>
+                    See Path API
                 </Link>
                 {' - '}
-                <Link href="/examples/unset-path-value">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/unset-path-value" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -170,8 +170,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setFormIsSubmitted(){' '}
-                <Link href="/advanced/hide-before-submit">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/advanced/hide-before-submit" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -181,8 +181,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setPathIsBlurred(path){' '}
-                <Link href="/library-api/path">
-                    <a className={'inner-link'}> See Path API </a>
+                <Link href="/library-api/path" className={'inner-link'}>
+                    See Path API
                 </Link>
             </div>
         ),
@@ -192,12 +192,12 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 unsetPathIsBlurred(path){' '}
-                <Link href="/library-api/path">
-                    <a className={'inner-link'}> See Path API </a>
+                <Link href="/library-api/path" className={'inner-link'}>
+                    See Path API
                 </Link>
                 {' - '}
-                <Link href="/examples/unset-path-is-blurred">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/unset-path-is-blurred" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -207,8 +207,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setFormData(newFormData, pathToBeRun){' '}
-                <Link href="/examples/set-form-data">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/set-form-data" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -218,8 +218,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setRules(newRules){' '}
-                <Link href="/examples/set-rules">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/set-rules" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -229,8 +229,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 setFormDataAndRules(newFormData, newRules){' '}
-                <Link href="/examples/set-form-data-and-rules">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/set-form-data-and-rules" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -240,8 +240,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 resetForm(){' '}
-                <Link href="/advanced/show-after-blur">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/advanced/show-after-blur" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -251,8 +251,8 @@ const returnValuesApiInfoList = [
         label: (
             <div>
                 isPathValid(path){' '}
-                <Link href="/examples/is-path-valid">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/examples/is-path-valid" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),

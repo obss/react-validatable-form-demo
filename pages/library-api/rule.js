@@ -14,8 +14,8 @@ const ruleParametersApiInfoList = [
         desc: (
             <span>
                 Identifier (name) of the rule to be run. (Can also be a{' '}
-                <Link href="/rules/custom-on-hook">
-                    <a className={'inner-link'}> custom function </a>
+                <Link href="/rules/custom-on-hook" className={'inner-link'}>
+                    custom function
                 </Link>
                 )
             </span>
@@ -26,20 +26,20 @@ const ruleParametersApiInfoList = [
         desc: (
             <span>
                 Comparison identifier that can be used only by{' '}
-                <Link href="/rules/number">
-                    <a className={'inner-link'}> number </a>
+                <Link href="/rules/number" className={'inner-link'}>
+                    number
                 </Link>
                 {', '}
-                <Link href="/rules/length">
-                    <a className={'inner-link'}> length </a>
+                <Link href="/rules/length" className={'inner-link'}>
+                    length
                 </Link>
                 {', '}
-                <Link href="/rules/list-size">
-                    <a className={'inner-link'}> listSize </a>
+                <Link href="/rules/list-size" className={'inner-link'}>
+                    listSize
                 </Link>
                 {' and '}
-                <Link href="/rules/date">
-                    <a className={'inner-link'}> date </a>
+                <Link href="/rules/date" className={'inner-link'}>
+                    date
                 </Link>{' '}
                 rules.
             </span>
@@ -49,16 +49,16 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 equalTo{' '}
-                <Link href="/rules/equality">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/rules/equality" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
         desc: (
             <span>
                 The equality identifier that can be used with the{' '}
-                <Link href={'/rules/equality'}>
-                    <a className={'inner-link'}> equality </a>
+                <Link href={'/rules/equality'} className={'inner-link'}>
+                    equality
                 </Link>{' '}
                 rule.
             </span>
@@ -68,16 +68,16 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 isOneOf{' '}
-                <Link href="/rules/equality">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/rules/equality" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
         desc: (
             <span>
                 Checking that it is included in the list available with the{' '}
-                <Link href={'/rules/equality'}>
-                    <a className={'inner-link'}> equality </a>
+                <Link href={'/rules/equality'} className={'inner-link'}>
+                    equality
                 </Link>{' '}
                 rule
             </span>
@@ -88,8 +88,8 @@ const ruleParametersApiInfoList = [
         desc: (
             <span>
                 Decides whether only integer are allowed that can be used only by{' '}
-                <Link href="/rules/number">
-                    <a className={'inner-link'}> number </a>
+                <Link href="/rules/number" className={'inner-link'}>
+                    number
                 </Link>{' '}
                 rule.
             </span>
@@ -100,8 +100,8 @@ const ruleParametersApiInfoList = [
         desc: (
             <span>
                 Decides whether hours and minutes are taken into account that can be used only by{' '}
-                <Link href="/rules/date">
-                    <a className={'inner-link'}> date </a>
+                <Link href="/rules/date" className={'inner-link'}>
+                    date
                 </Link>{' '}
                 rule.
             </span>
@@ -111,8 +111,8 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 applyToNulls (boolean){' '}
-                <Link href="/customizations/apply-to-nulls">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/customizations/apply-to-nulls" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -122,8 +122,8 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 disableIf (func){' '}
-                <Link href="/customizations/conditional-rules">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/customizations/conditional-rules" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -133,8 +133,8 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 enableIf (func){' '}
-                <Link href="/customizations/conditional-rules">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/customizations/conditional-rules" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
@@ -144,8 +144,8 @@ const ruleParametersApiInfoList = [
         label: (
             <div>
                 customMessage (string || func){' '}
-                <Link href="/customizations/custom-message">
-                    <a className={'inner-link'}> See Example </a>
+                <Link href="/customizations/custom-message" className={'inner-link'}>
+                    See Example
                 </Link>
             </div>
         ),
