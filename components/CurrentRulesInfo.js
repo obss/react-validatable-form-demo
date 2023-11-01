@@ -35,7 +35,9 @@ const CurrentRulesInfo = ({ currentRules, header = 'Current Rules' }) => {
                     <span className={'currentRuleLabel'}>{header}</span>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <span className={'currentRuleString'}>{stringifyWithFunction(currentRules)}</span>
+                    <span suppressHydrationWarning={true} className={'currentRuleString'}>
+                        {stringifyWithFunction(currentRules)}
+                    </span>
                 </AccordionDetails>
             </Accordion>
         </div>
