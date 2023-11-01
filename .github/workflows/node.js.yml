@@ -17,7 +17,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [18.12.0]
+                node-version: [18.18.2]
 
         steps:
             - uses: actions/checkout@v3
@@ -27,7 +27,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
             - name: Update yarn @v2
               run: corepack enable
-            - run: corepack prepare yarn@3.2.4 --activate
+            - run: corepack prepare yarn@4.0.0 --activate
             - run: yarn -v
             - name: Install dependencies
               run: rm -rf node_modules && yarn install
