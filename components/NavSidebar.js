@@ -433,27 +433,25 @@ export const NavSidebar = ({ menuIsHidden, toggleDrawer }) => {
     const menuStatus = menuIsHidden ? 'sideMenuHidden' : 'sideMenuOpen';
 
     return (
-        <>
-            <div
-                className={`${menuStatus} mysidemenu inset-y-0 left-0 z-30 overflow-y-auto transition duration-300 ease-out transform translate-x-0 bg-white border-r-2 lg:translate-x-0 lg:static lg:inset-0 ${'ease-build translate-x-0'}`}
-            >
-                <div className={'navbar-area'}>
-                    <TextField
-                        className="menu-search-input"
-                        label="Search"
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <Search />
-                                </InputAdornment>
-                            ),
-                        }}
-                        value={searchInput}
-                        onChange={handleTextInput}
-                    />
-                    <Box pt={1}>{accordionNavigations}</Box>
-                </div>
+        <div
+            className={`${menuStatus} mysidemenu inset-y-0 left-0 z-30 overflow-y-auto transition duration-300 ease-out transform translate-x-0 bg-white border-r-2 lg:translate-x-0 lg:static lg:inset-0 ${'ease-build translate-x-0'}`}
+        >
+            <div className={'navbar-area'}>
+                <TextField
+                    className="menu-search-input"
+                    label="Search"
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <Search />
+                            </InputAdornment>
+                        ),
+                    }}
+                    value={searchInput}
+                    onChange={handleTextInput}
+                />
+                <Box pt={1}>{accordionNavigations}</Box>
             </div>
-        </>
+        </div>
     );
 };
