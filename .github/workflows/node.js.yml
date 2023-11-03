@@ -32,7 +32,6 @@ jobs:
             - name: Install dependencies
               run: rm -rf node_modules && yarn install
             - run: npm run build
-            - run: npm run export
             - run: touch ./out/.nojekyll
 
             - name: Deploy 🚀
