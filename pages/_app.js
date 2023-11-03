@@ -378,7 +378,7 @@ function MyApp({ Component, pageProps }) {
                             focusToErrorAfterSubmit={currentSettings.focusToErrorAfterSubmit}
                             elementFocusHandler={customElementFocusHandler}
                         >
-                            <Component {...pageProps} />
+                            <Component openSettingsDialog={openSettingsDialog} {...pageProps} />
                         </ReactValidatableFormProvider>
                     </LocalizationProvider>
                 </div>

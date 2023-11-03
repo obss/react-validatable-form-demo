@@ -1,7 +1,7 @@
 import { useValidatableForm } from 'react-validatable-form';
 import TextField from '@mui/material/TextField';
 import { Autocomplete, Button } from '@mui/material';
-import { DesktopDatePicker } from '@mui/x-date-pickers';
+import { DatePicker } from '@mui/x-date-pickers';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { options } from '../../constants/Data';
@@ -124,14 +124,11 @@ const ApplyToNulls = () => {
                 />
             </div>
             <div>
-                <DesktopDatePicker
+                <DatePicker
                     label="dateApplyToNulls"
-                    inputFormat="MM/dd/yyyy"
                     value={getValue('val5') || null}
                     onChange={(val) => setPathValue('val5', val)}
-                    renderInput={(params) => (
-                        <TextField {...params} error={!!getError('val5')} helperText={getError('val5') || ' '} />
-                    )}
+                    slotProps={{ textField: { error: !!getError('val5'), helperText: getError('val5') || ' ' } }}
                 />
             </div>
             <div>

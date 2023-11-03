@@ -19,11 +19,6 @@ a {
     text-align: center;
 }
 
-select,
-input {
-    border: 1px solid;
-}
-
 .pureButton {
     border: 1px solid;
     padding-left: 20px;
@@ -146,10 +141,6 @@ input {
 
 .comparisonComponent {
     width: 200px !important;
-}
-
-.comparisonDateComponent {
-    width: 250px !important;
 }
 
 .comparisonDiv {

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import {
     Accordion,
     AccordionDetails,
@@ -193,7 +192,7 @@ const allMenuItems = [
                 itemId: '/examples/react-bootstrap',
             },
             {
-                title: 'React Native Usage',
+                title: 'React Native',
                 itemId: '/examples/react-native',
             },
             {

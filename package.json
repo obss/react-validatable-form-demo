@@ -1,6 +1,6 @@
 {
     "name": "react-validatable-form-demo",
-    "version": "5.0.0-beta.2",
+    "version": "5.0.0-beta.3",
     "license": "MIT",
     "scripts": {
         "dev": "next dev -p 3155",
@@ -10,31 +10,31 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@date-io/date-fns": "2.16.0",
-        "@emotion/react": "11.10.4",
-        "@emotion/styled": "11.10.4",
-        "@mui/icons-material": "5.10.9",
-        "@mui/material": "5.10.9",
-        "@mui/x-date-pickers": "5.0.4",
-        "antd": "4.23.5",
-        "bootstrap": "5.2.2",
-        "date-fns": "2.29.3",
-        "next": "13.0.6",
-        "primereact": "8.6.1",
+        "@date-io/date-fns": "2.17.0",
+        "@emotion/react": "11.11.1",
+        "@emotion/styled": "11.11.0",
+        "@mui/icons-material": "5.14.16",
+        "@mui/material": "5.14.16",
+        "@mui/x-date-pickers": "6.17.0",
+        "antd": "5.10.3",
+        "bootstrap": "5.3.2",
+        "date-fns": "2.30.0",
+        "next": "14.0.1",
+        "primereact": "10.0.9",
         "react": "18.2.0",
-        "react-bootstrap": "2.5.0",
+        "react-bootstrap": "2.9.1",
         "react-dom": "18.2.0",
         "react-minimal-side-navigation": "1.9.2",
-        "react-validatable-form": "5.0.0-beta.2"
+        "react-validatable-form": "5.0.0-beta.3"
     },
     "devDependencies": {
-        "eslint": "8.23.1",
+        "eslint": "8.52.0",
         "eslint-config-next": "12.3.0",
-        "eslint-config-prettier": "8.5.0",
-        "eslint-plugin-prettier": "4.2.1",
-        "eslint-plugin-react": "7.31.8",
+        "eslint-config-prettier": "9.0.0",
+        "eslint-plugin-prettier": "5.0.1",
+        "eslint-plugin-react": "7.33.2",
         "eslint-plugin-react-hooks": "4.6.0",
-        "prettier": "2.7.1"
+        "prettier": "3.0.3"
     },
     "browserslist": {
         "production": [
